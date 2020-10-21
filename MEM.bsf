@@ -1,0 +1,92 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 248 176)
+	(text "MEM" (rect 5 0 33 19)(font "Intel Clear" (font_size 8)))
+	(text "inst" (rect 8 139 24 156)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Instruction[31..0]" (rect 0 0 100 19)(font "Intel Clear" (font_size 8)))
+		(text "Instruction[31..0]" (rect 21 27 121 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "MEMALUOut" (rect 0 0 74 19)(font "Intel Clear" (font_size 8)))
+		(text "MEMALUOut" (rect 21 43 95 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "MEMB" (rect 0 0 36 19)(font "Intel Clear" (font_size 8)))
+		(text "MEMB" (rect 21 59 57 78)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 232 32)
+		(output)
+		(text "MEMIR[31..0]" (rect 0 0 79 19)(font "Intel Clear" (font_size 8)))
+		(text "MEMIR[31..0]" (rect 132 27 211 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 232 32)(pt 216 32)(line_width 3))
+	)
+	(port
+		(pt 232 48)
+		(output)
+		(text "MEMop" (rect 0 0 43 19)(font "Intel Clear" (font_size 8)))
+		(text "MEMop" (rect 168 43 211 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 232 48)(pt 216 48))
+	)
+	(port
+		(pt 232 64)
+		(output)
+		(text "MEMrs" (rect 0 0 38 19)(font "Intel Clear" (font_size 8)))
+		(text "MEMrs" (rect 173 59 211 78)(font "Intel Clear" (font_size 8)))
+		(line (pt 232 64)(pt 216 64))
+	)
+	(port
+		(pt 232 80)
+		(output)
+		(text "MEMrt" (rect 0 0 37 19)(font "Intel Clear" (font_size 8)))
+		(text "MEMrt" (rect 174 75 211 94)(font "Intel Clear" (font_size 8)))
+		(line (pt 232 80)(pt 216 80))
+	)
+	(port
+		(pt 232 96)
+		(output)
+		(text "MEMrd" (rect 0 0 41 19)(font "Intel Clear" (font_size 8)))
+		(text "MEMrd" (rect 170 91 211 110)(font "Intel Clear" (font_size 8)))
+		(line (pt 232 96)(pt 216 96))
+	)
+	(port
+		(pt 232 112)
+		(output)
+		(text "MEMValue" (rect 0 0 61 19)(font "Intel Clear" (font_size 8)))
+		(text "MEMValue" (rect 150 107 211 126)(font "Intel Clear" (font_size 8)))
+		(line (pt 232 112)(pt 216 112))
+	)
+	(drawing
+		(rectangle (rect 16 16 216 144))
+	)
+)
