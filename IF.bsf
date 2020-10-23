@@ -65,6 +65,13 @@ refer to the applicable agreement for further details.
 		(text "IFIR[31..0]" (rect 134 27 195 46)(font "Intel Clear" (font_size 8)))
 		(line (pt 216 32)(pt 200 32)(line_width 3))
 	)
+	(port
+		(pt 216 48)
+		(output)
+		(text "IFop[5..0]" (rect 0 0 56 19)(font "Intel Clear" (font_size 8)))
+		(text "IFop[5..0]" (rect 139 43 195 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 216 48)(pt 200 48)(line_width 3))
+	)
 	(drawing
 		(rectangle (rect 16 16 200 112))
 	)
