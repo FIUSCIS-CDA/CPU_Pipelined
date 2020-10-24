@@ -33,9 +33,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 48)
 		(input)
-		(text "Funct[5:0]" (rect 0 0 60 19)(font "Intel Clear" (font_size 8)))
-		(text "Funct[5:0]" (rect 21 43 81 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
+		(text "Funct[5..0]" (rect 0 0 62 19)(font "Intel Clear" (font_size 8)))
+		(text "Funct[5..0]" (rect 21 43 83 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
 		(pt 128 32)

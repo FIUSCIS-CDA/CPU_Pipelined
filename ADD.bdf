@@ -39,7 +39,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 200 376 368 392)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "Funct[5:0]" (rect 5 0 53 17)(font "Intel Clear" ))
+	(text "Funct[5..0]" (rect 5 0 55 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))

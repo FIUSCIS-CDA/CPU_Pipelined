@@ -183,7 +183,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 64 424 232 440)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "MEMrs[4..0]" (rect 5 0 62 17)(font "Intel Clear" ))
+	(text "MEMrs[4..0]" (rect 5 0 61 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -199,7 +199,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 64 464 232 480)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "MEMrt[4..0]" (rect 5 0 61 17)(font "Intel Clear" ))
+	(text "MEMrt[4..0]" (rect 5 0 60 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -215,7 +215,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 64 512 232 528)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "MEMrd[4..0]" (rect 5 0 63 17)(font "Intel Clear" ))
+	(text "MEMrd[4..0]" (rect 5 0 62 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -231,7 +231,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 64 192 232 208)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "EXop[5..0]" (rect 5 0 56 12)(font "Arial" ))
+	(text "EXop[5..0]" (rect 5 0 55 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -1695,11 +1695,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 264 696)
-	(pt 264 720)
-	(bus)
-)
-(connector
 	(pt 264 720)
 	(pt 472 720)
 	(bus)
@@ -1732,31 +1727,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 304 1336)
 	(pt 472 1336)
-	(bus)
-)
-(connector
-	(pt 304 920)
-	(pt 480 920)
-	(bus)
-)
-(connector
-	(pt 304 808)
-	(pt 304 920)
-	(bus)
-)
-(connector
-	(pt 304 1024)
-	(pt 480 1024)
-	(bus)
-)
-(connector
-	(pt 304 920)
-	(pt 304 1024)
-	(bus)
-)
-(connector
-	(pt 304 1024)
-	(pt 304 1336)
 	(bus)
 )
 (connector
@@ -2015,10 +1985,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 640 1520)
 	(pt 680 1520)
-)
-(connector
-	(pt 760 624)
-	(pt 856 624)
 )
 (connector
 	(pt 856 624)
@@ -2356,6 +2322,45 @@ refer to the applicable agreement for further details.
 	(pt 976 456)
 	(pt 1136 456)
 )
+(connector
+	(pt 752 624)
+	(pt 856 624)
+)
+(connector
+	(pt 304 808)
+	(pt 304 1336)
+	(bus)
+)
+(connector
+	(pt 264 696)
+	(pt 264 720)
+	(bus)
+)
+(connector
+	(pt 480 920)
+	(pt 264 920)
+	(bus)
+)
+(connector
+	(pt 264 720)
+	(pt 264 920)
+	(bus)
+)
+(connector
+	(pt 480 1024)
+	(pt 264 1024)
+	(bus)
+)
+(connector
+	(pt 264 920)
+	(pt 264 1024)
+	(bus)
+)
+(connector
+	(pt 264 1024)
+	(pt 264 1032)
+	(bus)
+)
 (junction (pt 688 256))
 (junction (pt 336 168))
 (junction (pt 688 184))
@@ -2365,8 +2370,6 @@ refer to the applicable agreement for further details.
 (junction (pt 264 696))
 (junction (pt 376 288))
 (junction (pt 304 808))
-(junction (pt 304 920))
-(junction (pt 304 1024))
 (junction (pt 272 352))
 (junction (pt 288 456))
 (junction (pt 664 720))
@@ -2390,3 +2393,6 @@ refer to the applicable agreement for further details.
 (junction (pt 936 304))
 (junction (pt 1280 432))
 (junction (pt 912 432))
+(junction (pt 264 720))
+(junction (pt 264 920))
+(junction (pt 264 1024))

@@ -55,7 +55,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 136 304 304 320)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "IDIR[31..0]" (rect 5 0 61 12)(font "Arial" ))
+	(text "IDIR[31..0]" (rect 5 0 60 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -71,7 +71,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 136 440 304 456)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "IDA[31..0]" (rect 5 0 56 12)(font "Arial" ))
+	(text "IDA[31..0]" (rect 5 0 55 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -87,7 +87,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 136 568 304 584)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "IDB[31..0]" (rect 5 0 52 17)(font "Intel Clear" ))
+	(text "IDB[31..0]" (rect 5 0 51 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -184,9 +184,9 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 392 384 544 480)
+	(rect 392 512 544 608)
 	(text "Flopr_32" (rect 5 0 59 19)(font "Intel Clear" (font_size 8)))
-	(text "IR" (rect 8 75 17 92)(font "Intel Clear" ))
+	(text "IR1" (rect 8 75 23 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -220,9 +220,9 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 392 512 544 608)
+	(rect 392 384 544 480)
 	(text "Flopr_32" (rect 5 0 59 19)(font "Intel Clear" (font_size 8)))
-	(text "IR1" (rect 8 75 23 92)(font "Intel Clear" ))
+	(text "IR2" (rect 8 75 23 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)

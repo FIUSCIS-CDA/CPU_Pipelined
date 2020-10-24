@@ -68,9 +68,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 264 96)
 		(output)
-		(text "WBReg[4:0]" (rect 0 0 70 19)(font "Intel Clear" (font_size 8)))
-		(text "WBReg[4:0]" (rect 173 91 243 110)(font "Intel Clear" (font_size 8)))
-		(line (pt 264 96)(pt 248 96))
+		(text "WBReg[4..0]" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
+		(text "WBReg[4..0]" (rect 170 91 243 110)(font "Intel Clear" (font_size 8)))
+		(line (pt 264 96)(pt 248 96)(line_width 3))
 	)
 	(port
 		(pt 264 112)

@@ -55,7 +55,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 136 304 304 320)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "MEMIR[31..0]" (rect 5 0 73 12)(font "Arial" ))
+	(text "MEMIR[31..0]" (rect 5 0 72 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -71,7 +71,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 120 440 304 456)
 	(text "INPUT" (rect 141 0 169 10)(font "Arial" (font_size 6)))
-	(text "MEMValue[31..0]" (rect 5 0 88 12)(font "Arial" ))
+	(text "MEMValue[31..0]" (rect 5 0 87 12)(font "Arial" ))
 	(pt 184 8)
 	(drawing
 		(line (pt 100 12)(pt 125 12))
@@ -154,7 +154,7 @@ refer to the applicable agreement for further details.
 (symbol
 	(rect 392 384 544 480)
 	(text "Flopr_32" (rect 5 0 59 19)(font "Intel Clear" (font_size 8)))
-	(text "IR" (rect 8 75 17 92)(font "Intel Clear" ))
+	(text "IR2" (rect 8 75 23 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)

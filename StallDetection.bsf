@@ -82,8 +82,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 160)
 		(input)
-		(text "MEMrt[5..0]" (rect 0 0 68 19)(font "Intel Clear" (font_size 8)))
-		(text "MEMrt[5..0]" (rect 21 155 89 174)(font "Intel Clear" (font_size 8)))
+		(text "MEMrt[4..0]" (rect 0 0 68 19)(font "Intel Clear" (font_size 8)))
+		(text "MEMrt[4..0]" (rect 21 155 89 174)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 160)(pt 16 160)(line_width 3))
 	)
 	(port

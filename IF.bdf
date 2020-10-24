@@ -23,7 +23,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 784 456 968 472)
 	(text "INPUT" (rect 141 0 169 10)(font "Arial" (font_size 6)))
-	(text "beq_offset[15..0]" (rect 5 0 92 12)(font "Arial" ))
+	(text "beq_offset[15..0]" (rect 5 0 91 12)(font "Arial" ))
 	(pt 184 8)
 	(drawing
 		(line (pt 100 12)(pt 125 12))
@@ -55,7 +55,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 120 72 288 88)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "reset" (rect 5 0 29 17)(font "Intel Clear" ))
+	(text "reset" (rect 5 0 28 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -345,36 +345,6 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 344 368 544 464)
-	(text "SPLICE_PCJ" (rect 122 0 195 19)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 176 75 192 92)(font "Intel Clear" ))
-	(port
-		(pt 200 32)
-		(input)
-		(text "pc31_28[31..28]" (rect 0 0 101 19)(font "Intel Clear" (font_size 8)))
-		(text "pc31_28[31..28]" (rect 78 27 179 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 200 32)(pt 184 32)(line_width 3))
-	)
-	(port
-		(pt 200 48)
-		(input)
-		(text "ir25_0[25..0]" (rect 0 0 79 19)(font "Intel Clear" (font_size 8)))
-		(text "ir25_0[25..0]" (rect 100 43 179 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 200 48)(pt 184 48)(line_width 3))
-	)
-	(port
-		(pt 0 32)
-		(output)
-		(text "Y[31..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
-		(text "Y[31..0]" (rect 21 27 68 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 184 80))
-	)
-	(flipy)
-)
-(symbol
 	(rect 304 224 456 320)
 	(text "Flopr_32" (rect 5 0 59 19)(font "Intel Clear" (font_size 8)))
 	(text "PCREG" (rect 8 75 42 92)(font "Intel Clear" ))
@@ -409,6 +379,36 @@ refer to the applicable agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 136 80))
 	)
+)
+(symbol
+	(rect 344 368 544 464)
+	(text "SPLICE_PCJ" (rect 122 0 195 19)(font "Intel Clear" (font_size 8)))
+	(text "inst99" (rect 176 75 204 92)(font "Intel Clear" ))
+	(port
+		(pt 200 32)
+		(input)
+		(text "pc31_28[31..28]" (rect 0 0 101 19)(font "Intel Clear" (font_size 8)))
+		(text "pc31_28[31..28]" (rect 78 27 179 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 200 32)(pt 184 32)(line_width 3))
+	)
+	(port
+		(pt 200 48)
+		(input)
+		(text "ir25_0[25..0]" (rect 0 0 79 19)(font "Intel Clear" (font_size 8)))
+		(text "ir25_0[25..0]" (rect 100 43 179 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 200 48)(pt 184 48)(line_width 3))
+	)
+	(port
+		(pt 0 32)
+		(output)
+		(text "Y[31..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
+		(text "Y[31..0]" (rect 21 27 68 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 184 80))
+	)
+	(flipy)
 )
 (connector
 	(pt 728 240)
@@ -650,12 +650,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "PC" (rect 466 240 480 257)(font "Intel Clear" ))
-	(pt 456 256)
-	(pt 472 256)
-	(bus)
-)
-(connector
 	(text "PC[31..28]" (rect 456 300 473 349)(font "Intel Clear" )(vertical))
 	(pt 472 256)
 	(pt 472 352)
@@ -716,16 +710,40 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "Instruction" (rect 666 240 714 257)(font "Intel Clear" ))
+	(pt 952 224)
+	(pt 1008 224)
+	(bus)
+)
+(connector
+	(pt 952 224)
+	(pt 952 304)
+	(bus)
+)
+(connector
+	(text "IFIR[31..26]" (rect 962 288 1015 305)(font "Intel Clear" ))
+	(pt 952 304)
+	(pt 1016 304)
+	(bus)
+)
+(connector
+	(text "Instruction[31..0]" (rect 666 240 743 257)(font "Intel Clear" ))
 	(pt 680 256)
 	(pt 744 256)
 	(bus)
 )
 (connector
+	(text "PC[31..0]" (rect 466 240 509 257)(font "Intel Clear" ))
+	(pt 456 256)
+	(pt 472 256)
+	(bus)
+)
+(connector
+	(text "IFIR[31..0]" (rect 906 208 953 225)(font "Intel Clear" ))
 	(pt 896 224)
-	(pt 1008 224)
+	(pt 952 224)
 	(bus)
 )
 (junction (pt 472 256))
 (junction (pt 472 -320))
 (junction (pt 680 256))
+(junction (pt 952 224))

@@ -23,7 +23,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 320 240 488 256)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "Op[31..26]" (rect 5 0 56 12)(font "Arial" ))
+	(text "Op[31..26]" (rect 5 0 57 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -175,11 +175,6 @@ refer to the applicable agreement for further details.
 	(pt 688 392)
 )
 (connector
-	(text "Op[30]" (rect 536 288 569 305)(font "Intel Clear" ))
-	(pt 528 304)
-	(pt 616 304)
-)
-(connector
 	(pt 744 264)
 	(pt 744 304)
 )
@@ -282,11 +277,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "Op[28]" (rect 536 368 569 385)(font "Intel Clear" ))
-	(pt 528 384)
-	(pt 616 384)
-)
-(connector
 	(pt 664 384)
 	(pt 688 384)
 )
@@ -296,9 +286,19 @@ refer to the applicable agreement for further details.
 	(pt 744 264)
 )
 (connector
+	(text "Op[30]" (rect 536 288 569 305)(font "Intel Clear" ))
+	(pt 528 304)
+	(pt 616 304)
+)
+(connector
 	(text "Op[29]" (rect 536 328 569 345)(font "Intel Clear" ))
 	(pt 528 344)
 	(pt 688 344)
+)
+(connector
+	(text "Op[28]" (rect 536 368 569 385)(font "Intel Clear" ))
+	(pt 528 384)
+	(pt 616 384)
 )
 (connector
 	(text "Op[27]" (rect 576 400 609 417)(font "Intel Clear" ))

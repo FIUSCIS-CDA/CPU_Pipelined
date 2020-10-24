@@ -23,7 +23,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 136 128 304 144)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "IFop[31..26]" (rect 5 0 66 12)(font "Arial" ))
+	(text "IFop[31..26]" (rect 5 0 65 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -39,7 +39,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -120 256 48 272)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "IDop[31..26]" (rect 5 0 67 12)(font "Arial" ))
+	(text "IDop[31..26]" (rect 5 0 66 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -55,7 +55,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -112 368 56 384)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "IDA[31..0]" (rect 5 0 56 12)(font "Arial" ))
+	(text "IDA[31..0]" (rect 5 0 55 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -71,7 +71,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -120 432 48 448)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "IDB[31..0]" (rect 5 0 52 17)(font "Intel Clear" ))
+	(text "IDB[31..0]" (rect 5 0 51 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -217,28 +217,6 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 80 232 208 328)
-	(text "BEQ" (rect 5 0 29 19)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 8 75 24 92)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "Op[31..26]" (rect 0 0 64 19)(font "Intel Clear" (font_size 8)))
-		(text "Op[31..26]" (rect 21 27 85 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 128 32)
-		(output)
-		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
-		(text "Y" (rect 99 27 107 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 128 32)(pt 112 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 112 80))
-	)
-)
-(symbol
 	(rect 88 368 200 464)
 	(text "EQ_32" (rect 5 0 45 19)(font "Intel Clear" (font_size 8)))
 	(text "inst14" (rect 8 75 36 92)(font "Intel Clear" ))
@@ -297,6 +275,28 @@ refer to the applicable agreement for further details.
 		(line (pt 14 37)(pt 31 37))
 		(line (pt 14 12)(pt 14 37))
 		(arc (pt 31 37)(pt 30 12)(rect 18 12 43 37))
+	)
+)
+(symbol
+	(rect 80 232 208 328)
+	(text "BEQ" (rect 5 0 29 19)(font "Intel Clear" (font_size 8)))
+	(text "inst99" (rect 8 75 36 92)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Op[31..26]" (rect 0 0 64 19)(font "Intel Clear" (font_size 8)))
+		(text "Op[31..26]" (rect 21 27 85 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 128 32)
+		(output)
+		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
+		(text "Y" (rect 99 27 107 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 128 32)(pt 112 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 112 80))
 	)
 )
 (connector

@@ -26,16 +26,16 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 32)
 		(input)
-		(text "Opcode[5:0]" (rect 0 0 74 19)(font "Intel Clear" (font_size 8)))
-		(text "Opcode[5:0]" (rect 21 27 95 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
+		(text "Opcode[5..0]" (rect 0 0 76 19)(font "Intel Clear" (font_size 8)))
+		(text "Opcode[5..0]" (rect 21 27 97 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "Functcode[5:0]" (rect 0 0 88 19)(font "Intel Clear" (font_size 8)))
-		(text "Functcode[5:0]" (rect 21 43 109 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
+		(text "Functcode[5..0]" (rect 0 0 90 19)(font "Intel Clear" (font_size 8)))
+		(text "Functcode[5..0]" (rect 21 43 111 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
 		(pt 216 32)
