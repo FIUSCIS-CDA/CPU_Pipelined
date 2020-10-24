@@ -21,7 +21,7 @@ refer to the applicable agreement for further details.
 (header "symbol" (version "1.2"))
 (symbol
 	(rect 16 16 144 112)
-	(text "OR" (rect 5 0 22 19)(font "Intel Clear" (font_size 8)))
+	(text "ORR" (rect 5 0 30 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 75 24 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
@@ -33,9 +33,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 48)
 		(input)
-		(text "Funct[5:0]" (rect 0 0 60 19)(font "Intel Clear" (font_size 8)))
-		(text "Funct[5:0]" (rect 21 43 81 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
+		(text "Funct[5..0]" (rect 0 0 62 19)(font "Intel Clear" (font_size 8)))
+		(text "Funct[5..0]" (rect 21 43 83 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
 		(pt 128 32)
