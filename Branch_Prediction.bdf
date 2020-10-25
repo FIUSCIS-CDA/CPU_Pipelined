@@ -315,11 +315,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 704 160)
-	(pt 704 296)
-	(bus)
-)
-(connector
 	(pt 344 296)
 	(pt 344 344)
 )
@@ -447,6 +442,12 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 304 344)
 	(pt 304 296)
+)
+(connector
+	(text "S[1..0]" (rect 688 261 705 290)(font "Intel Clear" )(vertical))
+	(pt 704 160)
+	(pt 704 296)
+	(bus)
 )
 (junction (pt 704 160))
 (junction (pt 344 296))
