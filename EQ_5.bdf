@@ -23,7 +23,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 96 1472 264 1488)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "A[4..0]" (rect 5 0 39 12)(font "Arial" ))
+	(text "A[4..0]" (rect 5 0 38 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -39,7 +39,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 88 1528 256 1544)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "B[4..0]" (rect 5 0 36 17)(font "Intel Clear" ))
+	(text "B[4..0]" (rect 5 0 35 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -303,19 +303,17 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 776 1584 808 1616)
-	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
-	(text "inst39" (rect 3 21 31 38)(font "Intel Clear" )(invisible))
+	(rect 728 1560 760 1576)
+	(text "VCC" (rect 7 0 27 10)(font "Arial" (font_size 6)))
+	(text "inst1" (rect 3 5 25 22)(font "Intel Clear" )(invisible))
 	(port
-		(pt 16 0)
+		(pt 16 16)
 		(output)
-		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
-		(line (pt 16 8)(pt 16 0))
+		(text "1" (rect 19 7 24 19)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 19 7 24 19)(font "Courier New" (bold))(invisible))
+		(line (pt 16 16)(pt 16 8))
 	)
 	(drawing
-		(line (pt 8 8)(pt 16 16))
-		(line (pt 16 16)(pt 24 8))
 		(line (pt 8 8)(pt 24 8))
 	)
 )
@@ -508,10 +506,6 @@ refer to the applicable agreement for further details.
 	(pt 984 1656)
 )
 (connector
-	(pt 792 1584)
-	(pt 792 1560)
-)
-(connector
 	(pt 792 1560)
 	(pt 864 1560)
 )
@@ -526,6 +520,18 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 984 1592)
 	(pt 1040 1592)
+)
+(connector
+	(pt 744 1576)
+	(pt 744 1608)
+)
+(connector
+	(pt 744 1608)
+	(pt 792 1608)
+)
+(connector
+	(pt 792 1560)
+	(pt 792 1608)
 )
 (junction (pt 336 1616))
 (junction (pt 296 1632))

@@ -20,9 +20,9 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 192 112)
+	(rect 16 16 192 144)
 	(text "IFIDTower" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 8 75 24 92)(font "Intel Clear" ))
+	(text "inst" (rect 8 107 24 124)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -45,6 +45,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 64)(pt 16 64)(line_width 3))
 	)
 	(port
+		(pt 0 80)
+		(input)
+		(text "stall" (rect 0 0 24 19)(font "Intel Clear" (font_size 8)))
+		(text "stall" (rect 21 75 45 94)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
 		(pt 176 32)
 		(output)
 		(text "IDIR[31..0]" (rect 0 0 63 19)(font "Intel Clear" (font_size 8)))
@@ -52,6 +59,6 @@ refer to the applicable agreement for further details.
 		(line (pt 176 32)(pt 160 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 160 80))
+		(rectangle (rect 16 16 160 112))
 	)
 )

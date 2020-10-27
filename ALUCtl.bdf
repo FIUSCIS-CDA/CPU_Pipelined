@@ -23,7 +23,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 56 56 224 72)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "Opcode[5..0]" (rect 5 0 69 12)(font "Arial" ))
+	(text "Opcode[5..0]" (rect 5 0 68 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -39,7 +39,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 56 272 232 288)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
-	(text "Functcode[5..0]" (rect 5 0 83 12)(font "Arial" ))
+	(text "Functcode[5..0]" (rect 5 0 82 12)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 92 12)(pt 117 12))
@@ -725,10 +725,6 @@ refer to the applicable agreement for further details.
 	(pt 624 528)
 )
 (connector
-	(pt 504 776)
-	(pt 592 776)
-)
-(connector
 	(pt 592 776)
 	(pt 592 544)
 )
@@ -773,20 +769,8 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 536 672)
-	(pt 536 832)
-)
-(connector
 	(pt 536 832)
 	(pt 616 832)
-)
-(connector
-	(pt 504 672)
-	(pt 536 672)
-)
-(connector
-	(pt 536 672)
-	(pt 584 672)
 )
 (connector
 	(pt 504 888)
@@ -862,6 +846,22 @@ refer to the applicable agreement for further details.
 	(pt 744 208)
 	(pt 768 208)
 )
+(connector
+	(pt 504 672)
+	(pt 584 672)
+)
+(connector
+	(pt 536 832)
+	(pt 536 776)
+)
+(connector
+	(pt 504 776)
+	(pt 536 776)
+)
+(connector
+	(pt 536 776)
+	(pt 592 776)
+)
 (junction (pt 768 80))
 (junction (pt 768 144))
 (junction (pt 768 272))
@@ -879,7 +879,7 @@ refer to the applicable agreement for further details.
 (junction (pt 256 688))
 (junction (pt 256 792))
 (junction (pt 280 888))
-(junction (pt 536 672))
 (junction (pt 256 904))
 (junction (pt 624 160))
 (junction (pt 768 208))
+(junction (pt 536 776))

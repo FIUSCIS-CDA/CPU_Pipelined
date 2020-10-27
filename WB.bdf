@@ -499,20 +499,8 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "WireWire[5..0]" (rect 682 64 750 81)(font "Intel Clear" ))
-	(pt 672 80)
-	(pt 960 80)
-	(bus)
-)
-(connector
 	(pt 960 80)
 	(pt 960 160)
-	(bus)
-)
-(connector
-	(text "LWWire[5..0]" (rect 960 144 1022 161)(font "Intel Clear" ))
-	(pt 960 160)
-	(pt 992 160)
 	(bus)
 )
 (connector
@@ -526,7 +514,19 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "RTypeWire[5..0]" (rect 968 400 1044 417)(font "Intel Clear" ))
+	(text "WBIR[31..26]" (rect 682 64 744 81)(font "Intel Clear" ))
+	(pt 672 80)
+	(pt 960 80)
+	(bus)
+)
+(connector
+	(text "WBIR[31..26]" (rect 960 144 1022 161)(font "Intel Clear" ))
+	(pt 960 160)
+	(pt 992 160)
+	(bus)
+)
+(connector
+	(text "WBIR[31..26]" (rect 968 400 1030 417)(font "Intel Clear" ))
 	(pt 960 416)
 	(pt 1024 416)
 	(bus)
