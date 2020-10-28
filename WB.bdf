@@ -292,6 +292,60 @@ refer to the applicable agreement for further details.
 		(rectangle (rect 16 16 112 80))
 	)
 )
+(symbol
+	(rect 896 488 1040 584)
+	(text "NONZERO" (rect 5 0 66 19)(font "Intel Clear" (font_size 8)))
+	(text "inst2" (rect 8 75 30 92)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Register[4..0]" (rect 0 0 79 19)(font "Intel Clear" (font_size 8)))
+		(text "Register[4..0]" (rect 21 27 100 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 144 32)
+		(output)
+		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
+		(text "Y" (rect 115 27 123 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 144 32)(pt 128 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 128 80))
+	)
+)
+(symbol
+	(rect 1272 488 1336 536)
+	(text "AND2" (rect 1 0 25 10)(font "Arial" (font_size 6)))
+	(text "inst1" (rect 3 37 25 54)(font "Intel Clear" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
+		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 14 16))
+	)
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
+		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
+		(line (pt 0 32)(pt 14 32))
+	)
+	(port
+		(pt 64 24)
+		(output)
+		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
+		(line (pt 42 24)(pt 64 24))
+	)
+	(drawing
+		(line (pt 14 12)(pt 30 12))
+		(line (pt 14 37)(pt 31 37))
+		(line (pt 14 12)(pt 14 37))
+		(arc (pt 31 37)(pt 30 12)(rect 18 12 43 37))
+	)
+)
 (connector
 	(pt 344 88)
 	(pt 400 88)
@@ -315,11 +369,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 648 120)
 	(pt 696 120)
-	(bus)
-)
-(connector
-	(pt 576 184)
-	(pt 696 184)
 	(bus)
 )
 (connector
@@ -383,16 +432,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 576 320)
-	(pt 696 320)
-	(bus)
-)
-(connector
-	(pt 576 184)
-	(pt 576 320)
-	(bus)
-)
-(connector
 	(pt 824 304)
 	(pt 952 304)
 	(bus)
@@ -424,14 +463,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 1168 400)
 	(pt 1216 400)
-)
-(connector
-	(pt 1152 416)
-	(pt 1216 416)
-)
-(connector
-	(pt 1280 408)
-	(pt 1440 408)
 )
 (connector
 	(pt 296 352)
@@ -531,6 +562,89 @@ refer to the applicable agreement for further details.
 	(pt 1024 416)
 	(bus)
 )
+(connector
+	(pt 1280 408)
+	(pt 1344 408)
+)
+(connector
+	(pt 1424 416)
+	(pt 1424 408)
+)
+(connector
+	(pt 1424 408)
+	(pt 1440 408)
+)
+(connector
+	(pt 576 184)
+	(pt 696 184)
+	(bus)
+)
+(connector
+	(text "WBIR[15..11]" (rect 586 304 648 321)(font "Intel Clear" ))
+	(pt 576 320)
+	(pt 696 320)
+	(bus)
+)
+(connector
+	(text "WBIR[15..11]" (rect 354 504 416 521)(font "Intel Clear" ))
+	(pt 576 520)
+	(pt 896 520)
+	(bus)
+)
+(connector
+	(pt 576 184)
+	(pt 576 320)
+	(bus)
+)
+(connector
+	(pt 576 320)
+	(pt 576 520)
+	(bus)
+)
+(connector
+	(pt 1040 520)
+	(pt 1272 520)
+)
+(connector
+	(pt 1152 416)
+	(pt 1168 416)
+)
+(connector
+	(pt 1168 416)
+	(pt 1168 504)
+)
+(connector
+	(pt 1168 504)
+	(pt 1272 504)
+)
+(connector
+	(pt 1336 512)
+	(pt 1360 512)
+)
+(connector
+	(pt 1360 512)
+	(pt 1360 448)
+)
+(connector
+	(pt 1360 448)
+	(pt 1192 448)
+)
+(connector
+	(pt 1192 448)
+	(pt 1192 416)
+)
+(connector
+	(pt 1192 416)
+	(pt 1216 416)
+)
+(connector
+	(pt 1344 408)
+	(pt 1344 416)
+)
+(connector
+	(pt 1344 416)
+	(pt 1424 416)
+)
 (junction (pt 672 80))
 (junction (pt 296 464))
 (junction (pt 632 152))
@@ -542,3 +656,4 @@ refer to the applicable agreement for further details.
 (junction (pt 672 16))
 (junction (pt 960 160))
 (junction (pt 960 416))
+(junction (pt 576 320))
