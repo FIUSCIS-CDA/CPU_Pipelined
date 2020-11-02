@@ -52,6 +52,22 @@ refer to the applicable agreement for further details.
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
 )
 (pin
+	(input)
+	(rect -320 624 -152 640)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "Strategy[1..0]" (rect 5 0 74 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
 	(output)
 	(rect 104 -16 280 0)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
@@ -393,56 +409,6 @@ refer to the applicable agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 224 272))
-	)
-)
-(symbol
-	(rect 96 648 280 776)
-	(text "Branch_Prediction" (rect 5 0 112 19)(font "Intel Clear" (font_size 8)))
-	(text "inst29" (rect 8 107 36 124)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "IFop[31..26]" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
-		(text "IFop[31..26]" (rect 21 27 94 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "IDop[31..26]" (rect 0 0 75 19)(font "Intel Clear" (font_size 8)))
-		(text "IDop[31..26]" (rect 21 43 96 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "IDA[31..0]" (rect 0 0 60 19)(font "Intel Clear" (font_size 8)))
-		(text "IDA[31..0]" (rect 21 59 81 78)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "IDB[31..0]" (rect 0 0 60 19)(font "Intel Clear" (font_size 8)))
-		(text "IDB[31..0]" (rect 21 75 81 94)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 184 32)
-		(output)
-		(text "Pick[1..0]" (rect 0 0 55 19)(font "Intel Clear" (font_size 8)))
-		(text "Pick[1..0]" (rect 108 27 163 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 184 32)(pt 168 32)(line_width 3))
-	)
-	(port
-		(pt 184 48)
-		(output)
-		(text "Fix" (rect 0 0 16 19)(font "Intel Clear" (font_size 8)))
-		(text "Fix" (rect 147 43 163 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 184 48)(pt 168 48))
-	)
-	(drawing
-		(rectangle (rect 16 16 168 112))
 	)
 )
 (symbol
@@ -1177,6 +1143,70 @@ refer to the applicable agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 264 176))
+	)
+)
+(symbol
+	(rect 96 672 280 832)
+	(text "Branch_Prediction" (rect 5 0 112 19)(font "Intel Clear" (font_size 8)))
+	(text "inst4" (rect 8 139 30 156)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Taken" (rect 0 0 36 19)(font "Intel Clear" (font_size 8)))
+		(text "Taken" (rect 21 27 57 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "IFop[31..26]" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
+		(text "IFop[31..26]" (rect 21 43 94 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "IDop[31..26]" (rect 0 0 75 19)(font "Intel Clear" (font_size 8)))
+		(text "IDop[31..26]" (rect 21 59 96 78)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "IDA[31..0]" (rect 0 0 60 19)(font "Intel Clear" (font_size 8)))
+		(text "IDA[31..0]" (rect 21 75 81 94)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "DelaySlot" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
+		(text "DelaySlot" (rect 21 91 78 110)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "IDB[31..0]" (rect 0 0 60 19)(font "Intel Clear" (font_size 8)))
+		(text "IDB[31..0]" (rect 21 107 81 126)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "Pick[1..0]" (rect 0 0 55 19)(font "Intel Clear" (font_size 8)))
+		(text "Pick[1..0]" (rect 108 27 163 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(port
+		(pt 184 48)
+		(output)
+		(text "Fix" (rect 0 0 16 19)(font "Intel Clear" (font_size 8)))
+		(text "Fix" (rect 147 43 163 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 184 48)(pt 168 48))
+	)
+	(drawing
+		(rectangle (rect 16 16 168 144))
 	)
 )
 (connector
@@ -2121,11 +2151,6 @@ refer to the applicable agreement for further details.
 	(pt 2864 208)
 )
 (connector
-	(pt 64 680)
-	(pt 96 680)
-	(bus)
-)
-(connector
 	(pt 656 640)
 	(pt 48 640)
 	(bus)
@@ -2141,16 +2166,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 48 640)
-	(pt 48 696)
-	(bus)
-)
-(connector
-	(pt 48 696)
-	(pt 96 696)
-	(bus)
-)
-(connector
 	(pt 680 360)
 	(pt 680 536)
 	(bus)
@@ -2161,16 +2176,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 40 536)
-	(pt 40 712)
-	(bus)
-)
-(connector
-	(pt 40 712)
-	(pt 96 712)
-	(bus)
-)
-(connector
 	(pt 688 376)
 	(pt 688 552)
 	(bus)
@@ -2178,16 +2183,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 688 552)
 	(pt 32 552)
-	(bus)
-)
-(connector
-	(pt 32 552)
-	(pt 32 728)
-	(bus)
-)
-(connector
-	(pt 32 728)
-	(pt 96 728)
 	(bus)
 )
 (connector
@@ -2216,16 +2211,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 280 680)
-	(pt 320 680)
-	(bus)
-)
-(connector
-	(pt 320 680)
-	(pt 320 464)
-	(bus)
-)
-(connector
 	(pt 320 464)
 	(pt -176 464)
 	(bus)
@@ -2239,14 +2224,6 @@ refer to the applicable agreement for further details.
 	(pt -176 408)
 	(pt -168 408)
 	(bus)
-)
-(connector
-	(pt 280 696)
-	(pt 336 696)
-)
-(connector
-	(pt 336 696)
-	(pt 336 472)
 )
 (connector
 	(pt 336 472)
@@ -2471,11 +2448,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 64 376)
 	(pt 48 376)
-	(bus)
-)
-(connector
-	(pt 64 376)
-	(pt 64 680)
 	(bus)
 )
 (connector
@@ -2713,6 +2685,105 @@ refer to the applicable agreement for further details.
 	(pt 808 392)
 	(bus)
 )
+(connector
+	(pt 64 720)
+	(pt 96 720)
+	(bus)
+)
+(connector
+	(pt 48 640)
+	(pt 48 736)
+	(bus)
+)
+(connector
+	(pt 48 736)
+	(pt 96 736)
+	(bus)
+)
+(connector
+	(pt 40 536)
+	(pt 40 752)
+	(bus)
+)
+(connector
+	(pt 40 752)
+	(pt 96 752)
+	(bus)
+)
+(connector
+	(pt 64 376)
+	(pt 64 720)
+	(bus)
+)
+(connector
+	(pt 320 464)
+	(pt 320 704)
+	(bus)
+)
+(connector
+	(pt 320 704)
+	(pt 280 704)
+	(bus)
+)
+(connector
+	(pt 336 720)
+	(pt 280 720)
+)
+(connector
+	(pt 336 472)
+	(pt 336 720)
+)
+(connector
+	(pt 88 664)
+	(pt 88 704)
+)
+(connector
+	(pt 88 704)
+	(pt 96 704)
+)
+(connector
+	(pt 32 784)
+	(pt 96 784)
+	(bus)
+)
+(connector
+	(pt 32 552)
+	(pt 32 784)
+	(bus)
+)
+(connector
+	(pt -72 664)
+	(pt -72 632)
+)
+(connector
+	(text "Strategy[0]" (rect -46 648 7 665)(font "Intel Clear" ))
+	(pt -72 664)
+	(pt 88 664)
+)
+(connector
+	(pt -72 632)
+	(pt -16 632)
+	(bus)
+)
+(connector
+	(pt -104 768)
+	(pt -104 632)
+)
+(connector
+	(text "Strategy[1]" (rect -46 752 7 769)(font "Intel Clear" ))
+	(pt -104 768)
+	(pt 96 768)
+)
+(connector
+	(pt -152 632)
+	(pt -104 632)
+	(bus)
+)
+(connector
+	(pt -104 632)
+	(pt -72 632)
+	(bus)
+)
 (junction (pt 792 72))
 (junction (pt 784 128))
 (junction (pt 1448 72))
@@ -2745,3 +2816,5 @@ refer to the applicable agreement for further details.
 (junction (pt 1400 304))
 (junction (pt 1408 320))
 (junction (pt 1416 336))
+(junction (pt -72 632))
+(junction (pt -104 632))
