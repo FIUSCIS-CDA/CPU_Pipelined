@@ -12,7 +12,7 @@ module testbenchBubble();
    // 00=NOT TAKEN (works)
    // 01=TAKEN (does not work yet)
    // 10=DELAY SLOT (works if the program uses delay slots - the bubble sort below does not)   
-   CPU_Pipelined myCPU(rst_tb, clk_tb, 'b00, PC, IFIR, IDIR, EXIR, MEMIR, WBIR);
+   CPU_Pipelined myCPU(rst_tb, clk_tb, 'b00, EXIR, IDIR, IFIR, MEMIR, PC, WBIR);
    
    initial begin
       // initialize instruction memory
