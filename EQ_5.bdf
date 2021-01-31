@@ -408,66 +408,6 @@ refer to the applicable agreement for further details.
 	(pt 296 1856)
 )
 (connector
-	(pt 816 1624)
-	(pt 816 1632)
-)
-(connector
-	(pt 584 1624)
-	(pt 816 1624)
-)
-(connector
-	(pt 816 1632)
-	(pt 880 1632)
-)
-(connector
-	(pt 584 1680)
-	(pt 816 1680)
-)
-(connector
-	(pt 816 1680)
-	(pt 816 1648)
-)
-(connector
-	(pt 816 1648)
-	(pt 880 1648)
-)
-(connector
-	(pt 584 1736)
-	(pt 824 1736)
-)
-(connector
-	(pt 824 1736)
-	(pt 824 1664)
-)
-(connector
-	(pt 824 1664)
-	(pt 880 1664)
-)
-(connector
-	(pt 584 1792)
-	(pt 832 1792)
-)
-(connector
-	(pt 832 1792)
-	(pt 832 1680)
-)
-(connector
-	(pt 832 1680)
-	(pt 880 1680)
-)
-(connector
-	(pt 584 1848)
-	(pt 848 1848)
-)
-(connector
-	(pt 848 1848)
-	(pt 848 1696)
-)
-(connector
-	(pt 848 1696)
-	(pt 880 1696)
-)
-(connector
 	(pt 336 1616)
 	(pt 336 1672)
 	(bus)
@@ -506,6 +446,76 @@ refer to the applicable agreement for further details.
 	(pt 984 1656)
 )
 (connector
+	(pt 984 1592)
+	(pt 1040 1592)
+)
+(connector
+	(pt 816 1624)
+	(pt 816 1632)
+)
+(connector
+	(text "Bit4EQ" (rect 594 1608 627 1625)(font "Intel Clear" ))
+	(pt 584 1624)
+	(pt 816 1624)
+)
+(connector
+	(pt 816 1632)
+	(pt 880 1632)
+)
+(connector
+	(text "Bit3EQ" (rect 594 1664 627 1681)(font "Intel Clear" ))
+	(pt 584 1680)
+	(pt 816 1680)
+)
+(connector
+	(pt 816 1680)
+	(pt 816 1648)
+)
+(connector
+	(pt 816 1648)
+	(pt 880 1648)
+)
+(connector
+	(text "Bit2EQ" (rect 594 1720 627 1737)(font "Intel Clear" ))
+	(pt 584 1736)
+	(pt 824 1736)
+)
+(connector
+	(pt 824 1736)
+	(pt 824 1664)
+)
+(connector
+	(pt 824 1664)
+	(pt 880 1664)
+)
+(connector
+	(text "Bit1EQ" (rect 594 1776 627 1793)(font "Intel Clear" ))
+	(pt 584 1792)
+	(pt 832 1792)
+)
+(connector
+	(pt 832 1792)
+	(pt 832 1680)
+)
+(connector
+	(pt 832 1680)
+	(pt 880 1680)
+)
+(connector
+	(text "Bit0EQ" (rect 594 1832 627 1849)(font "Intel Clear" ))
+	(pt 584 1848)
+	(pt 848 1848)
+)
+(connector
+	(pt 848 1848)
+	(pt 848 1696)
+)
+(connector
+	(pt 848 1696)
+	(pt 880 1696)
+)
+(connector
+	(text "Power" (rect 802 1544 832 1561)(font "Intel Clear" ))
 	(pt 792 1560)
 	(pt 864 1560)
 )
@@ -516,10 +526,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 864 1616)
 	(pt 880 1616)
-)
-(connector
-	(pt 984 1592)
-	(pt 1040 1592)
 )
 (connector
 	(pt 744 1576)

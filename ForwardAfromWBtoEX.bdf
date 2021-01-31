@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2019  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,8 +16,7 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 */
 (header "graphic" (version "1.4"))
 (pin
@@ -149,108 +148,6 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 440 352 568 448)
-	(text "RTYPE" (rect 5 0 45 19)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 8 75 24 92)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "Op[31..26]" (rect 0 0 64 19)(font "Intel Clear" (font_size 8)))
-		(text "Op[31..26]" (rect 21 27 85 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 128 32)
-		(output)
-		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
-		(text "Y" (rect 99 27 107 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 128 32)(pt 112 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 112 80))
-	)
-)
-(symbol
-	(rect 440 464 560 560)
-	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "inst2" (rect 8 75 30 92)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "reg1[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
-		(text "reg1[4..0]" (rect 21 27 78 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "reg2[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
-		(text "reg2[4..0]" (rect 21 43 78 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 120 32)
-		(output)
-		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
-		(text "Y" (rect 91 27 99 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 120 32)(pt 104 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 104 80))
-	)
-)
-(symbol
-	(rect 440 736 560 832)
-	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "inst3" (rect 8 75 30 92)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "reg1[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
-		(text "reg1[4..0]" (rect 21 27 78 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "reg2[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
-		(text "reg2[4..0]" (rect 21 43 78 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 120 32)
-		(output)
-		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
-		(text "Y" (rect 91 27 99 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 120 32)(pt 104 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 104 80))
-	)
-)
-(symbol
-	(rect 440 616 568 712)
-	(text "LW" (rect 5 0 23 19)(font "Intel Clear" (font_size 8)))
-	(text "inst4" (rect 8 75 30 92)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "Op[31..26]" (rect 0 0 64 19)(font "Intel Clear" (font_size 8)))
-		(text "Op[31..26]" (rect 21 27 85 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 128 32)
-		(output)
-		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
-		(text "Y" (rect 99 27 107 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 128 32)(pt 112 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 112 80))
-	)
-)
-(symbol
 	(rect 648 424 712 472)
 	(text "AND2" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "inst6" (rect 3 37 25 54)(font "Intel Clear" ))
@@ -283,7 +180,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 656 696 720 744)
+	(rect 736 776 800 824)
 	(text "AND2" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "inst7" (rect 3 37 25 54)(font "Intel Clear" ))
 	(port
@@ -347,6 +244,163 @@ https://fpgasoftware.intel.com/eula.
 		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
 	)
 )
+(symbol
+	(rect 664 664 728 712)
+	(text "OR2" (rect 1 0 19 10)(font "Arial" (font_size 6)))
+	(text "inst9" (rect 3 37 25 54)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
+		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
+		(line (pt 0 32)(pt 15 32))
+	)
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
+		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 15 16))
+	)
+	(port
+		(pt 64 24)
+		(output)
+		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
+		(line (pt 48 24)(pt 64 24))
+	)
+	(drawing
+		(line (pt 14 36)(pt 25 36))
+		(line (pt 14 13)(pt 25 13))
+		(arc (pt 7 29)(pt 7 19)(rect -14 8 19 41))
+		(arc (pt 49 24)(pt 25 13)(rect -6 13 57 76))
+		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
+	)
+)
+(symbol
+	(rect 440 352 568 448)
+	(text "RTYPE" (rect 5 0 45 19)(font "Intel Clear" (font_size 8)))
+	(text "WBopRTYPE" (rect 8 75 70 92)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Op[31..26]" (rect 0 0 64 19)(font "Intel Clear" (font_size 8)))
+		(text "Op[31..26]" (rect 21 27 85 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 128 32)
+		(output)
+		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
+		(text "Y" (rect 99 27 107 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 128 32)(pt 112 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 112 80))
+	)
+)
+(symbol
+	(rect 432 592 624 688)
+	(text "ADDI" (rect 5 0 35 19)(font "Intel Clear" (font_size 8)))
+	(text "WBopADDI" (rect 8 75 61 92)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Op[31..26]" (rect 0 0 64 19)(font "Intel Clear" (font_size 8)))
+		(text "Op[31..26]" (rect 21 27 85 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 192 32)
+		(output)
+		(text "addi_output" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
+		(text "addi_output" (rect 98 27 171 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 192 32)(pt 176 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 176 80))
+	)
+)
+(symbol
+	(rect 440 712 568 808)
+	(text "LW" (rect 5 0 23 19)(font "Intel Clear" (font_size 8)))
+	(text "WBopLW" (rect 8 75 54 92)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Op[31..26]" (rect 0 0 64 19)(font "Intel Clear" (font_size 8)))
+		(text "Op[31..26]" (rect 21 27 85 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 128 32)
+		(output)
+		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
+		(text "Y" (rect 99 27 107 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 128 32)(pt 112 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 112 80))
+	)
+)
+(symbol
+	(rect 440 464 560 560)
+	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
+	(text "WBrdEXrs" (rect 8 75 56 92)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "reg1[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
+		(text "reg1[4..0]" (rect 21 27 78 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reg2[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
+		(text "reg2[4..0]" (rect 21 43 78 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 120 32)
+		(output)
+		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
+		(text "Y" (rect 91 27 99 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 120 32)(pt 104 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 104 80))
+	)
+)
+(symbol
+	(rect 448 816 568 912)
+	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
+	(text "WBrtEXrs" (rect 8 75 54 92)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "reg1[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
+		(text "reg1[4..0]" (rect 21 27 78 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reg2[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
+		(text "reg2[4..0]" (rect 21 43 78 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 120 32)
+		(output)
+		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
+		(text "Y" (rect 91 27 99 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 120 32)(pt 104 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 104 80))
+	)
+)
 (connector
 	(pt 256 328)
 	(pt 280 328)
@@ -398,54 +452,6 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt 712 448)
-	(pt 744 448)
-)
-(connector
-	(pt 720 720)
-	(pt 744 720)
-)
-(connector
-	(pt 744 608)
-	(pt 744 720)
-)
-(connector
-	(pt 744 608)
-	(pt 840 608)
-)
-(connector
-	(pt 744 592)
-	(pt 744 448)
-)
-(connector
-	(pt 744 592)
-	(pt 840 592)
-)
-(connector
-	(pt 648 440)
-	(pt 624 440)
-)
-(connector
-	(pt 624 440)
-	(pt 624 384)
-)
-(connector
-	(pt 568 384)
-	(pt 624 384)
-)
-(connector
-	(pt 560 496)
-	(pt 624 496)
-)
-(connector
-	(pt 624 496)
-	(pt 624 456)
-)
-(connector
-	(pt 624 456)
-	(pt 648 456)
-)
-(connector
 	(pt 440 384)
 	(pt 328 384)
 	(bus)
@@ -459,45 +465,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 440 512)
 	(pt 280 512)
 	(bus)
-)
-(connector
-	(pt 328 648)
-	(pt 440 648)
-	(bus)
-)
-(connector
-	(pt 440 768)
-	(pt 376 768)
-	(bus)
-)
-(connector
-	(pt 440 784)
-	(pt 296 784)
-	(bus)
-)
-(connector
-	(pt 560 768)
-	(pt 616 768)
-)
-(connector
-	(pt 616 768)
-	(pt 616 728)
-)
-(connector
-	(pt 616 728)
-	(pt 656 728)
-)
-(connector
-	(pt 568 648)
-	(pt 616 648)
-)
-(connector
-	(pt 616 648)
-	(pt 616 712)
-)
-(connector
-	(pt 616 712)
-	(pt 656 712)
 )
 (connector
 	(pt 904 600)
@@ -519,43 +486,181 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt 328 384)
-	(pt 328 648)
-	(bus)
-)
-(connector
-	(pt 328 648)
-	(pt 328 928)
-	(bus)
-)
-(connector
 	(pt 376 88)
 	(pt 376 496)
 	(bus)
 )
 (connector
-	(pt 376 496)
-	(pt 376 768)
+	(pt 376 848)
+	(pt 448 848)
 	(bus)
 )
 (connector
-	(pt 376 768)
+	(pt 296 864)
+	(pt 448 864)
+	(bus)
+)
+(connector
+	(pt 376 496)
+	(pt 376 848)
+	(bus)
+)
+(connector
+	(pt 376 848)
 	(pt 376 928)
 	(bus)
 )
 (connector
 	(pt 296 288)
-	(pt 296 784)
+	(pt 296 864)
 	(bus)
 )
 (connector
-	(pt 296 784)
+	(pt 296 864)
 	(pt 296 928)
 	(bus)
 )
+(connector
+	(pt 328 744)
+	(pt 440 744)
+	(bus)
+)
+(connector
+	(pt 328 744)
+	(pt 328 928)
+	(bus)
+)
+(connector
+	(pt 328 624)
+	(pt 432 624)
+	(bus)
+)
+(connector
+	(pt 328 384)
+	(pt 328 624)
+	(bus)
+)
+(connector
+	(pt 328 624)
+	(pt 328 744)
+	(bus)
+)
+(connector
+	(pt 648 440)
+	(pt 624 440)
+)
+(connector
+	(text "WBopisRTYPE" (rect 608 371 625 440)(font "Intel Clear" )(vertical))
+	(pt 624 440)
+	(pt 624 384)
+)
+(connector
+	(pt 568 384)
+	(pt 624 384)
+)
+(connector
+	(text "WBrdisEXrs" (rect 570 480 625 497)(font "Intel Clear" ))
+	(pt 560 496)
+	(pt 624 496)
+)
+(connector
+	(pt 624 496)
+	(pt 624 456)
+)
+(connector
+	(pt 624 456)
+	(pt 648 456)
+)
+(connector
+	(pt 624 624)
+	(pt 640 624)
+)
+(connector
+	(text "WBopisADDI" (rect 624 619 641 679)(font "Intel Clear" )(vertical))
+	(pt 640 624)
+	(pt 640 680)
+)
+(connector
+	(pt 640 680)
+	(pt 664 680)
+)
+(connector
+	(pt 640 744)
+	(pt 640 696)
+)
+(connector
+	(text "WBopisLW" (rect 578 728 631 745)(font "Intel Clear" ))
+	(pt 568 744)
+	(pt 640 744)
+)
+(connector
+	(pt 640 696)
+	(pt 664 696)
+)
+(connector
+	(text "WBrtisEXrs" (rect 578 832 631 849)(font "Intel Clear" ))
+	(pt 616 848)
+	(pt 568 848)
+)
+(connector
+	(pt 616 848)
+	(pt 616 808)
+)
+(connector
+	(pt 616 808)
+	(pt 736 808)
+)
+(connector
+	(pt 712 448)
+	(pt 744 448)
+)
+(connector
+	(text "WBopisRTYPE_and_WBrdisEXrs" (rect 728 451 745 605)(font "Intel Clear" )(vertical))
+	(pt 744 592)
+	(pt 744 448)
+)
+(connector
+	(pt 744 592)
+	(pt 840 592)
+)
+(connector
+	(pt 728 688)
+	(pt 760 688)
+)
+(connector
+	(text "WBopisLWorADDI" (rect 744 669 761 755)(font "Intel Clear" )(vertical))
+	(pt 760 688)
+	(pt 760 752)
+)
+(connector
+	(pt 704 752)
+	(pt 704 792)
+)
+(connector
+	(pt 704 792)
+	(pt 736 792)
+)
+(connector
+	(pt 704 752)
+	(pt 760 752)
+)
+(connector
+	(pt 840 608)
+	(pt 824 608)
+)
+(connector
+	(pt 824 800)
+	(pt 800 800)
+)
+(connector
+	(text "WBopisLWorADDI_and_WBrtisEXrs" (rect 808 647 825 815)(font "Intel Clear" )(vertical))
+	(pt 824 608)
+	(pt 824 800)
+)
 (junction (pt 280 512))
 (junction (pt 328 384))
-(junction (pt 328 648))
 (junction (pt 376 496))
-(junction (pt 376 768))
-(junction (pt 296 784))
+(junction (pt 376 848))
+(junction (pt 296 864))
+(junction (pt 328 744))
+(junction (pt 328 624))

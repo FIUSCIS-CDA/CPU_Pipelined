@@ -74,7 +74,6 @@ set_global_assignment -name BDF_FILE WB.bdf
 set_global_assignment -name BDF_FILE StallDetection.bdf
 set_global_assignment -name BDF_FILE NONZERO.bdf
 set_global_assignment -name BDF_FILE EQ_5.bdf
-set_global_assignment -name BDF_FILE ForwardDetection.bdf
 set_global_assignment -name BDF_FILE REGCheck.bdf
 set_global_assignment -name BDF_FILE CPU_Pipelined.bdf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
@@ -92,7 +91,6 @@ set_global_assignment -name BDF_FILE ../MUX3_32/MUX3_32.bdf
 set_global_assignment -name BDF_FILE ../SameBit/SameBit.bdf
 set_global_assignment -name BDF_FILE ../MUX3/MUX3.bdf
 set_global_assignment -name BDF_FILE ../SL2_32/SL2_32.bdf
-set_global_assignment -name VERILOG_FILE ../DM/DM.v
 set_global_assignment -name BDF_FILE ../ALU32/ALU32.bdf
 set_global_assignment -name BDF_FILE ../ALU32/ALUBit31.bdf
 set_global_assignment -name BDF_FILE ../ALU32/ALUBits0To30.bdf
@@ -112,4 +110,15 @@ set_global_assignment -name BDF_FILE ../Decoder_32/Decoder_32.bdf
 set_global_assignment -name BDF_FILE ../MUX32/MUX32.bdf
 set_global_assignment -name BDF_FILE IFF.bdf
 set_global_assignment -name BDF_FILE ANDD.bdf
+set_global_assignment -name BDF_FILE ADDI.bdf
+set_global_assignment -name BDF_FILE ForwardBfromWBtoID.bdf
+set_global_assignment -name BDF_FILE ForwardBfromWBtoEX.bdf
+set_global_assignment -name BDF_FILE ForwardBfromMEMtoID.bdf
+set_global_assignment -name BDF_FILE ForwardBfromMEMtoEX.bdf
+set_global_assignment -name BDF_FILE ForwardAfromWBtoID.bdf
+set_global_assignment -name BDF_FILE ForwardAfromWBtoEX.bdf
+set_global_assignment -name BDF_FILE ForwardAfromMEMtoID.bdf
+set_global_assignment -name BDF_FILE ForwardAfromMEMtoEX.bdf
+set_global_assignment -name BDF_FILE ForwardDetection.bdf
+set_global_assignment -name VERILOG_FILE ../DM/DM_synch.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

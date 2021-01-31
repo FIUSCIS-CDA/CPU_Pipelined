@@ -40,9 +40,16 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
+		(text "clk" (rect 0 0 16 19)(font "Intel Clear" (font_size 8)))
+		(text "clk" (rect 21 59 37 78)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
 		(text "MEMB[31..0]" (rect 0 0 75 19)(font "Intel Clear" (font_size 8)))
-		(text "MEMB[31..0]" (rect 21 59 96 78)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
+		(text "MEMB[31..0]" (rect 21 75 96 94)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
 		(pt 280 32)

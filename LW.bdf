@@ -187,10 +187,6 @@ refer to the applicable agreement for further details.
 	)
 )
 (connector
-	(pt 688 344)
-	(pt 688 360)
-)
-(connector
 	(pt 488 248)
 	(pt 528 248)
 	(bus)
@@ -211,46 +207,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 744 304)
 	(pt 760 304)
-)
-(connector
-	(pt 720 304)
-	(pt 720 320)
-)
-(connector
-	(pt 664 304)
-	(pt 720 304)
-)
-(connector
-	(pt 720 320)
-	(pt 760 320)
-)
-(connector
-	(pt 688 360)
-	(pt 720 360)
-)
-(connector
-	(pt 720 360)
-	(pt 720 336)
-)
-(connector
-	(pt 720 336)
-	(pt 760 336)
-)
-(connector
-	(pt 688 368)
-	(pt 736 368)
-)
-(connector
-	(pt 688 368)
-	(pt 688 384)
-)
-(connector
-	(pt 736 368)
-	(pt 736 352)
-)
-(connector
-	(pt 736 352)
-	(pt 760 352)
 )
 (connector
 	(pt 688 392)
@@ -312,10 +268,6 @@ refer to the applicable agreement for further details.
 	(pt 616 384)
 )
 (connector
-	(pt 664 384)
-	(pt 688 384)
-)
-(connector
 	(text "Op[31]" (rect 536 248 569 265)(font "Intel Clear" ))
 	(pt 528 264)
 	(pt 744 264)
@@ -336,8 +288,59 @@ refer to the applicable agreement for further details.
 	(pt 616 344)
 )
 (connector
+	(pt 720 304)
+	(pt 720 320)
+)
+(connector
+	(text "NOTOp30" (rect 674 288 721 305)(font "Intel Clear" ))
+	(pt 664 304)
+	(pt 720 304)
+)
+(connector
+	(pt 720 320)
+	(pt 760 320)
+)
+(connector
+	(pt 688 344)
+	(pt 688 360)
+)
+(connector
+	(text "NOTOp29" (rect 688 344 735 361)(font "Intel Clear" ))
+	(pt 688 360)
+	(pt 720 360)
+)
+(connector
+	(pt 720 360)
+	(pt 720 336)
+)
+(connector
+	(pt 720 336)
+	(pt 760 336)
+)
+(connector
 	(pt 664 344)
 	(pt 688 344)
+)
+(connector
+	(pt 688 368)
+	(pt 736 368)
+)
+(connector
+	(pt 688 368)
+	(pt 688 384)
+)
+(connector
+	(pt 736 368)
+	(pt 736 352)
+)
+(connector
+	(pt 736 352)
+	(pt 760 352)
+)
+(connector
+	(text "NOTOp28" (rect 664 368 711 385)(font "Intel Clear" ))
+	(pt 664 384)
+	(pt 688 384)
 )
 (junction (pt 528 264))
 (junction (pt 528 304))

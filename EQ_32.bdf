@@ -23,7 +23,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 96 -40 264 -24)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "A[31..0]" (rect 5 0 44 12)(font "Arial" ))
+	(text "A[31..0]" (rect 5 0 43 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -39,7 +39,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 88 16 256 32)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "B[31..0]" (rect 5 0 42 17)(font "Intel Clear" ))
+	(text "B[31..0]" (rect 5 0 41 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -2191,6 +2191,11 @@ refer to the applicable agreement for further details.
 	(pt 296 1856)
 )
 (connector
+	(pt 1088 856)
+	(pt 1112 856)
+)
+(connector
+	(text "A31EQB31" (rect 594 88 645 105)(font "Intel Clear" ))
 	(pt 584 104)
 	(pt 720 104)
 )
@@ -2203,10 +2208,12 @@ refer to the applicable agreement for further details.
 	(pt 752 144)
 )
 (connector
+	(text "A30EQB30" (rect 594 144 645 161)(font "Intel Clear" ))
 	(pt 584 160)
 	(pt 752 160)
 )
 (connector
+	(text "A29EQB29" (rect 594 200 645 217)(font "Intel Clear" ))
 	(pt 584 216)
 	(pt 648 216)
 )
@@ -2219,6 +2226,7 @@ refer to the applicable agreement for further details.
 	(pt 648 176)
 )
 (connector
+	(text "A28EQB28" (rect 602 264 653 281)(font "Intel Clear" ))
 	(pt 592 280)
 	(pt 664 280)
 )
@@ -2239,6 +2247,7 @@ refer to the applicable agreement for further details.
 	(pt 752 192)
 )
 (connector
+	(text "A27EQB27" (rect 594 312 645 329)(font "Intel Clear" ))
 	(pt 584 328)
 	(pt 680 328)
 )
@@ -2251,18 +2260,7 @@ refer to the applicable agreement for further details.
 	(pt 752 208)
 )
 (connector
-	(pt 584 384)
-	(pt 696 384)
-)
-(connector
-	(pt 696 384)
-	(pt 696 224)
-)
-(connector
-	(pt 696 224)
-	(pt 752 224)
-)
-(connector
+	(text "A25EQB25" (rect 594 424 645 441)(font "Intel Clear" ))
 	(pt 584 440)
 	(pt 712 440)
 )
@@ -2275,6 +2273,20 @@ refer to the applicable agreement for further details.
 	(pt 752 240)
 )
 (connector
+	(text "A26EQB26" (rect 594 368 645 385)(font "Intel Clear" ))
+	(pt 584 384)
+	(pt 696 384)
+)
+(connector
+	(pt 696 384)
+	(pt 696 224)
+)
+(connector
+	(pt 696 224)
+	(pt 752 224)
+)
+(connector
+	(text "A24EQB24" (rect 594 480 645 497)(font "Intel Clear" ))
 	(pt 584 496)
 	(pt 728 496)
 )
@@ -2287,10 +2299,24 @@ refer to the applicable agreement for further details.
 	(pt 752 256)
 )
 (connector
+	(text "upper8EQ" (rect 826 184 873 201)(font "Intel Clear" ))
+	(pt 816 200)
+	(pt 992 200)
+)
+(connector
+	(pt 992 200)
+	(pt 992 832)
+)
+(connector
+	(pt 992 832)
+	(pt 1024 832)
+)
+(connector
 	(pt 752 552)
 	(pt 752 664)
 )
 (connector
+	(text "A23EQB23" (rect 594 536 645 553)(font "Intel Clear" ))
 	(pt 584 552)
 	(pt 752 552)
 )
@@ -2299,6 +2325,7 @@ refer to the applicable agreement for further details.
 	(pt 776 664)
 )
 (connector
+	(text "A22EQB22" (rect 594 592 645 609)(font "Intel Clear" ))
 	(pt 584 608)
 	(pt 744 608)
 )
@@ -2311,6 +2338,7 @@ refer to the applicable agreement for further details.
 	(pt 776 680)
 )
 (connector
+	(text "A21EQB21" (rect 594 648 645 665)(font "Intel Clear" ))
 	(pt 584 664)
 	(pt 728 664)
 )
@@ -2323,6 +2351,7 @@ refer to the applicable agreement for further details.
 	(pt 776 696)
 )
 (connector
+	(text "A20EQB20" (rect 594 704 645 721)(font "Intel Clear" ))
 	(pt 584 720)
 	(pt 728 720)
 )
@@ -2335,6 +2364,7 @@ refer to the applicable agreement for further details.
 	(pt 776 712)
 )
 (connector
+	(text "A19EQB19" (rect 594 760 645 777)(font "Intel Clear" ))
 	(pt 584 776)
 	(pt 736 776)
 )
@@ -2347,6 +2377,7 @@ refer to the applicable agreement for further details.
 	(pt 776 728)
 )
 (connector
+	(text "A18EQB18" (rect 594 816 645 833)(font "Intel Clear" ))
 	(pt 584 832)
 	(pt 744 832)
 )
@@ -2359,6 +2390,7 @@ refer to the applicable agreement for further details.
 	(pt 776 744)
 )
 (connector
+	(text "A17EQB17" (rect 594 872 645 889)(font "Intel Clear" ))
 	(pt 584 888)
 	(pt 752 888)
 )
@@ -2371,6 +2403,7 @@ refer to the applicable agreement for further details.
 	(pt 776 760)
 )
 (connector
+	(text "A16EQB16" (rect 594 928 645 945)(font "Intel Clear" ))
 	(pt 584 944)
 	(pt 760 944)
 )
@@ -2383,6 +2416,20 @@ refer to the applicable agreement for further details.
 	(pt 776 776)
 )
 (connector
+	(text "second8EQ" (rect 850 704 903 721)(font "Intel Clear" ))
+	(pt 840 720)
+	(pt 968 720)
+)
+(connector
+	(pt 968 720)
+	(pt 968 848)
+)
+(connector
+	(pt 968 848)
+	(pt 1024 848)
+)
+(connector
+	(text "A15EQB15" (rect 594 992 645 1009)(font "Intel Clear" ))
 	(pt 584 1008)
 	(pt 816 1008)
 )
@@ -2395,6 +2442,7 @@ refer to the applicable agreement for further details.
 	(pt 840 1096)
 )
 (connector
+	(text "A14EQB14" (rect 594 1048 645 1065)(font "Intel Clear" ))
 	(pt 584 1064)
 	(pt 808 1064)
 )
@@ -2407,6 +2455,7 @@ refer to the applicable agreement for further details.
 	(pt 840 1112)
 )
 (connector
+	(text "A13EQB13" (rect 594 1104 645 1121)(font "Intel Clear" ))
 	(pt 584 1120)
 	(pt 792 1120)
 )
@@ -2419,6 +2468,7 @@ refer to the applicable agreement for further details.
 	(pt 840 1128)
 )
 (connector
+	(text "A12EQB12" (rect 594 1160 645 1177)(font "Intel Clear" ))
 	(pt 584 1176)
 	(pt 792 1176)
 )
@@ -2431,6 +2481,7 @@ refer to the applicable agreement for further details.
 	(pt 840 1144)
 )
 (connector
+	(text "A11EQB11" (rect 594 1216 645 1233)(font "Intel Clear" ))
 	(pt 584 1232)
 	(pt 800 1232)
 )
@@ -2443,6 +2494,7 @@ refer to the applicable agreement for further details.
 	(pt 840 1160)
 )
 (connector
+	(text "A10EQB10" (rect 594 1272 645 1289)(font "Intel Clear" ))
 	(pt 584 1288)
 	(pt 808 1288)
 )
@@ -2455,6 +2507,7 @@ refer to the applicable agreement for further details.
 	(pt 840 1176)
 )
 (connector
+	(text "A09EQB09" (rect 594 1328 645 1345)(font "Intel Clear" ))
 	(pt 584 1344)
 	(pt 816 1344)
 )
@@ -2467,6 +2520,7 @@ refer to the applicable agreement for further details.
 	(pt 840 1192)
 )
 (connector
+	(text "A08EQB08" (rect 594 1384 645 1401)(font "Intel Clear" ))
 	(pt 584 1400)
 	(pt 824 1400)
 )
@@ -2479,6 +2533,20 @@ refer to the applicable agreement for further details.
 	(pt 840 1208)
 )
 (connector
+	(text "third8EQ" (rect 914 1136 955 1153)(font "Intel Clear" ))
+	(pt 904 1152)
+	(pt 968 1152)
+)
+(connector
+	(pt 968 1152)
+	(pt 968 864)
+)
+(connector
+	(pt 968 864)
+	(pt 1024 864)
+)
+(connector
+	(text "A07EQB07" (rect 594 1440 645 1457)(font "Intel Clear" ))
 	(pt 584 1456)
 	(pt 864 1456)
 )
@@ -2491,6 +2559,7 @@ refer to the applicable agreement for further details.
 	(pt 880 1584)
 )
 (connector
+	(text "A06EQB06" (rect 594 1496 645 1513)(font "Intel Clear" ))
 	(pt 584 1512)
 	(pt 848 1512)
 )
@@ -2503,6 +2572,7 @@ refer to the applicable agreement for further details.
 	(pt 880 1600)
 )
 (connector
+	(text "A05EQB05" (rect 594 1552 645 1569)(font "Intel Clear" ))
 	(pt 584 1568)
 	(pt 832 1568)
 )
@@ -2519,6 +2589,7 @@ refer to the applicable agreement for further details.
 	(pt 816 1632)
 )
 (connector
+	(text "A04EQB04" (rect 594 1608 645 1625)(font "Intel Clear" ))
 	(pt 584 1624)
 	(pt 816 1624)
 )
@@ -2527,6 +2598,7 @@ refer to the applicable agreement for further details.
 	(pt 880 1632)
 )
 (connector
+	(text "A03EQB03" (rect 594 1664 645 1681)(font "Intel Clear" ))
 	(pt 584 1680)
 	(pt 816 1680)
 )
@@ -2539,6 +2611,7 @@ refer to the applicable agreement for further details.
 	(pt 880 1648)
 )
 (connector
+	(text "A02EQB02" (rect 594 1720 645 1737)(font "Intel Clear" ))
 	(pt 584 1736)
 	(pt 824 1736)
 )
@@ -2551,6 +2624,7 @@ refer to the applicable agreement for further details.
 	(pt 880 1664)
 )
 (connector
+	(text "A01EQB01" (rect 594 1776 645 1793)(font "Intel Clear" ))
 	(pt 584 1792)
 	(pt 832 1792)
 )
@@ -2563,6 +2637,7 @@ refer to the applicable agreement for further details.
 	(pt 880 1680)
 )
 (connector
+	(text "A00EQB00" (rect 594 1832 645 1849)(font "Intel Clear" ))
 	(pt 584 1848)
 	(pt 848 1848)
 )
@@ -2575,56 +2650,17 @@ refer to the applicable agreement for further details.
 	(pt 880 1696)
 )
 (connector
-	(pt 816 200)
-	(pt 992 200)
-)
-(connector
-	(pt 992 200)
-	(pt 992 832)
-)
-(connector
-	(pt 992 832)
-	(pt 1024 832)
-)
-(connector
-	(pt 840 720)
-	(pt 968 720)
-)
-(connector
-	(pt 968 720)
-	(pt 968 848)
-)
-(connector
-	(pt 968 848)
-	(pt 1024 848)
-)
-(connector
-	(pt 904 1152)
-	(pt 968 1152)
-)
-(connector
-	(pt 968 1152)
-	(pt 968 864)
-)
-(connector
-	(pt 968 864)
-	(pt 1024 864)
-)
-(connector
 	(pt 944 1640)
 	(pt 984 1640)
 )
 (connector
+	(text "lower8EQ" (rect 968 1590 985 1637)(font "Intel Clear" )(vertical))
 	(pt 984 1640)
 	(pt 984 880)
 )
 (connector
 	(pt 984 880)
 	(pt 1024 880)
-)
-(connector
-	(pt 1088 856)
-	(pt 1112 856)
 )
 (junction (pt 336 96))
 (junction (pt 296 112))

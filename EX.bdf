@@ -245,7 +245,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1160 816 1336 832)
+	(rect 1168 1064 1344 1080)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "Exop[5..0]" (rect 90 0 140 12)(font "Arial" ))
 	(pt 0 8)
@@ -292,45 +292,49 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 400 24 552 120)
-	(text "MUX2_32" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 8 75 24 92)(font "Intel Clear" ))
+	(rect 1184 608 1248 656)
+	(text "OR3" (rect 1 0 19 10)(font "Arial" (font_size 6)))
+	(text "inst3" (rect 3 37 25 54)(font "Intel Clear" ))
+	(port
+		(pt 0 24)
+		(input)
+		(text "IN2" (rect 2 15 19 27)(font "Courier New" (bold))(invisible))
+		(text "IN2" (rect 2 15 19 27)(font "Courier New" (bold))(invisible))
+		(line (pt 0 24)(pt 18 24))
+	)
 	(port
 		(pt 0 32)
 		(input)
-		(text "B[31..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
-		(text "B[31..0]" (rect 21 27 68 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
+		(text "IN3" (rect 2 24 19 36)(font "Courier New" (bold))(invisible))
+		(text "IN3" (rect 2 24 19 36)(font "Courier New" (bold))(invisible))
+		(line (pt 0 32)(pt 16 32))
 	)
 	(port
-		(pt 0 48)
+		(pt 0 16)
 		(input)
-		(text "S" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
-		(text "S" (rect 21 43 29 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
+		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
+		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 16 16))
 	)
 	(port
-		(pt 0 64)
-		(input)
-		(text "A[31..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
-		(text "A[31..0]" (rect 21 59 68 78)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 152 32)
+		(pt 64 24)
 		(output)
-		(text "Y[31..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
-		(text "Y[31..0]" (rect 84 27 131 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 152 32)(pt 136 32)(line_width 3))
+		(text "OUT" (rect 47 15 64 27)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 47 15 64 27)(font "Courier New" (bold))(invisible))
+		(line (pt 49 24)(pt 64 24))
 	)
 	(drawing
-		(rectangle (rect 16 16 136 80))
+		(line (pt 14 13)(pt 25 13))
+		(line (pt 14 36)(pt 25 36))
+		(arc (pt 7 29)(pt 7 19)(rect -14 8 19 41))
+		(arc (pt 49 24)(pt 25 13)(rect -6 13 57 76))
+		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
 	)
 )
 (symbol
 	(rect 208 16 328 112)
 	(text "Zero" (rect 5 0 32 19)(font "Intel Clear" (font_size 8)))
-	(text "inst2" (rect 8 75 30 92)(font "Intel Clear" ))
+	(text "Value0" (rect 8 75 42 92)(font "Intel Clear" ))
 	(port
 		(pt 120 32)
 		(output)
@@ -343,9 +347,9 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1008 424 1160 520)
+	(rect 400 24 552 120)
 	(text "MUX2_32" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "inst7" (rect 8 75 30 92)(font "Intel Clear" ))
+	(text "EXIROUTMUX" (rect 8 75 75 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -379,86 +383,9 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 976 184 1128 280)
-	(text "SE16_32" (rect 5 0 60 19)(font "Intel Clear" (font_size 8)))
-	(text "inst8" (rect 8 75 30 92)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "A[15..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
-		(text "A[15..0]" (rect 21 27 68 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 152 32)
-		(output)
-		(text "Y[31..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
-		(text "Y[31..0]" (rect 84 27 131 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 152 32)(pt 136 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 136 80))
-	)
-)
-(symbol
-	(rect 1000 560 1128 656)
-	(text "LW" (rect 5 0 23 19)(font "Intel Clear" (font_size 8)))
-	(text "inst10" (rect 8 75 36 92)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "Op[31..26]" (rect 0 0 64 19)(font "Intel Clear" (font_size 8)))
-		(text "Op[31..26]" (rect 21 27 85 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 128 32)
-		(output)
-		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
-		(text "Y" (rect 99 27 107 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 128 32)(pt 112 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 112 80))
-	)
-)
-(symbol
-	(rect 1160 608 1224 656)
-	(text "OR2" (rect 1 0 19 10)(font "Arial" (font_size 6)))
-	(text "inst12" (rect 3 37 31 54)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
-		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
-		(line (pt 0 32)(pt 15 32))
-	)
-	(port
-		(pt 0 16)
-		(input)
-		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
-		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
-		(line (pt 0 16)(pt 15 16))
-	)
-	(port
-		(pt 64 24)
-		(output)
-		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
-		(line (pt 48 24)(pt 64 24))
-	)
-	(drawing
-		(line (pt 14 36)(pt 25 36))
-		(line (pt 14 13)(pt 25 13))
-		(arc (pt 7 29)(pt 7 19)(rect -14 8 19 41))
-		(arc (pt 49 24)(pt 25 13)(rect -6 13 57 76))
-		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
-	)
-)
-(symbol
 	(rect 752 264 904 392)
 	(text "MUX3_32" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "inst97" (rect 8 107 36 124)(font "Intel Clear" ))
+	(text "AMUX" (rect 8 107 38 124)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -501,7 +428,7 @@ refer to the applicable agreement for further details.
 (symbol
 	(rect 752 416 904 544)
 	(text "MUX3_32" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "inst98" (rect 8 107 36 124)(font "Intel Clear" ))
+	(text "BMUX" (rect 8 107 38 124)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -542,9 +469,45 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
+	(rect 1008 424 1160 520)
+	(text "MUX2_32" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
+	(text "OLDBMUX" (rect 8 75 59 92)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "B[31..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
+		(text "B[31..0]" (rect 21 27 68 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "S" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
+		(text "S" (rect 21 43 29 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "A[31..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
+		(text "A[31..0]" (rect 21 59 68 78)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "Y[31..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
+		(text "Y[31..0]" (rect 84 27 131 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 152 32)(pt 136 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 136 80))
+	)
+)
+(symbol
 	(rect 1256 328 1456 424)
 	(text "ALU32" (rect 5 0 46 19)(font "Intel Clear" (font_size 8)))
-	(text "inst99" (rect 8 75 36 92)(font "Intel Clear" ))
+	(text "MYALU" (rect 8 75 44 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -585,9 +548,75 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
+	(rect 976 184 1128 280)
+	(text "SE16_32" (rect 5 0 60 19)(font "Intel Clear" (font_size 8)))
+	(text "SignExtend" (rect 8 75 59 92)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "A[15..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
+		(text "A[15..0]" (rect 21 27 68 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "Y[31..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
+		(text "Y[31..0]" (rect 84 27 131 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 152 32)(pt 136 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 136 80))
+	)
+)
+(symbol
+	(rect 1000 560 1128 656)
+	(text "LW" (rect 5 0 23 19)(font "Intel Clear" (font_size 8)))
+	(text "isLW" (rect 8 75 31 92)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Op[31..26]" (rect 0 0 64 19)(font "Intel Clear" (font_size 8)))
+		(text "Op[31..26]" (rect 21 27 85 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 128 32)
+		(output)
+		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
+		(text "Y" (rect 99 27 107 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 128 32)(pt 112 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 112 80))
+	)
+)
+(symbol
+	(rect 1000 664 1128 760)
+	(text "SW" (rect 5 0 25 19)(font "Intel Clear" (font_size 8)))
+	(text "isSW" (rect 8 75 31 92)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Op[31..26]" (rect 0 0 64 19)(font "Intel Clear" (font_size 8)))
+		(text "Op[31..26]" (rect 21 27 85 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 128 32)
+		(output)
+		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
+		(text "Y" (rect 99 27 107 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 128 32)(pt 112 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 112 80))
+	)
+)
+(symbol
 	(rect 1224 88 1440 184)
 	(text "ALUCtl" (rect 5 0 46 19)(font "Intel Clear" (font_size 8)))
-	(text "inst101" (rect 8 75 42 92)(font "Intel Clear" ))
+	(text "myALUCtl" (rect 8 75 57 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -614,9 +643,9 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1000 664 1128 760)
-	(text "SW" (rect 5 0 25 19)(font "Intel Clear" (font_size 8)))
-	(text "inst5" (rect 8 75 30 92)(font "Intel Clear" ))
+	(rect 1000 808 1192 904)
+	(text "ADDI" (rect 5 0 35 19)(font "Intel Clear" (font_size 8)))
+	(text "isADDI" (rect 8 75 38 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -625,30 +654,15 @@ refer to the applicable agreement for further details.
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
-		(pt 128 32)
+		(pt 192 32)
 		(output)
-		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
-		(text "Y" (rect 99 27 107 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 128 32)(pt 112 32))
+		(text "addi_output" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
+		(text "addi_output" (rect 98 27 171 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 192 32)(pt 176 32))
 	)
 	(drawing
-		(rectangle (rect 16 16 112 80))
+		(rectangle (rect 16 16 176 80))
 	)
-)
-(connector
-	(pt 328 48)
-	(pt 376 48)
-	(bus)
-)
-(connector
-	(pt 376 48)
-	(pt 376 56)
-	(bus)
-)
-(connector
-	(pt 376 56)
-	(pt 400 56)
-	(bus)
 )
 (connector
 	(pt 368 0)
@@ -793,147 +807,13 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 904 296)
-	(pt 944 296)
-	(bus)
-)
-(connector
-	(pt 944 296)
-	(pt 944 376)
-	(bus)
-)
-(connector
-	(pt 904 448)
-	(pt 944 448)
-	(bus)
-)
-(connector
-	(pt 944 496)
-	(pt 984 496)
-	(bus)
-)
-(connector
-	(pt 984 496)
-	(pt 984 488)
-	(bus)
-)
-(connector
-	(pt 984 488)
-	(pt 1008 488)
-	(bus)
-)
-(connector
-	(pt 1128 216)
-	(pt 1168 216)
-	(bus)
-)
-(connector
-	(pt 1168 216)
-	(pt 1168 304)
-	(bus)
-)
-(connector
-	(pt 1168 304)
-	(pt 968 304)
-	(bus)
-)
-(connector
-	(pt 968 304)
-	(pt 968 456)
-	(bus)
-)
-(connector
-	(pt 968 456)
-	(pt 1008 456)
-	(bus)
-)
-(connector
-	(pt 1224 456)
-	(pt 1224 392)
-	(bus)
-)
-(connector
-	(pt 1224 392)
-	(pt 1256 392)
-	(bus)
-)
-(connector
-	(pt 1128 592)
-	(pt 1144 592)
-)
-(connector
-	(pt 1144 592)
-	(pt 1144 624)
-)
-(connector
-	(pt 1144 624)
-	(pt 1160 624)
-)
-(connector
-	(pt 1128 696)
-	(pt 1144 696)
-)
-(connector
-	(pt 1144 696)
-	(pt 1144 640)
-)
-(connector
-	(pt 1144 640)
-	(pt 1160 640)
-)
-(connector
-	(pt 1224 632)
-	(pt 1240 632)
-)
-(connector
-	(pt 1240 544)
-	(pt 1240 632)
-)
-(connector
-	(pt 1240 544)
-	(pt 992 544)
-)
-(connector
-	(pt 992 544)
-	(pt 992 472)
-)
-(connector
-	(pt 992 472)
-	(pt 1008 472)
-)
-(connector
 	(pt 1024 144)
 	(pt 1024 16)
 	(bus)
 )
 (connector
-	(pt 1216 232)
-	(pt 1216 360)
-	(bus)
-)
-(connector
-	(pt 1216 360)
-	(pt 1256 360)
-	(bus)
-)
-(connector
 	(pt 1456 360)
 	(pt 1480 360)
-	(bus)
-)
-(connector
-	(pt 944 520)
-	(pt 1416 520)
-	(bus)
-)
-(connector
-	(pt 944 448)
-	(pt 944 496)
-	(bus)
-)
-(connector
-	(pt 944 496)
-	(pt 944 520)
 	(bus)
 )
 (connector
@@ -1019,16 +899,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 960 824)
-	(pt 1160 824)
-	(bus)
-)
-(connector
-	(pt 1216 232)
-	(pt 1488 232)
-	(bus)
-)
-(connector
 	(pt 1224 144)
 	(pt 1224 136)
 	(bus)
@@ -1036,16 +906,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 1024 144)
 	(pt 1224 144)
-	(bus)
-)
-(connector
-	(pt 1488 120)
-	(pt 1440 120)
-	(bus)
-)
-(connector
-	(pt 1488 232)
-	(pt 1488 120)
 	(bus)
 )
 (connector
@@ -1064,20 +924,9 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 960 592)
-	(pt 960 696)
-	(bus)
-)
-(connector
 	(text "EXIROUT[31..0]" (rect 552 -16 569 57)(font "Intel Clear" )(vertical))
 	(pt 568 56)
 	(pt 568 -48)
-	(bus)
-)
-(connector
-	(text "EXIROUT[31..26]" (rect 944 766 961 845)(font "Intel Clear" )(vertical))
-	(pt 960 696)
-	(pt 960 824)
 	(bus)
 )
 (connector
@@ -1210,6 +1059,243 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
+	(pt 960 1072)
+	(pt 1168 1072)
+	(bus)
+)
+(connector
+	(pt 960 592)
+	(pt 960 696)
+	(bus)
+)
+(connector
+	(pt 1000 840)
+	(pt 960 840)
+	(bus)
+)
+(connector
+	(text "EXIROUT[31..26]" (rect 944 766 961 845)(font "Intel Clear" )(vertical))
+	(pt 960 696)
+	(pt 960 840)
+	(bus)
+)
+(connector
+	(pt 960 840)
+	(pt 960 1072)
+	(bus)
+)
+(connector
+	(pt 1128 216)
+	(pt 1168 216)
+	(bus)
+)
+(connector
+	(pt 1168 216)
+	(pt 1168 304)
+	(bus)
+)
+(connector
+	(pt 968 304)
+	(pt 968 456)
+	(bus)
+)
+(connector
+	(pt 968 456)
+	(pt 1008 456)
+	(bus)
+)
+(connector
+	(pt 1216 232)
+	(pt 1216 360)
+	(bus)
+)
+(connector
+	(pt 1216 360)
+	(pt 1256 360)
+	(bus)
+)
+(connector
+	(text "ALUOp[4..0]" (rect 1226 216 1283 233)(font "Intel Clear" ))
+	(pt 1216 232)
+	(pt 1488 232)
+	(bus)
+)
+(connector
+	(pt 1488 120)
+	(pt 1440 120)
+	(bus)
+)
+(connector
+	(pt 1488 232)
+	(pt 1488 120)
+	(bus)
+)
+(connector
+	(text "Lower16BitsSignExtended[31..0]" (rect 978 288 1130 305)(font "Intel Clear" ))
+	(pt 1168 304)
+	(pt 968 304)
+	(bus)
+)
+(connector
+	(pt 1128 592)
+	(pt 1144 592)
+)
+(connector
+	(text "EXopisLW" (rect 1128 573 1145 621)(font "Intel Clear" )(vertical))
+	(pt 1144 592)
+	(pt 1144 624)
+)
+(connector
+	(pt 1184 624)
+	(pt 1144 624)
+)
+(connector
+	(pt 1128 696)
+	(pt 1144 696)
+)
+(connector
+	(text "EXopisSW" (rect 1128 645 1145 693)(font "Intel Clear" )(vertical))
+	(pt 1144 696)
+	(pt 1144 640)
+)
+(connector
+	(pt 1144 640)
+	(pt 1160 640)
+)
+(connector
+	(pt 1160 640)
+	(pt 1160 632)
+)
+(connector
+	(pt 1160 632)
+	(pt 1184 632)
+)
+(connector
+	(pt 1192 840)
+	(pt 1200 840)
+)
+(connector
+	(text "EXopisADDI" (rect 1184 783 1201 838)(font "Intel Clear" )(vertical))
+	(pt 1200 840)
+	(pt 1200 688)
+)
+(connector
+	(pt 1200 688)
+	(pt 1168 688)
+)
+(connector
+	(pt 1168 688)
+	(pt 1168 640)
+)
+(connector
+	(pt 1168 640)
+	(pt 1184 640)
+)
+(connector
+	(pt 992 544)
+	(pt 992 472)
+)
+(connector
+	(pt 992 472)
+	(pt 1008 472)
+)
+(connector
+	(pt 992 544)
+	(pt 1288 544)
+)
+(connector
+	(text "EXopisLWorSWorADDI" (rect 1272 531 1289 638)(font "Intel Clear" )(vertical))
+	(pt 1288 544)
+	(pt 1288 632)
+)
+(connector
+	(pt 1248 632)
+	(pt 1288 632)
+)
+(connector
+	(text "TheConstant0[31..0]" (rect 328 32 423 49)(font "Intel Clear" ))
+	(pt 328 48)
+	(pt 376 48)
+	(bus)
+)
+(connector
+	(pt 376 48)
+	(pt 376 56)
+	(bus)
+)
+(connector
+	(pt 376 56)
+	(pt 400 56)
+	(bus)
+)
+(connector
+	(pt 1224 456)
+	(pt 1224 392)
+	(bus)
+)
+(connector
+	(pt 1224 392)
+	(pt 1256 392)
+	(bus)
+)
+(connector
+	(text "OLDBwire[31..0]" (rect 1170 440 1247 457)(font "Intel Clear" ))
+	(pt 1160 456)
+	(pt 1224 456)
+	(bus)
+)
+(connector
+	(pt 1224 456)
+	(pt 1264 456)
+	(bus)
+)
+(connector
+	(pt 904 448)
+	(pt 944 448)
+	(bus)
+)
+(connector
+	(pt 944 496)
+	(pt 984 496)
+	(bus)
+)
+(connector
+	(pt 984 496)
+	(pt 984 488)
+	(bus)
+)
+(connector
+	(pt 984 488)
+	(pt 1008 488)
+	(bus)
+)
+(connector
+	(text "EXALUBwire[31..0]" (rect 954 504 1043 521)(font "Intel Clear" ))
+	(pt 944 520)
+	(pt 1416 520)
+	(bus)
+)
+(connector
+	(pt 944 448)
+	(pt 944 496)
+	(bus)
+)
+(connector
+	(pt 944 496)
+	(pt 944 520)
+	(bus)
+)
+(connector
+	(pt 904 296)
+	(pt 944 296)
+	(bus)
+)
+(connector
+	(pt 944 296)
+	(pt 944 376)
+	(bus)
+)
+(connector
 	(pt 1184 376)
 	(pt 1184 288)
 	(bus)
@@ -1220,6 +1306,7 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
+	(text "OLDAwire[31..0]" (rect 954 360 1031 377)(font "Intel Clear" ))
 	(pt 944 376)
 	(pt 1184 376)
 	(bus)
@@ -1227,16 +1314,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 1184 376)
 	(pt 1256 376)
-	(bus)
-)
-(connector
-	(pt 1160 456)
-	(pt 1224 456)
-	(bus)
-)
-(connector
-	(pt 1224 456)
-	(pt 1264 456)
 	(bus)
 )
 (junction (pt 944 496))
@@ -1254,3 +1331,4 @@ refer to the applicable agreement for further details.
 (junction (pt 336 144))
 (junction (pt 1184 376))
 (junction (pt 1224 456))
+(junction (pt 960 840))

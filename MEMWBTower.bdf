@@ -118,7 +118,7 @@ refer to the applicable agreement for further details.
 (symbol
 	(rect 392 248 544 344)
 	(text "Flopr_32" (rect 5 0 59 19)(font "Intel Clear" (font_size 8)))
-	(text "IR" (rect 8 75 17 92)(font "Intel Clear" ))
+	(text "IR_REG" (rect 8 75 43 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -154,7 +154,7 @@ refer to the applicable agreement for further details.
 (symbol
 	(rect 392 384 544 480)
 	(text "Flopr_32" (rect 5 0 59 19)(font "Intel Clear" (font_size 8)))
-	(text "IR2" (rect 8 75 23 92)(font "Intel Clear" ))
+	(text "Value_REG" (rect 8 75 62 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)

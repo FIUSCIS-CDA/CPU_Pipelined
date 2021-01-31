@@ -445,21 +445,9 @@ refer to the applicable agreement for further details.
 	)
 )
 (connector
-	(pt 680 360)
-	(pt 704 360)
-)
-(connector
-	(pt 704 360)
-	(pt 704 376)
-)
-(connector
 	(pt 504 264)
 	(pt 544 264)
 	(bus)
-)
-(connector
-	(pt 704 432)
-	(pt 704 408)
 )
 (connector
 	(text "Op[31]" (rect 552 264 585 281)(font "Intel Clear" ))
@@ -482,93 +470,9 @@ refer to the applicable agreement for further details.
 	(pt 632 456)
 )
 (connector
-	(pt 760 280)
-	(pt 760 320)
-)
-(connector
-	(pt 680 280)
-	(pt 760 280)
-)
-(connector
-	(pt 760 320)
-	(pt 776 320)
-)
-(connector
-	(pt 736 320)
-	(pt 736 336)
-)
-(connector
-	(pt 680 320)
-	(pt 736 320)
-)
-(connector
-	(pt 736 336)
-	(pt 776 336)
-)
-(connector
-	(pt 704 376)
-	(pt 736 376)
-)
-(connector
-	(pt 736 376)
-	(pt 736 352)
-)
-(connector
-	(pt 736 352)
-	(pt 776 352)
-)
-(connector
-	(pt 704 384)
-	(pt 752 384)
-)
-(connector
-	(pt 704 384)
-	(pt 704 400)
-)
-(connector
-	(pt 752 384)
-	(pt 752 368)
-)
-(connector
-	(pt 752 368)
-	(pt 776 368)
-)
-(connector
-	(pt 704 408)
-	(pt 760 408)
-)
-(connector
-	(pt 760 408)
-	(pt 760 384)
-)
-(connector
-	(pt 760 384)
-	(pt 776 384)
-)
-(connector
-	(pt 768 456)
-	(pt 768 400)
-)
-(connector
-	(pt 680 456)
-	(pt 768 456)
-)
-(connector
-	(pt 768 400)
-	(pt 776 400)
-)
-(connector
-	(pt 840 360)
-	(pt 896 360)
-)
-(connector
 	(text "Op[27]" (rect 592 416 625 433)(font "Intel Clear" ))
 	(pt 544 432)
 	(pt 632 432)
-)
-(connector
-	(pt 680 432)
-	(pt 704 432)
 )
 (connector
 	(text "Op[28]" (rect 552 384 585 401)(font "Intel Clear" ))
@@ -576,25 +480,9 @@ refer to the applicable agreement for further details.
 	(pt 632 400)
 )
 (connector
-	(pt 680 400)
-	(pt 704 400)
-)
-(connector
-	(pt 680 600)
-	(pt 704 600)
-)
-(connector
-	(pt 704 600)
-	(pt 704 616)
-)
-(connector
 	(pt 504 504)
 	(pt 544 504)
 	(bus)
-)
-(connector
-	(pt 704 672)
-	(pt 704 648)
 )
 (connector
 	(pt 760 520)
@@ -603,30 +491,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 760 560)
 	(pt 776 560)
-)
-(connector
-	(pt 736 560)
-	(pt 736 576)
-)
-(connector
-	(pt 680 560)
-	(pt 736 560)
-)
-(connector
-	(pt 736 576)
-	(pt 776 576)
-)
-(connector
-	(pt 704 616)
-	(pt 736 616)
-)
-(connector
-	(pt 736 616)
-	(pt 736 592)
-)
-(connector
-	(pt 736 592)
-	(pt 776 592)
 )
 (connector
 	(pt 704 624)
@@ -645,28 +509,12 @@ refer to the applicable agreement for further details.
 	(pt 776 608)
 )
 (connector
-	(pt 704 648)
-	(pt 760 648)
-)
-(connector
-	(pt 760 648)
-	(pt 760 624)
-)
-(connector
-	(pt 760 624)
-	(pt 776 624)
-)
-(connector
 	(pt 768 696)
 	(pt 768 640)
 )
 (connector
 	(pt 768 640)
 	(pt 776 640)
-)
-(connector
-	(pt 840 600)
-	(pt 896 600)
 )
 (connector
 	(text "Funct[4]" (rect 552 544 590 561)(font "Intel Clear" ))
@@ -682,22 +530,6 @@ refer to the applicable agreement for further details.
 	(text "Funct[5]" (rect 552 504 590 521)(font "Intel Clear" ))
 	(pt 544 520)
 	(pt 760 520)
-)
-(connector
-	(pt 896 360)
-	(pt 896 472)
-)
-(connector
-	(pt 896 472)
-	(pt 928 472)
-)
-(connector
-	(pt 896 600)
-	(pt 896 488)
-)
-(connector
-	(pt 896 488)
-	(pt 928 488)
 )
 (connector
 	(pt 992 480)
@@ -785,10 +617,6 @@ refer to the applicable agreement for further details.
 	(pt 632 672)
 )
 (connector
-	(pt 680 672)
-	(pt 704 672)
-)
-(connector
 	(text "Funct[2]" (rect 552 624 590 641)(font "Intel Clear" ))
 	(pt 544 640)
 	(pt 704 640)
@@ -797,6 +625,189 @@ refer to the applicable agreement for further details.
 	(text "Funct[0]" (rect 552 680 590 697)(font "Intel Clear" ))
 	(pt 544 696)
 	(pt 768 696)
+)
+(connector
+	(pt 760 280)
+	(pt 760 320)
+)
+(connector
+	(text "NOTOp31" (rect 690 264 737 281)(font "Intel Clear" ))
+	(pt 680 280)
+	(pt 760 280)
+)
+(connector
+	(pt 760 320)
+	(pt 776 320)
+)
+(connector
+	(pt 736 320)
+	(pt 736 336)
+)
+(connector
+	(text "NOTOp30" (rect 690 304 737 321)(font "Intel Clear" ))
+	(pt 680 320)
+	(pt 736 320)
+)
+(connector
+	(pt 736 336)
+	(pt 776 336)
+)
+(connector
+	(pt 680 360)
+	(pt 704 360)
+)
+(connector
+	(pt 704 360)
+	(pt 704 376)
+)
+(connector
+	(text "NOTOp29" (rect 704 360 751 377)(font "Intel Clear" ))
+	(pt 704 376)
+	(pt 736 376)
+)
+(connector
+	(pt 736 376)
+	(pt 736 352)
+)
+(connector
+	(pt 736 352)
+	(pt 776 352)
+)
+(connector
+	(pt 704 384)
+	(pt 752 384)
+)
+(connector
+	(pt 704 384)
+	(pt 704 400)
+)
+(connector
+	(pt 752 384)
+	(pt 752 368)
+)
+(connector
+	(pt 752 368)
+	(pt 776 368)
+)
+(connector
+	(text "NOTOp28" (rect 680 384 727 401)(font "Intel Clear" ))
+	(pt 680 400)
+	(pt 704 400)
+)
+(connector
+	(pt 704 432)
+	(pt 704 408)
+)
+(connector
+	(pt 704 408)
+	(pt 760 408)
+)
+(connector
+	(pt 760 408)
+	(pt 760 384)
+)
+(connector
+	(pt 760 384)
+	(pt 776 384)
+)
+(connector
+	(text "NOTOp27" (rect 680 416 727 433)(font "Intel Clear" ))
+	(pt 680 432)
+	(pt 704 432)
+)
+(connector
+	(pt 768 456)
+	(pt 768 400)
+)
+(connector
+	(text "NOTOp26" (rect 690 440 737 457)(font "Intel Clear" ))
+	(pt 680 456)
+	(pt 768 456)
+)
+(connector
+	(pt 768 400)
+	(pt 776 400)
+)
+(connector
+	(pt 736 560)
+	(pt 736 576)
+)
+(connector
+	(text "NOTF4" (rect 690 544 723 561)(font "Intel Clear" ))
+	(pt 680 560)
+	(pt 736 560)
+)
+(connector
+	(pt 736 576)
+	(pt 776 576)
+)
+(connector
+	(pt 680 600)
+	(pt 704 600)
+)
+(connector
+	(pt 704 600)
+	(pt 704 616)
+)
+(connector
+	(text "NOTF3" (rect 714 600 747 617)(font "Intel Clear" ))
+	(pt 704 616)
+	(pt 736 616)
+)
+(connector
+	(pt 736 616)
+	(pt 736 592)
+)
+(connector
+	(pt 736 592)
+	(pt 776 592)
+)
+(connector
+	(pt 704 672)
+	(pt 704 648)
+)
+(connector
+	(text "NOTF1" (rect 714 632 747 649)(font "Intel Clear" ))
+	(pt 704 648)
+	(pt 760 648)
+)
+(connector
+	(pt 760 648)
+	(pt 760 624)
+)
+(connector
+	(pt 760 624)
+	(pt 776 624)
+)
+(connector
+	(pt 680 672)
+	(pt 704 672)
+)
+(connector
+	(text "isRTYPE" (rect 850 344 890 361)(font "Intel Clear" ))
+	(pt 840 360)
+	(pt 896 360)
+)
+(connector
+	(pt 896 360)
+	(pt 896 472)
+)
+(connector
+	(pt 896 472)
+	(pt 928 472)
+)
+(connector
+	(text "isOR" (rect 850 584 872 601)(font "Intel Clear" ))
+	(pt 840 600)
+	(pt 896 600)
+)
+(connector
+	(pt 896 600)
+	(pt 896 488)
+)
+(connector
+	(pt 896 488)
+	(pt 928 488)
 )
 (junction (pt 544 280))
 (junction (pt 544 320))

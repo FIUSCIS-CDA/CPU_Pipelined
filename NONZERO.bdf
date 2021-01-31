@@ -192,16 +192,17 @@ refer to the applicable agreement for further details.
 	(pt 328 208)
 )
 (connector
+	(pt 528 184)
+	(pt 616 184)
+)
+(connector
 	(pt 416 232)
 	(pt 416 224)
 )
 (connector
+	(text "Ground" (rect 426 208 460 225)(font "Intel Clear" ))
 	(pt 416 224)
 	(pt 464 224)
-)
-(connector
-	(pt 528 184)
-	(pt 616 184)
 )
 (junction (pt 328 144))
 (junction (pt 328 160))

@@ -23,7 +23,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 320 240 488 256)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "Op[31..26]" (rect 5 0 57 12)(font "Arial" ))
+	(text "Op[31..26]" (rect 5 0 56 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -183,18 +183,6 @@ refer to the applicable agreement for further details.
 	(pt 760 304)
 )
 (connector
-	(pt 720 304)
-	(pt 720 320)
-)
-(connector
-	(pt 664 304)
-	(pt 720 304)
-)
-(connector
-	(pt 720 320)
-	(pt 760 320)
-)
-(connector
 	(pt 688 360)
 	(pt 720 360)
 )
@@ -205,22 +193,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 720 336)
 	(pt 760 336)
-)
-(connector
-	(pt 688 368)
-	(pt 736 368)
-)
-(connector
-	(pt 688 368)
-	(pt 688 384)
-)
-(connector
-	(pt 736 368)
-	(pt 736 352)
-)
-(connector
-	(pt 736 352)
-	(pt 760 352)
 )
 (connector
 	(pt 688 392)
@@ -277,10 +249,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 664 384)
-	(pt 688 384)
-)
-(connector
 	(text "Op[31]" (rect 536 248 569 265)(font "Intel Clear" ))
 	(pt 528 264)
 	(pt 744 264)
@@ -309,6 +277,40 @@ refer to the applicable agreement for further details.
 	(text "Op[26]" (rect 536 424 569 441)(font "Intel Clear" ))
 	(pt 528 440)
 	(pt 752 440)
+)
+(connector
+	(pt 720 304)
+	(pt 720 320)
+)
+(connector
+	(text "NOTOp30" (rect 674 288 721 305)(font "Intel Clear" ))
+	(pt 664 304)
+	(pt 720 304)
+)
+(connector
+	(pt 720 320)
+	(pt 760 320)
+)
+(connector
+	(pt 688 368)
+	(pt 736 368)
+)
+(connector
+	(pt 688 368)
+	(pt 688 384)
+)
+(connector
+	(pt 736 368)
+	(pt 736 352)
+)
+(connector
+	(pt 736 352)
+	(pt 760 352)
+)
+(connector
+	(text "NOTOp28" (rect 664 368 711 385)(font "Intel Clear" ))
+	(pt 664 384)
+	(pt 688 384)
 )
 (junction (pt 528 264))
 (junction (pt 528 304))

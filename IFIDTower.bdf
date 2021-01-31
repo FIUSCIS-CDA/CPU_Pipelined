@@ -100,9 +100,34 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
+	(rect 304 408 352 440)
+	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
+	(text "inst" (rect 3 21 20 33)(font "Arial" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 13 16))
+	)
+	(port
+		(pt 48 16)
+		(output)
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
+		(line (pt 39 16)(pt 48 16))
+	)
+	(drawing
+		(line (pt 13 25)(pt 13 7))
+		(line (pt 13 7)(pt 31 16))
+		(line (pt 13 25)(pt 31 16))
+		(circle (rect 31 12 39 20))
+	)
+)
+(symbol
 	(rect 320 144 472 272)
 	(text "Flopenr_32" (rect 5 0 73 19)(font "Intel Clear" (font_size 8)))
-	(text "inst1" (rect 8 107 30 124)(font "Intel Clear" ))
+	(text "IR_REG" (rect 8 107 43 124)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -142,31 +167,6 @@ refer to the applicable agreement for further details.
 		(rectangle (rect 16 16 136 112))
 	)
 )
-(symbol
-	(rect 304 408 352 440)
-	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
-	(text "inst" (rect 3 21 20 33)(font "Arial" ))
-	(port
-		(pt 0 16)
-		(input)
-		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
-		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
-		(line (pt 0 16)(pt 13 16))
-	)
-	(port
-		(pt 48 16)
-		(output)
-		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
-		(line (pt 39 16)(pt 48 16))
-	)
-	(drawing
-		(line (pt 13 25)(pt 13 7))
-		(line (pt 13 7)(pt 31 16))
-		(line (pt 13 25)(pt 31 16))
-		(circle (rect 31 12 39 20))
-	)
-)
 (connector
 	(pt 248 56)
 	(pt 304 56)
@@ -201,6 +201,11 @@ refer to the applicable agreement for further details.
 	(pt 304 424)
 )
 (connector
+	(pt 472 176)
+	(pt 592 176)
+	(bus)
+)
+(connector
 	(pt 352 424)
 	(pt 400 424)
 )
@@ -209,6 +214,7 @@ refer to the applicable agreement for further details.
 	(pt 400 320)
 )
 (connector
+	(text "NOTstall" (rect 274 304 316 321)(font "Intel Clear" ))
 	(pt 400 320)
 	(pt 264 320)
 )
@@ -219,9 +225,4 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 264 224)
 	(pt 320 224)
-)
-(connector
-	(pt 472 176)
-	(pt 592 176)
-	(bus)
 )
