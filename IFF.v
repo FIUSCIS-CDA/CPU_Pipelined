@@ -1,21 +1,20 @@
-// Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
-// Your use of Altera Corporation's design tools, logic functions 
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
 // and other software and tools, and its AMPP partner logic 
 // functions, and any output files from any of the foregoing 
 // (including device programming or simulation files), and any 
 // associated documentation or information are expressly subject 
-// to the terms and conditions of the Altera Program License 
-// Subscription Agreement, the Altera Quartus II License Agreement,
-// the Altera MegaCore Function License Agreement, or other 
-// applicable license agreement, including, without limitation, 
-// that your use is for the sole purpose of programming logic 
-// devices manufactured by Altera and sold by Altera or its 
-// authorized distributors.  Please refer to the applicable 
-// agreement for further details.
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
 
-// PROGRAM		"Quartus II 64-Bit"
-// VERSION		"Version 15.0.0 Build 145 04/22/2015 SJ Web Edition"
-// CREATED		"Tue Feb  2 08:04:21 2021"
+// PROGRAM		"Quartus Prime"
+// VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+// CREATED		"Fri Feb 05 09:16:47 2021"
 
 module IFF(
 	clk,
@@ -61,6 +60,8 @@ wire	[31:0] PCJump;
 wire	[31:0] PredictNotTakenNewPC;
 wire	[31:0] PredictTakenNewPC;
 wire	[31:0] TheConstant0;
+wire	wire_to_ground;
+wire	wire_to_ground2;
 
 
 
@@ -132,9 +133,17 @@ ALU32	b2v_MYALU(
 	.A(PC),
 	.alu_op(Op),
 	.B(IDbeqtargettimes4),
-	
-	
+	.eq(wire_to_ground),
+	.Overflow(wire_to_ground2),
 	.Result(FixforPredictTaken));
+
+
+Grounder	b2v_myGround(
+	.Input_To_Ground(wire_to_ground));
+
+
+Grounder	b2v_myGround2(
+	.Input_To_Ground(wire_to_ground2));
 
 
 IM	b2v_MYIM(
