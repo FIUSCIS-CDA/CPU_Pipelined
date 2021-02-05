@@ -11,8 +11,8 @@ module testbench();
    // 00=NOT TAKEN 
    // 01=TAKEN 
    // 10=DELAY SLOT (works if the program uses delay slots - the bubble sort below does not)   
-   CPU_Pipelined myCPU(rst, clk, 'b00, EXIR, IDIR, IFIR, MEMIR, PC, WBIR);   // Not Taken
-   //CPU_Pipelined myCPU(rst, clk, 'b01, EXIR, IDIR, IFIR, MEMIR, PC, WBIR);     // Taken
+   CPU_Pipelined myCPU(rst, clk, 2'b00, EXIR, IDIR, IFIR, MEMIR, PC, WBIR);   // Not Taken
+   //CPU_Pipelined myCPU(rst, clk, 2'b01, EXIR, IDIR, IFIR, MEMIR, PC, WBIR);     // Taken
    
 
 
@@ -84,7 +84,7 @@ module testbench();
         //////////////////////////////////////////////////
         // CHANGE PC VALUE IN THIS IF STATEMENT
         // ADD 4 TIMES THE AMOUNT OF INSTRUCTIONS YOU RUN
-        if(myCPU.b2v_IFStage.b2v_PCREG.Q === 88) begin
+        if(PC === 88) begin
 
         //////////////////////////////////////////////////
         // CHANGE THIS TEST
