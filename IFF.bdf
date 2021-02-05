@@ -750,6 +750,36 @@ refer to the applicable agreement for further details.
 		(rectangle (rect 16 16 136 80))
 	)
 )
+(symbol
+	(rect 1224 -440 1384 -344)
+	(text "Grounder" (rect 5 0 59 14)(font "Arial" (font_size 8)))
+	(text "myGround" (rect 8 82 59 94)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Input_To_Ground" (rect 0 0 97 14)(font "Arial" (font_size 8)))
+		(text "Input_To_Ground" (rect 21 27 118 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 144 80))
+	)
+)
+(symbol
+	(rect 1504 -448 1664 -352)
+	(text "Grounder" (rect 5 0 59 14)(font "Arial" (font_size 8)))
+	(text "myGround2" (rect 8 82 63 99)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Input_To_Ground" (rect 0 0 97 14)(font "Arial" (font_size 8)))
+		(text "Input_To_Ground" (rect 21 27 118 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 144 80))
+	)
+)
 (connector
 	(pt 728 240)
 	(pt 744 240)
@@ -1475,6 +1505,40 @@ refer to the applicable agreement for further details.
 	(pt 96 288)
 	(pt 120 288)
 	(bus)
+)
+(connector
+	(pt 1224 -408)
+	(pt 1200 -408)
+)
+(connector
+	(pt 1200 -408)
+	(pt 1200 -304)
+)
+(connector
+	(text "wire_to_ground" (rect 1210 -320 1284 -303)(font "Intel Clear" ))
+	(pt 1200 -304)
+	(pt 1392 -304)
+)
+(connector
+	(pt 1392 -304)
+	(pt 1392 -240)
+)
+(connector
+	(pt 1392 -240)
+	(pt 1384 -240)
+)
+(connector
+	(pt 1384 -224)
+	(pt 1448 -224)
+)
+(connector
+	(text "wire_to_ground2" (rect 1432 -294 1449 -214)(font "Intel Clear" )(vertical))
+	(pt 1448 -224)
+	(pt 1448 -416)
+)
+(connector
+	(pt 1448 -416)
+	(pt 1504 -416)
 )
 (junction (pt 472 256))
 (junction (pt 680 256))
