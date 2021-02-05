@@ -4,8 +4,8 @@
 #### DEPENDENCIES
        SameBit,  MUX2,  Flopr_32, Flopenr_32, Flopr, DSwitch, MUX2_5, MUX2_32,
        Four,  SE16_32,  SL2_32,  RF,  Flopenr,  DESwitch,  MUX4_32,   MUX3_32,
-       MUX32_32,  MUX32,  Decoder_32, MUX4, MUX3, ALU32, IM, DM, SPLICE_PCJ, 
-       ALUBit31, ALUBits0To30, OneBitAdder, INC4_32, Adder_32
+       MUX32_32,  MUX32,  Decoder_32, MUX4, MUX3, ALU32, IM, DM_synch, SPLICE_PCJ, 
+       ALUBit31, ALUBits0To30, OneBitAdder, INC4_32, Adder_32, Grounder, OverflowDetection
 
 #### INPUTS
 Name  | Size(Bits)
@@ -40,6 +40,7 @@ WBIR  | 32
 #### AUTHOR
        Alexander T Pastoriza
        Idiel E Guerra
+       Trevor Cickovski
 
 #### SEE ALSO
        qms(1), modclone(1)
