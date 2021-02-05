@@ -1,7 +1,6 @@
 `timescale 1ps / 1ps
 module testbench();
 // Clock should be set to period=100 to accomodate memory
-// Total execution time: 85900ps
    reg clk, rst;
    
    localparam CLK_PERIOD = 100;
@@ -9,11 +8,11 @@ module testbench();
    wire[31:0] PC, IFIR, IDIR, EXIR, MEMIR, WBIR;
 
    // Third parameter is branch prediction strategy
-   // 00=NOT TAKEN (works)
-   // 01=TAKEN (does not work yet)
+   // 00=NOT TAKEN 
+   // 01=TAKEN 
    // 10=DELAY SLOT (works if the program uses delay slots - the bubble sort below does not)   
-   //CPU_Pipelined myCPU(rst, clk, 'b00, EXIR, IDIR, IFIR, MEMIR, PC, WBIR);   // Not Taken
-   CPU_Pipelined myCPU(rst, clk, 'b01, EXIR, IDIR, IFIR, MEMIR, PC, WBIR);     // Taken
+   CPU_Pipelined myCPU(rst, clk, 'b00, EXIR, IDIR, IFIR, MEMIR, PC, WBIR);   // Not Taken
+   //CPU_Pipelined myCPU(rst, clk, 'b01, EXIR, IDIR, IFIR, MEMIR, PC, WBIR);     // Taken
    
 
 
