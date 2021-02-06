@@ -55,15 +55,6 @@ begin
 end
 endtask
 
-/*task lala;
-
-begin
-      // Begin by setting everything to different values
-      
-      
-end
-
-endtask*/
 
 StallDetection stallDetector(EXop, EXrd, EXrs, EXrt, IDop, IDrs, IDrt, MEMop, MEMrt, IDstall, EXstall);
    
