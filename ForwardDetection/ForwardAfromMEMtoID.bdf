@@ -304,7 +304,7 @@ refer to the applicable agreement for further details.
 (symbol
 	(rect 376 544 496 640)
 	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "MEMrtEXrs" (rect 8 75 61 92)(font "Intel Clear" ))
+	(text "MEMrtIDrs" (rect 8 75 57 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -494,11 +494,6 @@ refer to the applicable agreement for further details.
 	(pt 632 528)
 )
 (connector
-	(text "MEMrtisEXrs" (rect 506 560 566 577)(font "Intel Clear" ))
-	(pt 496 576)
-	(pt 600 576)
-)
-(connector
 	(pt 600 576)
 	(pt 600 544)
 )
@@ -539,6 +534,11 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 640 440)
 	(pt 736 440)
+)
+(connector
+	(text "MEMrtisIDrs" (rect 506 560 562 577)(font "Intel Clear" ))
+	(pt 496 576)
+	(pt 600 576)
 )
 (junction (pt 272 216))
 (junction (pt 304 336))
