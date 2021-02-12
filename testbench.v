@@ -1,4 +1,4 @@
-`timescale 1ps / 1ps
+//`timescale 1ps / 1ps
 module testbench();
 // Clock should be set to period=100 to accomodate memory
    reg clk, rst;
