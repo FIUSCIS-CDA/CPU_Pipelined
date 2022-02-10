@@ -1,4 +1,7 @@
 //`timescale 1ps / 1ps
+
+// CLOCK AT 100
+// RUN 150000
 module testbench();
 // Clock should be set to period=100 to accomodate memory
    reg clk, rst;
@@ -11,8 +14,8 @@ module testbench();
    // 00=NOT TAKEN 
    // 01=TAKEN 
    // 10=DELAY SLOT (works if the program uses delay slots - the bubble sort below does not)   
-   CPU_Pipelined myCPU(rst, clk, 2'b00, EXIR, IDIR, IFIR, MEMIR, PC, WBIR);   // Not Taken
-   //CPU_Pipelined myCPU(rst, clk, 2'b01, EXIR, IDIR, IFIR, MEMIR, PC, WBIR);     // Taken
+   //CPU_Pipelined myCPU(rst, clk, 2'b00, EXIR, IDIR, IFIR, MEMIR, PC, WBIR);   // Not Taken
+   CPU_Pipelined myCPU(rst, clk, 2'b01, EXIR, IDIR, IFIR, MEMIR, PC, WBIR);     // Taken
    
 
 
@@ -26,8 +29,8 @@ module testbench();
       myCPU.b2v_IFStage.b2v_MYIM.memory[2] = 'b00100010001100101111111111111111; // addi $s2, $s1, -1                       8
       myCPU.b2v_IFStage.b2v_MYIM.memory[3] = 'b00100000000011010000000000000001; // addi $t5, $zero, 1                      12
       myCPU.b2v_IFStage.b2v_MYIM.memory[4] = 'b00000000000100100100000000101010; // loop1:   slt $t0, $zero, $s2            16
-      myCPU.b2v_IFStage.b2v_MYIM.memory[5] = 'b00010001000000000000000000010000; // beq $t0, $zero, doneloop1               20
-      //myCPU.b2v_IFStage.b2v_MYIM.memory[5] = 'b00010101000011010000000000010000; // 	bne $t0, $t5, doneloop1(16)	    20           
+      //myCPU.b2v_IFStage.b2v_MYIM.memory[5] = 'b00010001000000000000000000010000; // beq $t0, $zero, doneloop1               20
+      myCPU.b2v_IFStage.b2v_MYIM.memory[5] = 'b00010101000011010000000000010000; // 	bne $t0, $t5, doneloop1(16)	    20           
       myCPU.b2v_IFStage.b2v_MYIM.memory[6] = 'b00000000000000001001100000100000; // add $s3, $zero, $zero                   24
       myCPU.b2v_IFStage.b2v_MYIM.memory[7] = 'b00000010011100100100100000101010; // loop2:   slt $t1, $s3, $s2              28
       myCPU.b2v_IFStage.b2v_MYIM.memory[8] = 'b00010001001000000000000000001011; // beq $t1, $zero, doneloop2               32
