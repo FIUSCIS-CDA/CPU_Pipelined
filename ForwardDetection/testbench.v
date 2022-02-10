@@ -14,6 +14,7 @@ module testbench();
    parameter BEQ = 6'b000100;
    parameter J = 6'b000010;
    parameter ADDI = 6'b001000;
+   parameter BNE = 6'b000101;
    ///////////////////////////////////////
 
 task initialState;
