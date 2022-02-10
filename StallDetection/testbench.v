@@ -1,5 +1,9 @@
 `timescale 1ps / 1ps
 
+// NO CLOCK NECESSARY
+// RUN LONG ENOUGH TO COVER ALL TESTS
+// AS OF NOW 500 IS ENOUGH
+
 module testbench();
   reg[5:0] IDop, EXop, MEMop;
   reg[4:0] EXrd, EXrs, EXrt, IDrs, IDrt, MEMrt;
@@ -11,6 +15,7 @@ module testbench();
    parameter SW = 6'b101011;
    parameter RTYPE = 6'b000000;
    parameter BEQ = 6'b000100;
+   parameter BNE = 6'b000101;
    parameter J = 6'b000010;
    parameter ADDI = 6'b001000;
    ///////////////////////////////////////
@@ -84,7 +89,33 @@ StallDetection stallDetector(EXop, EXrd, EXrs, EXrt, IDop, IDrs, IDrt, MEMop, ME
    setupStall(IDop, BEQ, MEMop, LW, MEMrt, IDrt); #10;
    checkStall(IDstall); #10;
 
-   
+/////
+
+   setupStall(IDop, BNE, EXop, RTYPE, EXrd, IDrs); #10;
+   checkStall(IDstall); #10;
+
+   setupStall(IDop, BNE, EXop, RTYPE, EXrd, IDrt); #10;
+   checkStall(IDstall); #10;
+
+   setupStall(IDop, BNE, EXop, LW, EXrt, IDrs); #10;
+   checkStall(IDstall); #10;
+
+   setupStall(IDop, BNE, EXop, LW, EXrt, IDrt); #10;
+   checkStall(IDstall); #10;
+
+   setupStall(IDop, BNE, EXop, ADDI, EXrt, IDrs); #10;
+   checkStall(IDstall); #10;
+
+   setupStall(IDop, BNE, EXop, ADDI, EXrt, IDrt); #10;
+   checkStall(IDstall); #10;
+
+   setupStall(IDop, BNE, MEMop, LW, MEMrt, IDrs); #10;
+   checkStall(IDstall); #10;
+
+   setupStall(IDop, BNE, MEMop, LW, MEMrt, IDrt); #10;
+   checkStall(IDstall); #10;
+
+////
 
    setupStall(MEMop, LW, EXop, RTYPE, MEMrt, EXrs); #10;
    checkStall(EXstall); #10;

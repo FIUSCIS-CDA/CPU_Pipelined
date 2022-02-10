@@ -1,21 +1,20 @@
-// Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
-// Your use of Altera Corporation's design tools, logic functions 
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
 // and other software and tools, and its AMPP partner logic 
 // functions, and any output files from any of the foregoing 
 // (including device programming or simulation files), and any 
 // associated documentation or information are expressly subject 
-// to the terms and conditions of the Altera Program License 
-// Subscription Agreement, the Altera Quartus II License Agreement,
-// the Altera MegaCore Function License Agreement, or other 
-// applicable license agreement, including, without limitation, 
-// that your use is for the sole purpose of programming logic 
-// devices manufactured by Altera and sold by Altera or its 
-// authorized distributors.  Please refer to the applicable 
-// agreement for further details.
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
 
-// PROGRAM		"Quartus II 64-Bit"
-// VERSION		"Version 15.0.0 Build 145 04/22/2015 SJ Web Edition"
-// CREATED		"Thu Feb  4 14:53:55 2021"
+// PROGRAM		"Quartus Prime"
+// VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+// CREATED		"Thu Feb 10 13:10:39 2022"
 
 module StallDetection(
 	EXop,
@@ -60,7 +59,6 @@ wire	EXrdisIDrt;
 wire	EXrtisIDrs;
 wire	EXrtisIDrsorIDrt;
 wire	EXrtisIDrt;
-wire	IDopisBEQ;
 wire	IDRAWhazard;
 wire	MEMopisLW;
 wire	MEMopisLW_and_MEMrtisNOT0;
@@ -72,6 +70,9 @@ wire	MEMrtisEXrt;
 wire	MEMrtisIDrs;
 wire	MEMrtisIDrsorIDrt;
 wire	MEMrtisIDrt;
+wire	SYNTHESIZED_WIRE_0;
+wire	SYNTHESIZED_WIRE_1;
+wire	SYNTHESIZED_WIRE_2;
 
 
 
@@ -138,11 +139,16 @@ REGCheck	b2v_EXrtIDrt(
 
 BEQ	b2v_IDopBEQ(
 	.Op(IDop),
-	.Y(IDopisBEQ));
+	.Y(SYNTHESIZED_WIRE_1));
+
+
+BNE	b2v_inst(
+	.Op(IDop),
+	.Y(SYNTHESIZED_WIRE_2));
 
 assign	IDRAWhazard = EXopisLWorADDI_and_RAWhazardonEXrt | MEMopisLW_and_RAWhazardonMEMrt | EXopisRTYPE_and_RAWhazardonEXrd;
 
-assign	IDStall = IDopisBEQ & IDRAWhazard;
+assign	IDStall = SYNTHESIZED_WIRE_0 & IDRAWhazard;
 
 assign	EXrdisIDrsorIDrt = EXrdisIDrt | EXrdisIDrs;
 
@@ -171,6 +177,8 @@ assign	MEMopisLW_and_RAWhazardonMEMrt = MEMopisLW & MEMrtisIDrsorIDrt;
 assign	MEMopisLW_and_RAWhazardonMEMrtEXrsorrt = MEMopisLW & MEMrtisEXrsorEXrt;
 
 assign	MEMopisLW_and_MEMrtisNOT0 = MEMopisLW & MEMrtisEXrs;
+
+assign	SYNTHESIZED_WIRE_0 = SYNTHESIZED_WIRE_1 | SYNTHESIZED_WIRE_2;
 
 
 LW	b2v_MEMopLW(
