@@ -37,6 +37,25 @@ WBIR  | 32
        MEMIR: Instruction in MEM state
        WBIR: Instruction in WB state
 
+#### SUPPORTED INSTRUCTIONS
+       BNE (SP21)
+       ADDI (FA20)
+       J
+       BEQ
+       LW
+       SW
+       ADD
+       SUB
+       AND
+       OR
+       SLT
+
+#### SUPPORTED BRANCH PREDICTION STRATEGIES
+       DELAY SLOT (FA20)
+       TAKEN (FA20)
+       NOT TAKEN
+
+
 #### AUTHOR
        Alexander T Pastoriza
        Idiel E Guerra
