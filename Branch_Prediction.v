@@ -1,21 +1,20 @@
-// Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
-// Your use of Altera Corporation's design tools, logic functions 
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
 // and other software and tools, and its AMPP partner logic 
 // functions, and any output files from any of the foregoing 
 // (including device programming or simulation files), and any 
 // associated documentation or information are expressly subject 
-// to the terms and conditions of the Altera Program License 
-// Subscription Agreement, the Altera Quartus II License Agreement,
-// the Altera MegaCore Function License Agreement, or other 
-// applicable license agreement, including, without limitation, 
-// that your use is for the sole purpose of programming logic 
-// devices manufactured by Altera and sold by Altera or its 
-// authorized distributors.  Please refer to the applicable 
-// agreement for further details.
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
 
-// PROGRAM		"Quartus II 64-Bit"
-// VERSION		"Version 15.0.0 Build 145 04/22/2015 SJ Web Edition"
-// CREATED		"Tue Feb  2 07:58:15 2021"
+// PROGRAM		"Quartus Prime"
+// VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+// CREATED		"Thu Feb 10 13:16:19 2022"
 
 module Branch_Prediction(
 	Taken,
@@ -43,18 +42,26 @@ wire	Ground;
 wire	IDAeqIDB;
 wire	IDAnoteqIDB;
 wire	IDopBEQ;
-wire	IFopBEQ;
 wire	IFopisBEQorisNotTakenBranch;
 wire	IFopisBEQorJandNoFix;
 wire	IFopisJandNOTaNOTTakenBranch;
 wire	IFopisJandNOTaTakenBranch;
 wire	IFopJ;
 wire	isNotTakenBranch;
-wire	isTakenBranch;
 wire	isTakenBranch2;
 wire	NOTaNotTakenBranch;
 wire	NOTaTakenBranch;
 wire	[1:0] S;
+wire	SYNTHESIZED_WIRE_14;
+wire	SYNTHESIZED_WIRE_15;
+wire	SYNTHESIZED_WIRE_16;
+wire	SYNTHESIZED_WIRE_4;
+wire	SYNTHESIZED_WIRE_6;
+wire	SYNTHESIZED_WIRE_7;
+wire	SYNTHESIZED_WIRE_8;
+wire	SYNTHESIZED_WIRE_9;
+wire	SYNTHESIZED_WIRE_10;
+wire	SYNTHESIZED_WIRE_11;
 
 
 
@@ -62,7 +69,7 @@ wire	[1:0] S;
 
 BEQ	b2v_BEQ1(
 	.Op(IFop),
-	.Y(IFopBEQ));
+	.Y(SYNTHESIZED_WIRE_7));
 
 
 BEQ	b2v_BEQ2(
@@ -89,23 +96,45 @@ MUX2	b2v_FixMUX(
 	.B(isNotTakenBranch),
 	.Y(FixMUXOut));
 
-assign	NOTaTakenBranch =  ~isTakenBranch;
+assign	NOTaTakenBranch =  ~SYNTHESIZED_WIRE_14;
+
+
+BNE	b2v_inst1(
+	.Op(IFop),
+	.Y(SYNTHESIZED_WIRE_6));
 
 assign	IDAnoteqIDB =  ~IDAeqIDB;
 
 assign	IFopisJandNOTaTakenBranch = IFopJ & NOTaTakenBranch;
 
+assign	SYNTHESIZED_WIRE_4 =  ~IDAeqIDB;
+
 assign	IFopisJandNOTaNOTTakenBranch = IFopJ & NOTaNotTakenBranch;
 
-assign	isTakenBranch = IDopBEQ & IDAeqIDB;
+assign	SYNTHESIZED_WIRE_8 = IDopBEQ & IDAeqIDB;
 
-assign	isNotTakenBranch = IDopBEQ & IDAnoteqIDB;
+assign	SYNTHESIZED_WIRE_10 = IDopBEQ & IDAnoteqIDB;
 
-assign	IFopisBEQorisNotTakenBranch = isNotTakenBranch | IFopBEQ;
+assign	IFopisBEQorisNotTakenBranch = isNotTakenBranch | SYNTHESIZED_WIRE_15;
 
-assign	IFopisBEQorJandNoFix = IFopBEQ | IFopisJandNOTaNOTTakenBranch;
+assign	IFopisBEQorJandNoFix = SYNTHESIZED_WIRE_15 | IFopisJandNOTaNOTTakenBranch;
+
+assign	SYNTHESIZED_WIRE_9 = SYNTHESIZED_WIRE_16 & SYNTHESIZED_WIRE_4;
 
 assign	NOTaNotTakenBranch =  ~isNotTakenBranch;
+
+assign	SYNTHESIZED_WIRE_11 = SYNTHESIZED_WIRE_16 & IDAeqIDB;
+
+assign	SYNTHESIZED_WIRE_15 = SYNTHESIZED_WIRE_6 | SYNTHESIZED_WIRE_7;
+
+
+BNE	b2v_inst4(
+	.Op(IDop),
+	.Y(SYNTHESIZED_WIRE_16));
+
+assign	SYNTHESIZED_WIRE_14 = SYNTHESIZED_WIRE_8 | SYNTHESIZED_WIRE_9;
+
+assign	isNotTakenBranch = SYNTHESIZED_WIRE_10 | SYNTHESIZED_WIRE_11;
 
 
 
@@ -123,13 +152,13 @@ MUX2	b2v_pickMUX(
 
 MUX2	b2v_S0MUX(
 	.S(Taken),
-	.A(isTakenBranch),
+	.A(SYNTHESIZED_WIRE_14),
 	.B(IFopisBEQorisNotTakenBranch),
 	.Y(S[0]));
 
 
 SameBit	b2v_sameBit(
-	.Ain(isTakenBranch),
+	.Ain(SYNTHESIZED_WIRE_14),
 	.Aout(isTakenBranch2));
 
 assign	Pick = S;
