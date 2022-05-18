@@ -1,6 +1,6 @@
-// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Copyright (C) 2020  Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions 
-// and other software and tools, and its AMPP partner logic 
+// and other software and tools, and any partner logic 
 // functions, and any output files from any of the foregoing 
 // (including device programming or simulation files), and any 
 // associated documentation or information are expressly subject 
@@ -10,11 +10,12 @@
 // agreement, including, without limitation, that your use is for
 // the sole purpose of programming logic devices manufactured by
 // Intel and sold by Intel or its authorized distributors.  Please
-// refer to the applicable agreement for further details.
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
 
 // PROGRAM		"Quartus Prime"
-// VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Fri Feb 05 09:19:03 2021"
+// VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
+// CREATED		"Wed May 18 16:15:48 2022"
 
 module EX(
 	EXStall,
@@ -61,6 +62,7 @@ wire	[31:0] EXIROUT;
 wire	EXopisADDI;
 wire	EXopisLW;
 wire	EXopisLWorSWorADDI;
+wire	EXopisSLTI;
 wire	EXopisSW;
 wire	[31:0] Lower16BitsSignExtended;
 wire	[31:0] OLDAwire;
@@ -97,15 +99,20 @@ MUX2_32	b2v_EXIROUTMUX(
 	.Y(EXIROUT));
 
 
-ALU32	b2v_inst(
+ALU_32	b2v_inst(
 	.A(OLDAwire),
 	.alu_op(ALUOp),
 	.B(OLDBwire),
 	.Overflow(wire_to_ground),
-	.eq(wire_to_ground2),
+	.Zero(wire_to_ground2),
 	.Result(EXALUOut));
 
-assign	EXopisLWorSWorADDI = EXopisSW | EXopisADDI | EXopisLW;
+assign	EXopisLWorSWorADDI = EXopisLW | EXopisADDI | EXopisSLTI | EXopisSW;
+
+
+SLTI	b2v_inst2(
+	.Op(EXIROUT[31:26]),
+	.slti_output(EXopisSLTI));
 
 
 ADDI	b2v_isADDI(
