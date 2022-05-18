@@ -1,6 +1,6 @@
-// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Copyright (C) 2020  Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions 
-// and other software and tools, and its AMPP partner logic 
+// and other software and tools, and any partner logic 
 // functions, and any output files from any of the foregoing 
 // (including device programming or simulation files), and any 
 // associated documentation or information are expressly subject 
@@ -10,17 +10,18 @@
 // agreement, including, without limitation, that your use is for
 // the sole purpose of programming logic devices manufactured by
 // Intel and sold by Intel or its authorized distributors.  Please
-// refer to the applicable agreement for further details.
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
 
 // PROGRAM		"Quartus Prime"
-// VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Fri Feb 05 09:16:47 2021"
+// VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
+// CREATED		"Wed May 18 08:11:29 2022"
 
 module IFF(
-	clk,
-	reset,
-	Fix,
 	stall,
+	reset,
+	clk,
+	Fix,
 	Taken,
 	beq_offset,
 	Pick,
@@ -30,10 +31,10 @@ module IFF(
 );
 
 
-input wire	clk;
-input wire	reset;
-input wire	Fix;
 input wire	stall;
+input wire	reset;
+input wire	clk;
+input wire	Fix;
 input wire	Taken;
 input wire	[15:0] beq_offset;
 input wire	[1:0] Pick;
@@ -77,6 +78,15 @@ INC4_32	b2v_add4_2(
 	.S(IFbeqtargettimes4plus4));
 
 
+
+
+ALU_32	b2v_inst(
+	.A(PC),
+	.alu_op(Op),
+	.B(IDbeqtargettimes4),
+	.Overflow(wire_to_ground),
+	.Zero(wire_to_ground2),
+	.Result(FixforPredictTaken));
 
 
 SL2_32	b2v_multby4(
@@ -127,15 +137,6 @@ Adder_32	b2v_MYAdder2(
 	.A(PC),
 	.B(IFbeqtargettimes4plus4),
 	.S(PredictTakenNewPC));
-
-
-ALU32	b2v_MYALU(
-	.A(PC),
-	.alu_op(Op),
-	.B(IDbeqtargettimes4),
-	.eq(wire_to_ground),
-	.Overflow(wire_to_ground2),
-	.Result(FixforPredictTaken));
 
 
 Grounder	b2v_myGround(
