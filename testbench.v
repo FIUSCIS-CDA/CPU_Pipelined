@@ -21,19 +21,20 @@ module testbench();
 
 
    initial begin
-      // initialize instruction memory
-      myCPU.b2v_IFStage.b2v_MYIM.memory[0] = 'b00100000000100000000001000000000; // addi $s0, $zero, 512                    0
-      myCPU.b2v_IFStage.b2v_MYIM.memory[1] = 'b00100000000100010000000000001011; // addi $s1, $zero, 11                     4
       /////////////////////////////////////////////////////////////
       // PUT BUBBLE SORT CODE HERE
+      // initialize instruction memory
+      myCPU.b2v_IFStage.b2v_MYIM.memory[0] = 'b00100000000100000000001000000000; // addi $s0, $zero, 512                    0
+      myCPU.b2v_IFStage.b2v_MYIM.memory[1] = 'b00100000000100010000000000001011; // addi $s1, $zero, 11                      4
       myCPU.b2v_IFStage.b2v_MYIM.memory[2] = 'b00000000000000001001000000100000; // add $s2, $zero, zero                     8
       myCPU.b2v_IFStage.b2v_MYIM.memory[3] = 'b00100000000011010000000000000001; // addi $t5, $zero, 1                      12
       // SHOULD ALSO WORK IF THE NEXT INSTRUCTION BECOMES: slti $t0, $s2, 11
-      myCPU.b2v_IFStage.b2v_MYIM.memory[4] = 'b00000010010100010100000000101010; // loop1:   slt  $t0, $s2, $s1             16
-      //myCPU.b2v_IFStage.b2v_MYIM.memory[5] = 'b00010001000000000000000000010000; // beq $t0, $zero, doneloop1               20
-      myCPU.b2v_IFStage.b2v_MYIM.memory[5] = 'b00010101000011010000000000010001; // 	bne $t0, $t5, doneloop1(16)	    20           
+      myCPU.b2v_IFStage.b2v_MYIM.memory[4] = 'b00101010010010000000000000001011; 
+      //myCPU.b2v_IFStage.b2v_MYIM.memory[4] = 'b00000010010100010100000000101010; // loop1:   slt  $t0, $s2, $s1             16
+      //myCPU.b2v_IFStage.b2v_MYIM.memory[5] = 'b00010001000000000000000000010000; // beq $t0, $zero, doneloop1             20
+      myCPU.b2v_IFStage.b2v_MYIM.memory[5] = 'b00010101000011010000000000010001; // bne $t0, $t5, doneloop1(16)	            20           
       myCPU.b2v_IFStage.b2v_MYIM.memory[6] = 'b00000000000000001001100000100000; // add $s3, $zero, $zero                   24
-      myCPU.b2v_IFStage.b2v_MYIM.memory[7] = 'b00000010001100100111000000100010; //          sub $t6, $s1, $s2              28
+      myCPU.b2v_IFStage.b2v_MYIM.memory[7] = 'b00000010001100100111000000100010; // sub $t6, $s1, $s2                       28
       myCPU.b2v_IFStage.b2v_MYIM.memory[8] = 'b00000010011011100100100000101010; // loop2:   slt $t1, $s3, $t6              32
       myCPU.b2v_IFStage.b2v_MYIM.memory[9] = 'b00010001001000000000000000001011; // beq $t1, $zero, doneloop2               36
       //myCPU.b2v_IFStage.b2v_MYIM.memory[8] = 'b00010101001011010000000000001011; // 	bne $t1, $t5, doneloop2(11)         40   
@@ -44,12 +45,12 @@ module testbench();
       myCPU.b2v_IFStage.b2v_MYIM.memory[14] = 'b10001101011101010000000000000100; // lw $s5, 4($t3)                         60
       myCPU.b2v_IFStage.b2v_MYIM.memory[15] = 'b00000010101101000110000000101010; // slt $t4, $s5, $s4                      64
       myCPU.b2v_IFStage.b2v_MYIM.memory[16] = 'b00010001100000000000000000000010; // beq $t4, $zero, doneif                 68
-      //myCPU.b2v_IFStage.b2v_MYIM.memory[15] = 'b00010101100011010000000000000010; // 	bne $t4, $t5, doneif                72      
-      myCPU.b2v_IFStage.b2v_MYIM.memory[17] = 'b10101101011101010000000000000000; // sw $s5, 0($t3)                         64                       76     
+      //myCPU.b2v_IFStage.b2v_MYIM.memory[15] = 'b00010101100011010000000000000010; // 	bne $t4, $t5, doneif                68      
+      myCPU.b2v_IFStage.b2v_MYIM.memory[17] = 'b10101101011101010000000000000000; // sw $s5, 0($t3)                         72                       76     
       myCPU.b2v_IFStage.b2v_MYIM.memory[18] = 'b10101101011101000000000000000100; // sw $s4, 4($t3)                         76
       myCPU.b2v_IFStage.b2v_MYIM.memory[19] = 'b00100010011100110000000000000001; // doneif:    addi $s3, $s2, 1            80
       myCPU.b2v_IFStage.b2v_MYIM.memory[20] = 'b00001000000000000000000000001000; // j loop2 //instruction 9                84
-      myCPU.b2v_IFStage.b2v_MYIM.memory[21] = 'b00100010010100100000000000000001; //doneloop2: addi $s2, $s2, 1            88
+      myCPU.b2v_IFStage.b2v_MYIM.memory[21] = 'b00100010010100100000000000000001; // doneloop2: addi $s2, $s2, 1             88
       myCPU.b2v_IFStage.b2v_MYIM.memory[22] = 'b00001000000000000000000000000100; // j loop1 //instruction 6                92 
       myCPU.b2v_IFStage.b2v_MYIM.memory[23] = 'b00000000000000000000000000000000; // doneloop1:                             96
        // doneloop1: 

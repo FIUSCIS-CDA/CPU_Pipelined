@@ -15,6 +15,7 @@ module testbench();
    parameter J = 6'b000010;
    parameter ADDI = 6'b001000;
    parameter BNE = 6'b000101;
+   parameter SLTI = 6'b001010;
    ///////////////////////////////////////
 
 task initialState;
@@ -40,7 +41,11 @@ task checkForward;
    begin
       if (theforward !== 1)
       begin 
-         $display("[ERROR] Expected a forward\n");
+         $display("[ERROR] Expected a forward");
+      end
+      else
+      begin
+	      $display("[PASS]");
       end
    end
 endtask
@@ -68,91 +73,145 @@ ForwardBfromWBtoID unit7(IDrs,IDrt,WBop,WBrd,WBrs,WBrt,forwardBfromWBtoID);
    
    initial begin
  
-   setupForward(WBop, RTYPE, WBrd, IDrt); #10;
-   checkForward(forwardBfromWBtoID); #10;
-
-   setupForward(WBop, ADDI, WBrt, IDrt); #10;
-   checkForward(forwardBfromWBtoID); #10;
-
-   setupForward(WBop, LW, WBrt, IDrt); #10;
-   checkForward(forwardBfromWBtoID); #10;
-
-
-
-   setupForward(WBop, RTYPE, WBrd, EXrt); #10;
-   checkForward(forwardBfromWBtoEX); #10;
-
-   setupForward(WBop, ADDI, WBrt, EXrt); #10;
-   checkForward(forwardBfromWBtoEX); #10;
-
-   setupForward(WBop, LW, WBrt, EXrt); #10;
-   checkForward(forwardBfromWBtoEX); #10;
-
-
-   setupForward(MEMop, RTYPE, MEMrd, IDrt); #10;
-   checkForward(forwardBfromMEMtoID); #10;
-
-   setupForward(MEMop, ADDI, MEMrt, IDrt); #10;
-   checkForward(forwardBfromMEMtoID); #10;
-
-
-
-   setupForward(MEMop, RTYPE, MEMrd, EXrt); #10;
-   checkForward(forwardBfromMEMtoEX); #10;
-
-   setupForward(MEMop, ADDI, MEMrt, EXrt); #10;
-   checkForward(forwardBfromMEMtoEX); #10;
-
-
-
-   setupForward(WBop, RTYPE, WBrd, IDrs); #10;
-   checkForward(forwardAfromWBtoID); #10;
-
-   setupForward(WBop, ADDI, WBrt, IDrs); #10;
-   checkForward(forwardAfromWBtoID); #10;
-
-   setupForward(WBop, LW, WBrt, IDrs); #10;
-   checkForward(forwardAfromWBtoID); #10;
-
-
-
-   setupForward(WBop, RTYPE, WBrd, EXrs); #10;
-   checkForward(forwardAfromWBtoEX); #10;
-
-   setupForward(WBop, ADDI, WBrt, EXrs); #10;
-   checkForward(forwardAfromWBtoEX); #10;
-
-   setupForward(WBop, LW, WBrt, EXrs); #10;
-   checkForward(forwardAfromWBtoEX); #10;
-
-
+   ///////////////////////////////////////////////////////////////////
+   // A, MEM->ID
+   $display("[A, MEM->ID] MEMop=RTYPE, MEMrd=IDrs");
    setupForward(MEMop, RTYPE, MEMrd, IDrs); #10;
    checkForward(forwardAfromMEMtoID); #10;
 
+   $display("[A, MEM->ID] MEMop=ADDI, MEMrt=IDrs");
    setupForward(MEMop, ADDI, MEMrt, IDrs); #10;
    checkForward(forwardAfromMEMtoID); #10;
 
+   $display("[A, MEM->ID] MEMop=SLTI, MEMrt=IDrs");
+   setupForward(MEMop, SLTI, MEMrt, IDrs); #10;
+   checkForward(forwardAfromMEMtoID); #10;
+   ///////////////////////////////////////////////////////////////////
+
+   ///////////////////////////////////////////////////////////////////
+   // A, WB->ID
+   $display("[A, WB->ID] WBop=RTYPE, WBrd=IDrs");
+   setupForward(WBop, RTYPE, WBrd, IDrs); #10;
+   checkForward(forwardAfromWBtoID); #10;
+
+   $display("[A, WB->ID] WBop=ADDI, WBrt=IDrs");
+   setupForward(WBop, ADDI, WBrt, IDrs); #10;
+   checkForward(forwardAfromWBtoID); #10;
+
+   $display("[A, WB->ID] WBop=LW, WBrt=IDrs");
+   setupForward(WBop, LW, WBrt, IDrs); #10;
+   checkForward(forwardAfromWBtoID); #10;
+
+   $display("[A, WB->ID] WBop=SLTI, WBrt=IDrs");
+   setupForward(WBop, SLTI, WBrt, IDrs); #10;
+   checkForward(forwardAfromWBtoID); #10;
+   ///////////////////////////////////////////////////////////////////
+   
+   ///////////////////////////////////////////////////////////////////
+   // B, MEM->ID
+   $display("[B, MEM->ID] MEMop=RTYPE, MEMrd=IDrt");
+   setupForward(MEMop, RTYPE, MEMrd, IDrt); #10;
+   checkForward(forwardBfromMEMtoID); #10;
+
+   $display("[B, MEM->ID] MEMop=ADDI, MEMrt=IDrt");
+   setupForward(MEMop, ADDI, MEMrt, IDrt); #10;
+   checkForward(forwardBfromMEMtoID); #10;
+
+   $display("[B, MEM->ID] MEMop=SLTI, MEMrt=IDrt");
+   setupForward(MEMop, SLTI, MEMrt, IDrt); #10;
+   checkForward(forwardBfromMEMtoID); #10;
+   ///////////////////////////////////////////////////////////////////
+
+   ///////////////////////////////////////////////////////////////////
+   // B, WB->ID
+   $display("[B, WB->ID] WBop=RTYPE, WBrd=IDrt");
+   setupForward(WBop, RTYPE, WBrd, IDrt); #10;
+   checkForward(forwardBfromWBtoID); #10;
+
+   $display("[B, WB->ID] WBop=ADDI, WBrt=IDrt");
+   setupForward(WBop, ADDI, WBrt, IDrt); #10;
+   checkForward(forwardBfromWBtoID); #10;
+
+   $display("[B, WB->ID] WBop=LW, WBrt=IDrt");
+   setupForward(WBop, LW, WBrt, IDrt); #10;
+   checkForward(forwardBfromWBtoID); #10;
+
+   $display("[B, WB->ID] WBop=SLTI, WBrt=IDrt");
+   setupForward(WBop, SLTI, WBrt, IDrt); #10;
+   checkForward(forwardBfromWBtoID); #10;
+   ///////////////////////////////////////////////////////////////////
 
 
+   ///////////////////////////////////////////////////////////////////
+   // A, MEM->EX
+   $display("[A, MEM->EX] MEMop=RTYPE, MEMrd=EXrs");
    setupForward(MEMop, RTYPE, MEMrd, EXrs); #10;
    checkForward(forwardAfromMEMtoEX); #10;
 
+   $display("[A, MEM->EX] MEMop=ADDI, MEMrt=EXrs");
    setupForward(MEMop, ADDI, MEMrt, EXrs); #10;
    checkForward(forwardAfromMEMtoEX); #10;
 
+   $display("[A, MEM->EX] MEMop=SLTI, MEMrt=EXrs");
+   setupForward(MEMop, SLTI, MEMrt, EXrs); #10;
+   checkForward(forwardAfromMEMtoEX); #10;
+   //////////////////////////////////////////////////////////////////
+   
+   //////////////////////////////////////////////////////////////////
+   // A, WB->EX
+   $display("[A, WB->EX] WBop=RTYPE, WBrd=EXrs");
+   setupForward(WBop, RTYPE, WBrd, EXrs); #10;
+   checkForward(forwardAfromWBtoEX); #10;
 
+   $display("[A, WB->EX] WBop=ADDI, WBrt=EXrs");
+   setupForward(WBop, ADDI, WBrt, EXrs); #10;
+   checkForward(forwardAfromWBtoEX); #10;
 
+   $display("[A, WB->EX] WBop=LW, WBrt=EXrs");
+   setupForward(WBop, LW, WBrt, EXrs); #10;
+   checkForward(forwardAfromWBtoEX); #10;
 
+   $display("[A, WB->EX] WBop=SLTI, WBrt=EXrs");
+   setupForward(WBop, SLTI, WBrt, EXrs); #10;
+   checkForward(forwardAfromWBtoEX); #10;
+   /////////////////////////////////////////////////////////////////
 
+   /////////////////////////////////////////////////////////////////
+   // B, MEM->EX
+   $display("[A, MEM->EX] MEMop=RTYPE, MEMrd=EXrt");
+   setupForward(MEMop, RTYPE, MEMrd, EXrt); #10;
+   checkForward(forwardBfromMEMtoEX); #10;
 
+   $display("[A, MEM->EX] MEMop=ADDI, MEMrt=EXrt");
+   setupForward(MEMop, ADDI, MEMrt, EXrt); #10;
+   checkForward(forwardBfromMEMtoEX); #10;
 
+   $display("[A, MEM->EX] MEMop=SLTI, MEMrt=EXrt");
+   setupForward(MEMop, SLTI, MEMrt, EXrt); #10;
+   checkForward(forwardBfromMEMtoEX); #10;
+   /////////////////////////////////////////////////////////////////
 
+   /////////////////////////////////////////////////////////////////
+   // B, WB->EX
+   $display("[A, WB->EX] WBop=RTYPE, WBrd=EXrt");
+   setupForward(WBop, RTYPE, WBrd, EXrt); #10;
+   checkForward(forwardBfromWBtoEX); #10;
 
+   $display("[A, WB->EX] WBop=ADDI, WBrt=EXrt");
+   setupForward(WBop, ADDI, WBrt, EXrt); #10;
+   checkForward(forwardBfromWBtoEX); #10;
 
+   $display("[A, WB->EX] WBop=LW, WBrt=EXrt");
+   setupForward(WBop, LW, WBrt, EXrt); #10;
+   checkForward(forwardBfromWBtoEX); #10;
 
+   $display("[A, WB->EX] WBop=SLTI, WBrt=EXrt");
+   setupForward(WBop, SLTI, WBrt, EXrt); #10;
+   checkForward(forwardBfromWBtoEX); #10;
+   /////////////////////////////////////////////////////////////////
 
       
-      $display("All tests passed.\n");
+      $display("All tests passed.");
 
    end
 

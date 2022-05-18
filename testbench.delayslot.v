@@ -24,7 +24,8 @@ module testbenchDelaySlot();
       myCPU.b2v_IFStage.b2v_MYIM.memory[2] = 'b00000000000000001001000000100000; // add $s2, $zero, zero                      8
       myCPU.b2v_IFStage.b2v_MYIM.memory[3] = 'b00100000000011010000000000000001; // addi $t5, $zero, 1                      12
       // SHOULD ALSO WORK IF THE NEXT INSTRUCTION BECOMES: slti $t0, $s2, 11
-      myCPU.b2v_IFStage.b2v_MYIM.memory[4] = 'b00000010010100010100000000101010; // loop1:   slt  $t0, $s2, $s1            16
+      myCPU.b2v_IFStage.b2v_MYIM.memory[4] = 'b00101010010010000000000000001011;
+      //myCPU.b2v_IFStage.b2v_MYIM.memory[4] = 'b00000010010100010100000000101010; // loop1:   slt  $t0, $s2, $s1            16
       //myCPU.b2v_IFStage.b2v_MYIM.memory[5] = 'b00010001000000000000000000010000; // beq $t0, $zero, doneloop1               20
       myCPU.b2v_IFStage.b2v_MYIM.memory[5] = 'b00010101000011010000000000010001; // bne $t0, $t5, doneloop1(16)         20
       myCPU.b2v_IFStage.b2v_MYIM.memory[6] = 'b00000000000000001001100000100000; // add $s3, $zero, $zero  [DELAY]          24
