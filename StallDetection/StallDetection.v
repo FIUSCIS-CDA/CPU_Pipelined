@@ -1,6 +1,6 @@
-// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Copyright (C) 2020  Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions 
-// and other software and tools, and its AMPP partner logic 
+// and other software and tools, and any partner logic 
 // functions, and any output files from any of the foregoing 
 // (including device programming or simulation files), and any 
 // associated documentation or information are expressly subject 
@@ -10,11 +10,12 @@
 // agreement, including, without limitation, that your use is for
 // the sole purpose of programming logic devices manufactured by
 // Intel and sold by Intel or its authorized distributors.  Please
-// refer to the applicable agreement for further details.
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
 
 // PROGRAM		"Quartus Prime"
-// VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Thu Feb 10 13:10:39 2022"
+// VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
+// CREATED		"Wed May 18 05:31:08 2022"
 
 module StallDetection(
 	EXop,
@@ -73,6 +74,9 @@ wire	MEMrtisIDrt;
 wire	SYNTHESIZED_WIRE_0;
 wire	SYNTHESIZED_WIRE_1;
 wire	SYNTHESIZED_WIRE_2;
+wire	SYNTHESIZED_WIRE_3;
+wire	SYNTHESIZED_WIRE_4;
+wire	SYNTHESIZED_WIRE_5;
 
 
 
@@ -139,16 +143,18 @@ REGCheck	b2v_EXrtIDrt(
 
 BEQ	b2v_IDopBEQ(
 	.Op(IDop),
-	.Y(SYNTHESIZED_WIRE_1));
+	.Y(SYNTHESIZED_WIRE_2));
 
 
 BNE	b2v_inst(
 	.Op(IDop),
-	.Y(SYNTHESIZED_WIRE_2));
+	.Y(SYNTHESIZED_WIRE_3));
 
 assign	IDRAWhazard = EXopisLWorADDI_and_RAWhazardonEXrt | MEMopisLW_and_RAWhazardonMEMrt | EXopisRTYPE_and_RAWhazardonEXrd;
 
-assign	IDStall = SYNTHESIZED_WIRE_0 & IDRAWhazard;
+assign	EXStall = EXopisRTYPE_and_EXRAWhazard | EXopisLWorSWorADDI_and_EXRAWhazard | SYNTHESIZED_WIRE_0;
+
+assign	IDStall = SYNTHESIZED_WIRE_1 & IDRAWhazard;
 
 assign	EXrdisIDrsorIDrt = EXrdisIDrt | EXrdisIDrs;
 
@@ -166,19 +172,29 @@ assign	EXopisLWorSWorADDI_and_EXRAWhazard = EXopisLWorSWorADDI & MEMopisLW_and_M
 
 assign	EXopisRTYPE_and_RAWhazardonEXrd = EXopisRTYPE & EXrdisIDrsorIDrt;
 
-assign	EXopisLWorADDI = EXopisLW | EXopisADDI;
-
 assign	EXopisLWorSWorADDI = EXopisSW | EXopisADDI | EXopisLW;
-
-assign	EXStall = EXopisLWorSWorADDI_and_EXRAWhazard | EXopisRTYPE_and_EXRAWhazard;
 
 assign	MEMopisLW_and_RAWhazardonMEMrt = MEMopisLW & MEMrtisIDrsorIDrt;
 
 assign	MEMopisLW_and_RAWhazardonMEMrtEXrsorrt = MEMopisLW & MEMrtisEXrsorEXrt;
 
+
+SLTI	b2v_inst5(
+	.Op(EXop),
+	.slti_output(SYNTHESIZED_WIRE_5));
+
 assign	MEMopisLW_and_MEMrtisNOT0 = MEMopisLW & MEMrtisEXrs;
 
-assign	SYNTHESIZED_WIRE_0 = SYNTHESIZED_WIRE_1 | SYNTHESIZED_WIRE_2;
+assign	SYNTHESIZED_WIRE_1 = SYNTHESIZED_WIRE_2 | SYNTHESIZED_WIRE_3;
+
+
+SLTI	b2v_inst7(
+	.Op(EXop),
+	.slti_output(SYNTHESIZED_WIRE_4));
+
+assign	EXopisLWorADDI = EXopisLW | SYNTHESIZED_WIRE_4 | EXopisADDI;
+
+assign	SYNTHESIZED_WIRE_0 = SYNTHESIZED_WIRE_5 & MEMrtisEXrs;
 
 
 LW	b2v_MEMopLW(
