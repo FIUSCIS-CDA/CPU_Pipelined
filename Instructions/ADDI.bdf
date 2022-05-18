@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,39 +16,40 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 */
 (header "graphic" (version "1.4"))
 (pin
 	(input)
 	(rect -8 208 160 224)
-	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "Op[31..26]" (rect 5 0 56 12)(font "Arial" ))
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 255 0 0)(font_size 6)))
+	(text "Op[31..26]" (rect 5 0 56 12)(font "Arial" (color 255 0 0)))
 	(pt 168 8)
 	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
+		(line (pt 84 12)(pt 109 12)(color 255 0 0))
+		(line (pt 84 4)(pt 109 4)(color 255 0 0))
+		(line (pt 113 8)(pt 168 8)(color 255 0 0))
+		(line (pt 84 12)(pt 84 4)(color 255 0 0))
+		(line (pt 109 4)(pt 113 8)(color 255 0 0))
+		(line (pt 109 12)(pt 113 8)(color 255 0 0))
 	)
-	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (color 255 0 0)(font_size 6)))
 )
 (pin
 	(output)
 	(rect 632 272 808 288)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "addi_output" (rect 90 0 146 12)(font "Arial" ))
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (color 0 0 255)(font_size 6)))
+	(text "addi_output" (rect 90 0 146 12)(font "Arial" (color 0 0 255)))
 	(pt 0 8)
 	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
+		(line (pt 0 8)(pt 52 8)(color 0 0 255))
+		(line (pt 52 4)(pt 78 4)(color 0 0 255))
+		(line (pt 52 12)(pt 78 12)(color 0 0 255))
+		(line (pt 52 12)(pt 52 4)(color 0 0 255))
+		(line (pt 78 4)(pt 82 8)(color 0 0 255))
+		(line (pt 82 8)(pt 78 12)(color 0 0 255))
+		(line (pt 78 12)(pt 82 8)(color 0 0 255))
 	)
 )
 (symbol
@@ -237,83 +238,6 @@ refer to the applicable agreement for further details.
 	)
 )
 (connector
-	(pt 176 216)
-	(pt 160 216)
-	(bus)
-)
-(connector
-	(pt 176 240)
-	(pt 176 216)
-	(bus)
-)
-(connector
-	(text "Op[31]" (rect 186 224 219 241)(font "Intel Clear" ))
-	(pt 176 240)
-	(pt 304 240)
-)
-(connector
-	(text "Op[30]" (rect 178 272 211 289)(font "Intel Clear" ))
-	(pt 176 288)
-	(pt 304 288)
-)
-(connector
-	(pt 176 240)
-	(pt 176 288)
-	(bus)
-)
-(connector
-	(pt 176 288)
-	(pt 176 336)
-	(bus)
-)
-(connector
-	(pt 176 336)
-	(pt 176 376)
-	(bus)
-)
-(connector
-	(pt 176 376)
-	(pt 176 440)
-	(bus)
-)
-(connector
-	(pt 176 440)
-	(pt 176 496)
-	(bus)
-)
-(connector
-	(text "Op[28]" (rect 186 360 219 377)(font "Intel Clear" ))
-	(pt 176 376)
-	(pt 304 376)
-)
-(connector
-	(text "Op[27]" (rect 186 424 219 441)(font "Intel Clear" ))
-	(pt 176 440)
-	(pt 304 440)
-)
-(connector
-	(text "Op[26]" (rect 186 480 219 497)(font "Intel Clear" ))
-	(pt 176 496)
-	(pt 296 496)
-)
-(connector
-	(text "Op[29]" (rect 186 320 219 337)(font "Intel Clear" ))
-	(pt 176 336)
-	(pt 376 336)
-)
-(connector
-	(pt 376 272)
-	(pt 376 336)
-)
-(connector
-	(pt 376 272)
-	(pt 528 272)
-)
-(connector
-	(pt 592 280)
-	(pt 632 280)
-)
-(connector
 	(text "NOTOp31" (rect 362 224 409 241)(font "Intel Clear" ))
 	(pt 528 240)
 	(pt 352 240)
@@ -369,6 +293,99 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 448 320)
 	(pt 528 320)
+)
+(connector
+	(pt 176 216)
+	(pt 160 216)
+	(bus)
+	(color 255 0 0)
+)
+(connector
+	(pt 176 240)
+	(pt 176 216)
+	(bus)
+	(color 255 0 0)
+)
+(connector
+	(text "Op[31]" (rect 186 224 219 241)(font "Intel Clear" (color 255 0 0)))
+	(pt 176 240)
+	(pt 304 240)
+	(color 255 0 0)
+)
+(connector
+	(text "Op[30]" (rect 178 272 211 289)(font "Intel Clear" (color 255 0 0)))
+	(pt 176 288)
+	(pt 304 288)
+	(color 255 0 0)
+)
+(connector
+	(pt 176 240)
+	(pt 176 288)
+	(bus)
+	(color 255 0 0)
+)
+(connector
+	(pt 176 288)
+	(pt 176 336)
+	(bus)
+	(color 255 0 0)
+)
+(connector
+	(pt 176 336)
+	(pt 176 376)
+	(bus)
+	(color 255 0 0)
+)
+(connector
+	(pt 176 376)
+	(pt 176 440)
+	(bus)
+	(color 255 0 0)
+)
+(connector
+	(pt 176 440)
+	(pt 176 496)
+	(bus)
+	(color 255 0 0)
+)
+(connector
+	(text "Op[28]" (rect 186 360 219 377)(font "Intel Clear" (color 255 0 0)))
+	(pt 176 376)
+	(pt 304 376)
+	(color 255 0 0)
+)
+(connector
+	(text "Op[27]" (rect 186 424 219 441)(font "Intel Clear" (color 255 0 0)))
+	(pt 176 440)
+	(pt 304 440)
+	(color 255 0 0)
+)
+(connector
+	(text "Op[26]" (rect 186 480 219 497)(font "Intel Clear" (color 255 0 0)))
+	(pt 176 496)
+	(pt 296 496)
+	(color 255 0 0)
+)
+(connector
+	(text "Op[29]" (rect 186 320 219 337)(font "Intel Clear" (color 255 0 0)))
+	(pt 176 336)
+	(pt 376 336)
+	(color 255 0 0)
+)
+(connector
+	(pt 376 272)
+	(pt 376 336)
+	(color 255 0 0)
+)
+(connector
+	(pt 376 272)
+	(pt 528 272)
+	(color 255 0 0)
+)
+(connector
+	(pt 592 280)
+	(pt 632 280)
+	(color 0 0 255)
 )
 (junction (pt 176 240))
 (junction (pt 176 288))
