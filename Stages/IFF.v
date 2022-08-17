@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed May 18 08:11:29 2022"
+// CREATED		"Wed Aug 17 11:58:18 2022"
 
 module IFF(
 	stall,
@@ -89,14 +89,14 @@ ALU_32	b2v_inst(
 	.Result(FixforPredictTaken));
 
 
-SL2_32	b2v_multby4(
-	.I(IDbeqtarget),
-	.O(IDbeqtargettimes4));
+SL2_32	b2v_inst1(
+	.A(IDbeqtarget),
+	.Y(IDbeqtargettimes4));
 
 
-SL2_32	b2v_multby4_2(
-	.I(IFbeqtarget_SE),
-	.O(IFbeqtargettimes4));
+SL2_32	b2v_inst2(
+	.A(IFbeqtarget_SE),
+	.Y(IFbeqtargettimes4));
 
 
 MUX2_32	b2v_MUXFixPC(
