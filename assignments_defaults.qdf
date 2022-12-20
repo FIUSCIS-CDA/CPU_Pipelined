@@ -63,6 +63,7 @@ set_global_assignment -name BDF_FILE IDEXTower.bdf
 set_global_assignment -name BDF_FILE SW.bdf
 set_global_assignment -name BDF_FILE LW.bdf
 set_global_assignment -name BDF_FILE RTYPE.bdf
+set_global_assignment -name BDF_FILE SLL.bdf
 set_global_assignment -name BDF_FILE EX.bdf
 set_global_assignment -name BDF_FILE ADD.bdf
 set_global_assignment -name BDF_FILE SUB.bdf

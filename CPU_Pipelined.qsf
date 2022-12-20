@@ -58,6 +58,7 @@ set_global_assignment -name BDF_FILE Branch_Prediction.bdf
 set_global_assignment -name BDF_FILE Instructions/J.bdf
 set_global_assignment -name BDF_FILE Instructions/BEQ.bdf
 set_global_assignment -name BDF_FILE Instructions/BNE.bdf
+set_global_assignment -name BDF_FILE Instructions/SLL.bdf
 set_global_assignment -name BDF_FILE Checks/EQ_32.bdf
 set_global_assignment -name BDF_FILE Stages/ID.bdf
 set_global_assignment -name BDF_FILE Towers/IDEXTower.bdf
@@ -126,6 +127,7 @@ set_global_assignment -name VERILOG_FILE ../DM/DM_synch.v
 set_global_assignment -name BDF_FILE ../ALU_32/OverflowDetection.bdf
 set_global_assignment -name BDF_FILE ../MUX4_32/MUX4_32.bdf
 set_global_assignment -name BDF_FILE ../Grounder/Grounder.bdf
+
 
 
 
