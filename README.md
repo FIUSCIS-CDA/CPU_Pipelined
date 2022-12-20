@@ -38,6 +38,7 @@ WBIR  | 32
        WBIR: Instruction in WB state
 
 #### SUPPORTED INSTRUCTIONS
+       SLL (FA22)
        SLTI (SP22)
        BNE (SP21)
        ADDI (FA20)
