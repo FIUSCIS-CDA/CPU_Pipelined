@@ -21,8 +21,8 @@ https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 232 112)
-	(text "ALUCtl" (rect 5 0 46 19)(font "Intel Clear" (font_size 8)))
+	(rect 16 16 168 112)
+	(text "SLL" (rect 5 0 27 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 75 24 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
@@ -39,20 +39,13 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
-		(pt 216 32)
+		(pt 152 32)
 		(output)
-		(text "ALUSLL" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
-		(text "ALUSLL" (rect 148 27 195 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 216 32)(pt 200 32))
-	)
-	(port
-		(pt 216 48)
-		(output)
-		(text "ALUOp[4..0]" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
-		(text "ALUOp[4..0]" (rect 122 43 195 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 216 48)(pt 200 48)(line_width 3))
+		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
+		(text "Y" (rect 123 27 131 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 152 32)(pt 136 32))
 	)
 	(drawing
-		(rectangle (rect 16 16 200 80))
+		(rectangle (rect 16 16 136 80))
 	)
 )

@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed May 18 16:15:48 2022"
+// CREATED		"Tue Dec 20 13:30:56 2022"
 
 module EX(
 	EXStall,
@@ -71,6 +71,9 @@ wire	[31:0] Temp;
 wire	[31:0] TheConstant0;
 wire	wire_to_ground;
 wire	wire_to_ground2;
+wire	SYNTHESIZED_WIRE_0;
+wire	[31:0] SYNTHESIZED_WIRE_1;
+wire	[31:0] SYNTHESIZED_WIRE_2;
 
 
 
@@ -105,7 +108,7 @@ ALU_32	b2v_inst(
 	.B(OLDBwire),
 	.Overflow(wire_to_ground),
 	.Zero(wire_to_ground2),
-	.Result(EXALUOut));
+	.Result(SYNTHESIZED_WIRE_1));
 
 assign	EXopisLWorSWorADDI = EXopisLW | EXopisADDI | EXopisSLTI | EXopisSW;
 
@@ -113,6 +116,26 @@ assign	EXopisLWorSWorADDI = EXopisLW | EXopisADDI | EXopisSLTI | EXopisSW;
 SLTI	b2v_inst2(
 	.Op(EXIROUT[31:26]),
 	.slti_output(EXopisSLTI));
+
+
+ALUCtl	b2v_inst3(
+	.Functcode(EXIROUT[5:0]),
+	.Opcode(Temp[31:26]),
+	.ALUSLL(SYNTHESIZED_WIRE_0),
+	.ALUOp(ALUOp));
+
+
+SLL_32	b2v_inst5(
+	.A(OLDBwire),
+	.H(Temp[10:6]),
+	.Y(SYNTHESIZED_WIRE_2));
+
+
+MUX2_32	b2v_inst6(
+	.S(SYNTHESIZED_WIRE_0),
+	.A(SYNTHESIZED_WIRE_1),
+	.B(SYNTHESIZED_WIRE_2),
+	.Y(EXALUOut));
 
 
 ADDI	b2v_isADDI(
@@ -128,12 +151,6 @@ LW	b2v_isLW(
 SW	b2v_isSW(
 	.Op(EXIROUT[31:26]),
 	.Y(EXopisSW));
-
-
-ALUCtl	b2v_myALUCtl(
-	.Functcode(EXIROUT[5:0]),
-	.Opcode(Temp[31:26]),
-	.ALUOp(ALUOp));
 
 
 Grounder	b2v_myGrounder(
