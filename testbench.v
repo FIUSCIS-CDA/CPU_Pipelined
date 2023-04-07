@@ -107,8 +107,8 @@ CPU_Pipelined myCPU(.clk(clk), .reset(rst), .Strategy(BRANCH_PRED), .EXIR(EXIR),
           for (address=512; address <= 552; address = address + 4)
           begin
              $display("Testing element %d and element %d", address, address+4);
-             verifyLessEqual32(myCPU.b2v_MEMStage.b2v_MYDM.memory[address >> 4],
-                               myCPU.b2v_MEMStage.b2v_MYDM.memory[(address+4) >> 4]);
+             verifyLessEqual32(myCPU.b2v_MEMStage.b2v_MYDM.memory[address >> 2],
+                               myCPU.b2v_MEMStage.b2v_MYDM.memory[(address+4) >> 2]);
           end
           $display("CPU functional");
           $stop;
