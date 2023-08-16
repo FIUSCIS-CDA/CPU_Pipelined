@@ -24,7 +24,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -168 176 0 192)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 196 196 0)(font_size 6)))
-	(text "EXrs[4..0]" (rect 5 0 49 17)(font "Intel Clear" (color 196 196 0)))
+	(text "EXrm[4..0]" (rect 5 0 54 17)(font "Intel Clear" (color 196 196 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 188 188 0))
@@ -40,7 +40,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -168 216 0 232)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 178 178 0)(font_size 6)))
-	(text "EXrt[4..0]" (rect 5 0 48 17)(font "Intel Clear" (color 178 178 0)))
+	(text "EXrn[4..0]" (rect 5 0 51 17)(font "Intel Clear" (color 178 178 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 178 178 0))
@@ -56,7 +56,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -168 256 0 272)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 196 196 0)(font_size 6)))
-	(text "EXrd[4..0]" (rect 5 0 51 17)(font "Intel Clear" (color 196 196 0)))
+	(text "EXrp[4..0]" (rect 5 0 51 17)(font "Intel Clear" (color 196 196 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 191 191 0))
@@ -88,7 +88,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -168 336 0 352)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 0 255)(font_size 6)))
-	(text "WBrs[4..0]" (rect 5 0 54 17)(font "Intel Clear" (color 0 0 255)))
+	(text "WBrm[4..0]" (rect 5 0 59 17)(font "Intel Clear" (color 0 0 255)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 0 255))
@@ -104,7 +104,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -168 376 0 392)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 0 255)(font_size 6)))
-	(text "WBrt[4..0]" (rect 5 0 53 17)(font "Intel Clear" (color 0 0 255)))
+	(text "WBrn[4..0]" (rect 5 0 55 17)(font "Intel Clear" (color 0 0 255)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 0 255))
@@ -120,7 +120,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -168 416 0 432)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 0 255)(font_size 6)))
-	(text "WBrd[4..0]" (rect 5 0 55 17)(font "Intel Clear" (color 0 0 255)))
+	(text "WBrp[4..0]" (rect 5 0 55 17)(font "Intel Clear" (color 0 0 255)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 0 255))
@@ -270,7 +270,7 @@ https://fpgasoftware.intel.com/eula.
 (symbol
 	(rect 192 544 312 640)
 	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "WBrdEXrt" (rect 8 75 55 92)(font "Intel Clear" ))
+	(text "WBrpEXrn" (rect 8 75 57 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -343,7 +343,7 @@ https://fpgasoftware.intel.com/eula.
 (symbol
 	(rect 200 856 320 952)
 	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "WBrtEXrt" (rect 8 75 52 92)(font "Intel Clear" ))
+	(text "WBrnEXrn" (rect 8 75 57 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -462,22 +462,22 @@ https://fpgasoftware.intel.com/eula.
 	(pt 424 536)
 )
 (connector
-	(text "WBrtisEXrt" (rect 320 872 371 889)(font "Intel Clear" ))
+	(text "WBrnisEXrn" (rect 320 872 376 889)(font "Intel Clear" ))
 	(pt 320 888)
 	(pt 360 888)
 )
 (connector
-	(text "WBrdisEXrt" (rect 328 514 345 568)(font "Intel Clear" )(vertical))
+	(text "WBrpisEXrn" (rect 328 514 345 570)(font "Intel Clear" )(vertical))
 	(pt 344 544)
 	(pt 344 576)
 )
 (connector
-	(text "WBrdisEXrt" (rect 312 560 366 577)(font "Intel Clear" ))
+	(text "WBrpisEXrn" (rect 312 560 368 577)(font "Intel Clear" ))
 	(pt 344 576)
 	(pt 312 576)
 )
 (connector
-	(text "WBopisRTYPE_and_WBrdisEXrt" (rect 480 556 497 709)(font "Intel Clear" )(vertical))
+	(text "WBopisRTYPE_and_WBrpisEXrn" (rect 480 556 497 711)(font "Intel Clear" )(vertical))
 	(pt 496 536)
 	(pt 496 696)
 )
@@ -490,7 +490,7 @@ https://fpgasoftware.intel.com/eula.
 	(pt 832 712)
 )
 (connector
-	(text "WBrtisEXrt" (rect 344 834 361 885)(font "Intel Clear" )(vertical))
+	(text "WBrnisEXrn" (rect 344 834 361 890)(font "Intel Clear" )(vertical))
 	(pt 360 888)
 	(pt 360 856)
 )
@@ -499,7 +499,7 @@ https://fpgasoftware.intel.com/eula.
 	(pt 792 848)
 )
 (connector
-	(text "WBopisADDIorLW_and_WBrtisEXrt" (rect 816 696 833 863)(font "Intel Clear" )(vertical))
+	(text "WBopisADDIorLW_and_WBrnisEXrn" (rect 816 696 833 868)(font "Intel Clear" )(vertical))
 	(pt 832 712)
 	(pt 832 848)
 )

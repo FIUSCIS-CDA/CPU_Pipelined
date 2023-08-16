@@ -24,7 +24,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -48 64 120 80)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 181 181 0)(font_size 6)))
-	(text "EXrs[4..0]" (rect 5 0 49 17)(font "Intel Clear" (color 181 181 0)))
+	(text "EXrm[4..0]" (rect 5 0 54 17)(font "Intel Clear" (color 181 181 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 192 192 0))
@@ -40,7 +40,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -48 104 120 120)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 170 170 0)(font_size 6)))
-	(text "EXrt[4..0]" (rect 5 0 48 17)(font "Intel Clear" (color 170 170 0)))
+	(text "EXrn[4..0]" (rect 5 0 51 17)(font "Intel Clear" (color 170 170 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 170 170 0))
@@ -56,7 +56,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -48 144 120 160)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 172 172 0)(font_size 6)))
-	(text "EXrd[4..0]" (rect 5 0 51 17)(font "Intel Clear" (color 172 172 0)))
+	(text "EXrp[4..0]" (rect 5 0 51 17)(font "Intel Clear" (color 172 172 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 174 174 0))
@@ -88,7 +88,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -48 216 120 232)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 170 0)(font_size 6)))
-	(text "MEMrs[4..0]" (rect 5 0 61 17)(font "Intel Clear" (color 0 170 0)))
+	(text "MEMrm[4..0]" (rect 5 0 66 17)(font "Intel Clear" (color 0 170 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 170 0))
@@ -104,7 +104,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -48 256 120 272)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 170 0)(font_size 6)))
-	(text "MEMrt[4..0]" (rect 5 0 60 17)(font "Intel Clear" (color 0 170 0)))
+	(text "MEMrn[4..0]" (rect 5 0 62 17)(font "Intel Clear" (color 0 170 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 170 0))
@@ -120,7 +120,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -48 288 120 304)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 170 0)(font_size 6)))
-	(text "MEMrd[4..0]" (rect 5 0 62 17)(font "Intel Clear" (color 0 170 0)))
+	(text "MEMrp[4..0]" (rect 5 0 62 17)(font "Intel Clear" (color 0 170 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 170 0))
@@ -292,7 +292,7 @@ https://fpgasoftware.intel.com/eula.
 (symbol
 	(rect 296 456 416 552)
 	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "MEMrdEXrs" (rect 8 75 63 92)(font "Intel Clear" ))
+	(text "MEMrpEXrm" (rect 8 75 68 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -321,7 +321,7 @@ https://fpgasoftware.intel.com/eula.
 (symbol
 	(rect 312 704 432 800)
 	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "MEMrtEXrs" (rect 8 75 61 92)(font "Intel Clear" ))
+	(text "MEMrnEXrm" (rect 8 75 68 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -416,7 +416,7 @@ https://fpgasoftware.intel.com/eula.
 	(pt 464 440)
 )
 (connector
-	(text "MEMrdisEXrs" (rect 416 472 478 489)(font "Intel Clear" ))
+	(text "MEMrpisEXrm" (rect 416 472 483 489)(font "Intel Clear" ))
 	(pt 416 488)
 	(pt 440 488)
 )
@@ -433,7 +433,7 @@ https://fpgasoftware.intel.com/eula.
 	(pt 520 600)
 )
 (connector
-	(text "MEMrtisEXrs" (rect 442 720 502 737)(font "Intel Clear" ))
+	(text "MEMrnisEXrm" (rect 442 720 509 737)(font "Intel Clear" ))
 	(pt 432 736)
 	(pt 520 736)
 )
@@ -442,7 +442,7 @@ https://fpgasoftware.intel.com/eula.
 	(pt 600 448)
 )
 (connector
-	(text "MEMopisRTYPE_and_MEMrdisEXrs" (rect 584 335 601 503)(font "Intel Clear" )(vertical))
+	(text "MEMopisRTYPE_and_MEMrpisEXrm" (rect 584 335 601 508)(font "Intel Clear" )(vertical))
 	(pt 600 448)
 	(pt 600 488)
 )
@@ -476,7 +476,7 @@ https://fpgasoftware.intel.com/eula.
 	(pt 808 680)
 )
 (connector
-	(text "MEMopisADDI_and_MEMrtisEXrs" (rect 832 537 849 693)(font "Intel Clear" )(vertical))
+	(text "MEMopisADDI_and_MEMrnisEXrm" (rect 832 537 849 701)(font "Intel Clear" )(vertical))
 	(pt 848 568)
 	(pt 848 680)
 )

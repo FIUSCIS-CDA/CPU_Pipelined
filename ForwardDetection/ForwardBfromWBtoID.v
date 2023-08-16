@@ -15,34 +15,34 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed May 18 06:42:35 2022"
+// CREATED		"Wed Aug 16 14:47:43 2023"
 
 module ForwardBfromWBtoID(
-	IDrs,
-	IDrt,
+	IDrm,
+	IDrn,
 	WBop,
-	WBrd,
-	WBrs,
-	WBrt,
+	WBrm,
+	WBrn,
+	WBrp,
 	Y
 );
 
 
-input wire	[4:0] IDrs;
-input wire	[4:0] IDrt;
+input wire	[4:0] IDrm;
+input wire	[4:0] IDrn;
 input wire	[5:0] WBop;
-input wire	[4:0] WBrd;
-input wire	[4:0] WBrs;
-input wire	[4:0] WBrt;
+input wire	[4:0] WBrm;
+input wire	[4:0] WBrn;
+input wire	[4:0] WBrp;
 output wire	Y;
 
 wire	WBopisADDI;
 wire	WBopisLW;
-wire	WBopisLWorADDI_and_WBrtisIDrt;
+wire	WBopisLWorADDI_and_WBrnisIDrn;
 wire	WBopisRTYPE;
-wire	WBopisRTYPE_and_WBrdisIDrt;
-wire	WBrdisIDrt;
-wire	WBrtisIDrt;
+wire	WBopisRTYPE_and_WBrpisIDrn;
+wire	WBrnisIDrn;
+wire	WBrpisIDrn;
 wire	SYNTHESIZED_WIRE_0;
 wire	SYNTHESIZED_WIRE_1;
 
@@ -56,11 +56,11 @@ SLTI	b2v_inst(
 
 assign	SYNTHESIZED_WIRE_1 = WBopisLW | SYNTHESIZED_WIRE_0 | WBopisADDI;
 
-assign	WBopisRTYPE_and_WBrdisIDrt = WBopisRTYPE & WBrdisIDrt;
+assign	WBopisRTYPE_and_WBrpisIDrn = WBopisRTYPE & WBrpisIDrn;
 
-assign	WBopisLWorADDI_and_WBrtisIDrt = SYNTHESIZED_WIRE_1 & WBrtisIDrt;
+assign	WBopisLWorADDI_and_WBrnisIDrn = SYNTHESIZED_WIRE_1 & WBrnisIDrn;
 
-assign	Y = WBopisLWorADDI_and_WBrtisIDrt | WBopisRTYPE_and_WBrdisIDrt;
+assign	Y = WBopisLWorADDI_and_WBrnisIDrn | WBopisRTYPE_and_WBrpisIDrn;
 
 
 ADDI	b2v_WBopADDI(
@@ -78,16 +78,16 @@ RTYPE	b2v_WBopRTYPE(
 	.Y(WBopisRTYPE));
 
 
-REGCheck	b2v_WBrdIDrt(
-	.reg1(IDrt),
-	.reg2(WBrd),
-	.Y(WBrdisIDrt));
+REGCheck	b2v_WBrnIDrn(
+	.reg1(IDrn),
+	.reg2(WBrn),
+	.Y(WBrnisIDrn));
 
 
-REGCheck	b2v_WBrtIDrt(
-	.reg1(IDrt),
-	.reg2(WBrt),
-	.Y(WBrtisIDrt));
+REGCheck	b2v_WBrpIDrn(
+	.reg1(IDrn),
+	.reg2(WBrp),
+	.Y(WBrpisIDrn));
 
 
 endmodule

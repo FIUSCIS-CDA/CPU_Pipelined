@@ -41,16 +41,9 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 216 32)
 		(output)
-		(text "ALUSLL" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
-		(text "ALUSLL" (rect 148 27 195 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 216 32)(pt 200 32))
-	)
-	(port
-		(pt 216 48)
-		(output)
-		(text "ALUOp[4..0]" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
-		(text "ALUOp[4..0]" (rect 122 43 195 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 216 48)(pt 200 48)(line_width 3))
+		(text "ALUOp[6..0]" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
+		(text "ALUOp[6..0]" (rect 122 27 195 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 200 80))

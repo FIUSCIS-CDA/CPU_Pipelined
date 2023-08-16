@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed May 18 05:33:17 2022"
+// CREATED		"Wed Aug 17 11:45:35 2022"
 
 module EQ_5(
 	A,

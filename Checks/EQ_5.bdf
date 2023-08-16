@@ -304,7 +304,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 728 1560 760 1576)
+	(rect 728 1504 760 1520)
 	(text "VCC" (rect 7 0 27 10)(font "Arial" (font_size 6)))
 	(text "inst1" (rect 3 5 25 22)(font "Intel Clear" )(invisible))
 	(port
@@ -543,12 +543,6 @@ https://fpgasoftware.intel.com/eula.
 	(color 0 0 255)
 )
 (connector
-	(text "Power" (rect 802 1544 831 1556)(font "Arial" (color 170 0 0)))
-	(pt 792 1560)
-	(pt 864 1560)
-	(color 170 0 0)
-)
-(connector
 	(pt 864 1560)
 	(pt 864 1616)
 	(color 170 0 0)
@@ -559,18 +553,14 @@ https://fpgasoftware.intel.com/eula.
 	(color 170 0 0)
 )
 (connector
-	(pt 744 1576)
-	(pt 744 1608)
+	(pt 744 1520)
+	(pt 744 1560)
 	(color 170 0 0)
 )
 (connector
-	(pt 744 1608)
-	(pt 792 1608)
-	(color 170 0 0)
-)
-(connector
-	(pt 792 1560)
-	(pt 792 1608)
+	(text "Power" (rect 802 1544 831 1556)(font "Arial" (color 170 0 0)))
+	(pt 744 1560)
+	(pt 864 1560)
 	(color 170 0 0)
 )
 (junction (pt 336 1616))

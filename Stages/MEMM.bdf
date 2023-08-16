@@ -120,7 +120,7 @@ https://fpgasoftware.intel.com/eula.
 	(output)
 	(rect 1032 160 1208 176)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (color 0 170 0)(font_size 6)))
-	(text "MEMrs[4..0]" (rect 90 0 149 12)(font "Arial" (color 0 170 0)))
+	(text "MEMrm[4..0]" (rect 90 0 152 12)(font "Arial" (color 0 170 0)))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8)(color 0 170 0))
@@ -136,7 +136,7 @@ https://fpgasoftware.intel.com/eula.
 	(output)
 	(rect 1024 208 1200 224)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (color 0 170 0)(font_size 6)))
-	(text "MEMrt[4..0]" (rect 90 0 146 12)(font "Arial" (color 0 170 0)))
+	(text "MEMrn[4..0]" (rect 90 0 149 12)(font "Arial" (color 0 170 0)))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8)(color 0 170 0))
@@ -152,7 +152,7 @@ https://fpgasoftware.intel.com/eula.
 	(output)
 	(rect 1016 256 1192 272)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (color 0 170 0)(font_size 6)))
-	(text "MEMrd[4..0]" (rect 90 0 149 12)(font "Arial" (color 0 170 0)))
+	(text "MEMrp[4..0]" (rect 90 0 149 12)(font "Arial" (color 0 170 0)))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8)(color 0 170 0))
@@ -242,39 +242,40 @@ https://fpgasoftware.intel.com/eula.
 )
 (symbol
 	(rect 816 328 968 424)
-	(text "MUX2_32" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "MUXMEMValue" (rect 8 75 84 92)(font "Intel Clear" ))
+	(text "MUX2_32" (rect 5 0 65 19)(font "Intel Clear" (color 0 0 0)(font_size 8)))
+	(text "MUXMEMValue" (rect 8 75 84 92)(font "Intel Clear" (color 0 0 0)))
 	(port
 		(pt 0 32)
 		(input)
 		(text "B[31..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
-		(text "B[31..0]" (rect 21 27 68 46)(font "Intel Clear" (font_size 8)))
+		(text "B[31..0]" (rect 21 27 68 46)(font "Intel Clear" (color 0 0 0)(font_size 8)))
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
 		(pt 0 48)
 		(input)
 		(text "S" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
-		(text "S" (rect 21 43 29 62)(font "Intel Clear" (font_size 8)))
+		(text "S" (rect 21 43 29 62)(font "Intel Clear" (color 0 0 0)(font_size 8)))
 		(line (pt 0 48)(pt 16 48))
 	)
 	(port
 		(pt 0 64)
 		(input)
 		(text "A[31..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
-		(text "A[31..0]" (rect 21 59 68 78)(font "Intel Clear" (font_size 8)))
+		(text "A[31..0]" (rect 21 59 68 78)(font "Intel Clear" (color 0 0 0)(font_size 8)))
 		(line (pt 0 64)(pt 16 64)(line_width 3))
 	)
 	(port
 		(pt 152 32)
 		(output)
 		(text "Y[31..0]" (rect 0 0 47 19)(font "Intel Clear" (font_size 8)))
-		(text "Y[31..0]" (rect 84 27 131 46)(font "Intel Clear" (font_size 8)))
+		(text "Y[31..0]" (rect 84 27 131 46)(font "Intel Clear" (color 0 0 0)(font_size 8)))
 		(line (pt 152 32)(pt 136 32)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 136 80))
 	)
+	(fill (color 0 170 255))
 )
 (symbol
 	(rect 544 312 712 424)
@@ -318,7 +319,7 @@ https://fpgasoftware.intel.com/eula.
 	(drawing
 		(rectangle (rect 16 16 152 96)(color 255 255 255))
 	)
-	(fill (color 0 170 0))
+	(fill (color 0 85 0))
 )
 (connector
 	(pt 688 208)

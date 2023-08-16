@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,13 +16,14 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.2"))
 (symbol
 	(rect 16 16 256 240)
-	(text "ID" (rect 5 0 17 19)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 8 203 24 220)(font "Intel Clear" ))
+	(text "ID" (rect 5 0 20 20)(font "Intel Clear" (font_size 10)))
+	(text "inst" (rect 8 200 33 220)(font "Intel Clear" (font_size 10)))
 	(port
 		(pt 0 32)
 		(input)
@@ -117,15 +118,15 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 240 64)
 		(output)
-		(text "IDrs[4..0]" (rect 0 0 54 19)(font "Intel Clear" (font_size 8)))
-		(text "IDrs[4..0]" (rect 165 59 219 78)(font "Intel Clear" (font_size 8)))
+		(text "IDrm[4..0]" (rect 0 0 60 19)(font "Intel Clear" (font_size 8)))
+		(text "IDrm[4..0]" (rect 159 59 219 78)(font "Intel Clear" (font_size 8)))
 		(line (pt 240 64)(pt 224 64)(line_width 3))
 	)
 	(port
 		(pt 240 80)
 		(output)
-		(text "IDrt[4..0]" (rect 0 0 53 19)(font "Intel Clear" (font_size 8)))
-		(text "IDrt[4..0]" (rect 166 75 219 94)(font "Intel Clear" (font_size 8)))
+		(text "IDrn[4..0]" (rect 0 0 55 19)(font "Intel Clear" (font_size 8)))
+		(text "IDrn[4..0]" (rect 164 75 219 94)(font "Intel Clear" (font_size 8)))
 		(line (pt 240 80)(pt 224 80)(line_width 3))
 	)
 	(port

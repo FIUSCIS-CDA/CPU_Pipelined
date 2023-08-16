@@ -24,7 +24,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 112 32 280 48)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 255 85 0)(font_size 6)))
-	(text "IDrs[4..0]" (rect 5 0 46 17)(font "Intel Clear" (color 255 85 0)))
+	(text "IDrm[4..0]" (rect 5 0 51 17)(font "Intel Clear" (color 255 85 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 255 85 0))
@@ -40,7 +40,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 112 72 280 88)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 255 85 0)(font_size 6)))
-	(text "IDrt[4..0]" (rect 5 0 45 17)(font "Intel Clear" (color 255 85 0)))
+	(text "IDrn[4..0]" (rect 5 0 47 17)(font "Intel Clear" (color 255 85 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 255 85 0))
@@ -72,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 112 152 280 168)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 0 255)(font_size 6)))
-	(text "WBrs[4..0]" (rect 5 0 54 17)(font "Intel Clear" (color 0 0 255)))
+	(text "WBrm[4..0]" (rect 5 0 59 17)(font "Intel Clear" (color 0 0 255)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 0 255))
@@ -88,7 +88,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 112 192 280 208)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 0 255)(font_size 6)))
-	(text "WBrt[4..0]" (rect 5 0 53 17)(font "Intel Clear" (color 0 0 255)))
+	(text "WBrn[4..0]" (rect 5 0 55 17)(font "Intel Clear" (color 0 0 255)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 0 255))
@@ -104,7 +104,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 112 232 280 248)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 0 255)(font_size 6)))
-	(text "WBrd[4..0]" (rect 5 0 55 17)(font "Intel Clear" (color 0 0 255)))
+	(text "WBrp[4..0]" (rect 5 0 55 17)(font "Intel Clear" (color 0 0 255)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 0 255))
@@ -298,7 +298,7 @@ https://fpgasoftware.intel.com/eula.
 (symbol
 	(rect 448 360 568 456)
 	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "WBrdIDrs" (rect 8 75 52 92)(font "Intel Clear" ))
+	(text "WBrpIDrm" (rect 8 75 57 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -327,7 +327,7 @@ https://fpgasoftware.intel.com/eula.
 (symbol
 	(rect 448 832 568 928)
 	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "WBrtIDrs" (rect 8 75 50 92)(font "Intel Clear" ))
+	(text "WBrnIDrm" (rect 8 75 57 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -437,7 +437,7 @@ https://fpgasoftware.intel.com/eula.
 	(pt 656 352)
 )
 (connector
-	(text "WBrdisIDrs" (rect 578 376 629 393)(font "Intel Clear" ))
+	(text "WBrpisIDrm" (rect 578 376 634 393)(font "Intel Clear" ))
 	(pt 568 392)
 	(pt 632 392)
 )
@@ -459,7 +459,7 @@ https://fpgasoftware.intel.com/eula.
 	(pt 568 864)
 )
 (connector
-	(text "WBopisRTYPE_and_WBrdisIDrs" (rect 736 350 753 501)(font "Intel Clear" )(vertical))
+	(text "WBopisRTYPE_and_WBrpisIDrm" (rect 736 350 753 505)(font "Intel Clear" )(vertical))
 	(pt 752 344)
 	(pt 752 488)
 )
@@ -476,7 +476,7 @@ https://fpgasoftware.intel.com/eula.
 	(pt 888 728)
 )
 (connector
-	(text "WBrtisIDrs" (rect 608 748 625 797)(font "Intel Clear" )(vertical))
+	(text "WBrnisIDrm" (rect 608 748 625 804)(font "Intel Clear" )(vertical))
 	(pt 624 864)
 	(pt 624 728)
 )
@@ -485,7 +485,7 @@ https://fpgasoftware.intel.com/eula.
 	(pt 952 720)
 )
 (connector
-	(text "WBopisLWorADDI_and_WBrtisIDrs" (rect 984 562 1001 727)(font "Intel Clear" )(vertical))
+	(text "WBopisLWorADDI_and_WBrnisIDrm" (rect 984 562 1001 734)(font "Intel Clear" )(vertical))
 	(pt 1000 504)
 	(pt 1000 720)
 )

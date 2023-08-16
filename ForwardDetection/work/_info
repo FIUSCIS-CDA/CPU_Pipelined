@@ -1,0 +1,388 @@
+m255
+K4
+z0
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+vADDI
+Z0 !s110 1660751302
+!i10b 1
+!s100 LMl=hmFehAQ5]0X4;JD]F1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+INQC2QSe1DNM3KLkL4lVQV3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection
+w1660751199
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/ADDI.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/ADDI.v
+!i122 13
+Z4 L0 20 32
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1660751302.000000
+!s107 C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/ADDI.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/ADDI.v|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+n@a@d@d@i
+vEQ_5
+R0
+!i10b 1
+!s100 ?][FK97c0[UbK1R4CAz_k3
+R1
+IVAIT4X_7zfd4K`MGFYm@?3
+R2
+R3
+w1660751135
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Checks/EQ_5.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Checks/EQ_5.v
+!i122 10
+L0 20 37
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Checks/EQ_5.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Checks/EQ_5.v|
+!i113 1
+R7
+R8
+n@e@q_5
+vForwardAfromMEMtoEX
+R0
+!i10b 1
+!s100 Who6Mj^9zzAJn>jD;ISM63
+R1
+I3Ch^GDPzJS]c04f5kGFJZ2
+R2
+R3
+w1660751258
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromMEMtoEX.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromMEMtoEX.v
+!i122 1
+Z9 L0 20 70
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromMEMtoEX.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromMEMtoEX.v|
+!i113 1
+R7
+R8
+n@forward@afrom@m@e@mto@e@x
+vForwardAfromMEMtoID
+R0
+!i10b 1
+!s100 MX4OnX<KZ^Sc99eOl7jA81
+R1
+I7m3[YVJR7Afg6S]YPg@QF1
+R2
+R3
+w1660751252
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromMEMtoID.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromMEMtoID.v
+!i122 2
+Z10 L0 20 68
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromMEMtoID.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromMEMtoID.v|
+!i113 1
+R7
+R8
+n@forward@afrom@m@e@mto@i@d
+vForwardAfromWBtoEX
+R0
+!i10b 1
+!s100 BchSLHjCY5@XSbmig6GYd3
+R1
+IVe4F_UUKa]IiAaIO1TCcl0
+R2
+R3
+w1660751247
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromWBtoEX.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromWBtoEX.v
+!i122 3
+Z11 L0 20 76
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromWBtoEX.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromWBtoEX.v|
+!i113 1
+R7
+R8
+n@forward@afrom@w@bto@e@x
+vForwardAfromWBtoID
+R0
+!i10b 1
+!s100 ThdSanYQk>MmR_JTbP:oz2
+R1
+IJBeYh1Y?0A2GjldZ0f^`k0
+R2
+R3
+w1660751240
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromWBtoID.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromWBtoID.v
+!i122 4
+Z12 L0 20 74
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromWBtoID.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardAfromWBtoID.v|
+!i113 1
+R7
+R8
+n@forward@afrom@w@bto@i@d
+vForwardBfromMEMtoEX
+R0
+!i10b 1
+!s100 3bK>b]FFLQgQ3dG4IIQ8S2
+R1
+Iie?D_kYlITHc`1o7JjVQ@0
+R2
+R3
+w1660751234
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromMEMtoEX.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromMEMtoEX.v
+!i122 5
+R9
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromMEMtoEX.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromMEMtoEX.v|
+!i113 1
+R7
+R8
+n@forward@bfrom@m@e@mto@e@x
+vForwardBfromMEMtoID
+R0
+!i10b 1
+!s100 AUAD9_`4=47HJA:Y9m98F3
+R1
+IP^X5Y4=Fg2K5V4OJJGjF03
+R2
+R3
+w1660751222
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromMEMtoID.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromMEMtoID.v
+!i122 6
+R10
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromMEMtoID.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromMEMtoID.v|
+!i113 1
+R7
+R8
+n@forward@bfrom@m@e@mto@i@d
+vForwardBfromWBtoEX
+R0
+!i10b 1
+!s100 mCzZecPJcn8e6Pj;cLb;C0
+R1
+IcW6;n=bz9EWHcnIcXAhan0
+R2
+R3
+w1660751211
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromWBtoEX.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromWBtoEX.v
+!i122 7
+R11
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromWBtoEX.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromWBtoEX.v|
+!i113 1
+R7
+R8
+n@forward@bfrom@w@bto@e@x
+vForwardBfromWBtoID
+R0
+!i10b 1
+!s100 OiM;36Yzm6fKUdH04o_dF0
+R1
+ImenDb2YK>Jc;2<1ki;63L0
+R2
+R3
+w1660751205
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromWBtoID.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromWBtoID.v
+!i122 0
+R12
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromWBtoID.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/ForwardBfromWBtoID.v|
+!i113 1
+R7
+R8
+n@forward@bfrom@w@bto@i@d
+vLW
+R0
+!i10b 1
+!s100 E3?BE7hA3P`R`4RXXh_]K1
+R1
+IWo^9>RPaKaNPiQVL9Nzn72
+R2
+R3
+w1660751038
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/LW.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/LW.v
+!i122 14
+L0 20 26
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/LW.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/LW.v|
+!i113 1
+R7
+R8
+n@l@w
+vNONZERO
+R0
+!i10b 1
+!s100 0?D2>?Zh;BAl;GC?VU^z^3
+R1
+I_A3jS9c5jI0l4hFYiM_OZ1
+R2
+R3
+w1660751143
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Checks/NONZERO.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Checks/NONZERO.v
+!i122 11
+L0 20 20
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Checks/NONZERO.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Checks/NONZERO.v|
+!i113 1
+R7
+R8
+n@n@o@n@z@e@r@o
+vREGCheck
+R0
+!i10b 1
+!s100 0OmM`YA_Gl?lbH;hY7];h3
+R1
+I`O_@3`G0eH]hdC5aYF5@A1
+R2
+R3
+w1660751150
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Checks/REGCheck.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Checks/REGCheck.v
+!i122 9
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Checks/REGCheck.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Checks/REGCheck.v|
+!i113 1
+R7
+R8
+n@r@e@g@check
+vRTYPE
+R0
+!i10b 1
+!s100 >nU=B3M9o[`N`3iG[HIMO3
+R1
+ILQM2[F7lb5N`UI3^RYPW;0
+R2
+R3
+w1660751050
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/RTYPE.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/RTYPE.v
+!i122 12
+L0 20 35
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/RTYPE.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/RTYPE.v|
+!i113 1
+R7
+R8
+n@r@t@y@p@e
+vSLTI
+!s110 1660751303
+!i10b 1
+!s100 1:O3M=M_X:a^47CZ>RS8D1
+R1
+IHP6LeD>AeW?kgh^JoYzg00
+R2
+R3
+Z13 w1660524651
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/SLTI.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/SLTI.v
+!i122 15
+L0 20 29
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/SLTI.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/Instructions/SLTI.v|
+!i113 1
+R7
+R8
+n@s@l@t@i
+vtestbench
+R0
+!i10b 1
+!s100 [_3Ba7Uz7c5YBF^^FlA`O1
+R1
+IBzGQgkP8Ii_jPKR_`edHc1
+R2
+R3
+R13
+8C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/testbench.v
+FC:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/testbench.v
+F../../Test/Test.v
+!i122 8
+L0 10 323
+R5
+r1
+!s85 0
+31
+R6
+!s107 ../../Test/Test.v|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tcickovs/Desktop/CompArch/CPU_Pipelined/ForwardDetection/testbench.v|
+!i113 1
+R7
+R8

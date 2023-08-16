@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Tue Dec 20 13:30:56 2022"
+// CREATED		"Wed Aug 16 14:46:19 2023"
 
 module EX(
 	EXStall,
@@ -30,9 +30,9 @@ module EX(
 	EXALUOut,
 	EXIR,
 	Exop,
-	EXrd,
-	EXrs,
-	EXrt,
+	EXrm,
+	EXrn,
+	EXrp,
 	OLDA,
 	OLDB
 );
@@ -50,13 +50,12 @@ output wire	[31:0] EXALUB;
 output wire	[31:0] EXALUOut;
 output wire	[31:0] EXIR;
 output wire	[5:0] Exop;
-output wire	[4:0] EXrd;
-output wire	[4:0] EXrs;
-output wire	[4:0] EXrt;
+output wire	[4:0] EXrm;
+output wire	[4:0] EXrn;
+output wire	[4:0] EXrp;
 output wire	[31:0] OLDA;
 output wire	[31:0] OLDB;
 
-wire	[4:0] ALUOp;
 wire	[31:0] EXALUBwire;
 wire	[31:0] EXIROUT;
 wire	EXopisADDI;
@@ -64,16 +63,14 @@ wire	EXopisLW;
 wire	EXopisLWorSWorADDI;
 wire	EXopisSLTI;
 wire	EXopisSW;
-wire	[31:0] Lower16BitsSignExtended;
 wire	[31:0] OLDAwire;
 wire	[31:0] OLDBwire;
 wire	[31:0] Temp;
 wire	[31:0] TheConstant0;
 wire	wire_to_ground;
 wire	wire_to_ground2;
-wire	SYNTHESIZED_WIRE_0;
+wire	[6:0] SYNTHESIZED_WIRE_0;
 wire	[31:0] SYNTHESIZED_WIRE_1;
-wire	[31:0] SYNTHESIZED_WIRE_2;
 
 
 
@@ -102,13 +99,10 @@ MUX2_32	b2v_EXIROUTMUX(
 	.Y(EXIROUT));
 
 
-ALU_32	b2v_inst(
-	.A(OLDAwire),
-	.alu_op(ALUOp),
-	.B(OLDBwire),
-	.Overflow(wire_to_ground),
-	.Zero(wire_to_ground2),
-	.Result(SYNTHESIZED_WIRE_1));
+ALUCtl	b2v_inst(
+	.Functcode(EXIROUT[5:0]),
+	.Opcode(Temp[31:26]),
+	.ALUOp(SYNTHESIZED_WIRE_0));
 
 assign	EXopisLWorSWorADDI = EXopisLW | EXopisADDI | EXopisSLTI | EXopisSW;
 
@@ -118,24 +112,14 @@ SLTI	b2v_inst2(
 	.slti_output(EXopisSLTI));
 
 
-ALUCtl	b2v_inst3(
-	.Functcode(EXIROUT[5:0]),
-	.Opcode(Temp[31:26]),
-	.ALUSLL(SYNTHESIZED_WIRE_0),
-	.ALUOp(ALUOp));
-
-
-SLL_32	b2v_inst5(
-	.A(OLDBwire),
+ALU_32	b2v_inst4(
+	.A(OLDAwire),
+	.alu_op(SYNTHESIZED_WIRE_0),
+	.B(OLDBwire),
 	.H(Temp[10:6]),
-	.Y(SYNTHESIZED_WIRE_2));
-
-
-MUX2_32	b2v_inst6(
-	.S(SYNTHESIZED_WIRE_0),
-	.A(SYNTHESIZED_WIRE_1),
-	.B(SYNTHESIZED_WIRE_2),
-	.Y(EXALUOut));
+	.Overflow(wire_to_ground),
+	.Zero(wire_to_ground2),
+	.Result(EXALUOut));
 
 
 ADDI	b2v_isADDI(
@@ -164,13 +148,13 @@ Grounder	b2v_myGrounder2(
 MUX2_32	b2v_OLDBMUX(
 	.S(EXopisLWorSWorADDI),
 	.A(EXALUBwire),
-	.B(Lower16BitsSignExtended),
+	.B(SYNTHESIZED_WIRE_1),
 	.Y(OLDBwire));
 
 
 SE16_32	b2v_SignExtend(
 	.A(EXIROUT[15:0]),
-	.Y(Lower16BitsSignExtended));
+	.Y(SYNTHESIZED_WIRE_1));
 
 
 Zero	b2v_Value0(
@@ -180,9 +164,9 @@ assign	EXALUB = EXALUBwire;
 assign	Temp = Instruction;
 assign	EXIR = EXIROUT;
 assign	Exop[5:0] = EXIROUT[31:26];
-assign	EXrd[4:0] = Temp[15:11];
-assign	EXrs[4:0] = Temp[25:21];
-assign	EXrt[4:0] = Temp[20:16];
+assign	EXrm[4:0] = Temp[25:21];
+assign	EXrn[4:0] = Temp[20:16];
+assign	EXrp[4:0] = Temp[15:11];
 assign	OLDA = OLDAwire;
 assign	OLDB = OLDBwire;
 

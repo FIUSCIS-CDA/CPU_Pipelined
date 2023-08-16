@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed May 18 06:14:20 2022"
+// CREATED		"Wed Aug 16 15:04:53 2023"
 
 module CPU_Pipelined(
 	clk,
@@ -47,9 +47,9 @@ wire	[31:0] EXMEMTower_ALUOut;
 wire	[31:0] EXMEMTower_B;
 wire	[31:0] EXMEMTower_IR;
 wire	[5:0] EXop;
-wire	[4:0] EXrd;
-wire	[4:0] EXrs;
-wire	[4:0] EXrt;
+wire	[4:0] EXrm;
+wire	[4:0] EXrn;
+wire	[4:0] EXrp;
 wire	EXstall;
 wire	EXstall_or_IDstall;
 wire	Fix;
@@ -67,17 +67,17 @@ wire	[31:0] IDEXTower_B;
 wire	[31:0] IDEXTower_IR;
 wire	[31:0] IDIRwire;
 wire	[5:0] IDop;
-wire	[4:0] IDrs;
-wire	[4:0] IDrt;
+wire	[4:0] IDrm;
+wire	[4:0] IDrn;
 wire	IDstall;
 wire	[31:0] IFIDTower_IR;
 wire	[31:0] IFIRwire;
 wire	[5:0] IFop;
 wire	[31:0] MEMIRwire;
 wire	[5:0] MEMop;
-wire	[4:0] MEMrd;
-wire	[4:0] MEMrs;
-wire	[4:0] MEMrt;
+wire	[4:0] MEMrm;
+wire	[4:0] MEMrn;
+wire	[4:0] MEMrp;
 wire	[31:0] MEMValue;
 wire	[31:0] MEMWBTower_IR;
 wire	[31:0] MEMWBTower_Value;
@@ -88,9 +88,9 @@ wire	[4:0] REGtoWrite;
 wire	RF_we;
 wire	[31:0] ValuetoWriteREG;
 wire	[5:0] WBop;
-wire	[4:0] WBrd;
-wire	[4:0] WBrs;
-wire	[4:0] WBrt;
+wire	[4:0] WBrm;
+wire	[4:0] WBrn;
+wire	[4:0] WBrp;
 
 
 
@@ -131,28 +131,28 @@ EX	b2v_EXStage(
 	.EXALUOut(EXALUOut),
 	.EXIR(EXIR_ALTERA_SYNTHESIZED),
 	.Exop(EXop),
-	.EXrd(EXrd),
-	.EXrs(EXrs),
-	.EXrt(EXrt),
+	.EXrm(EXrm),
+	.EXrn(EXrn),
+	.EXrp(EXrp),
 	.OLDA(OLDA),
 	.OLDB(OLDB));
 
 
 ForwardDetection	b2v_ForwardDetectionUnit(
 	.EXop(EXop),
-	.EXrd(EXrd),
-	.EXrs(EXrs),
-	.EXrt(EXrt),
-	.IDrs(IDrs),
-	.IDrt(IDrt),
+	.EXrm(EXrm),
+	.EXrn(EXrn),
+	.EXrp(EXrp),
+	.IDrm(IDrm),
+	.IDrn(IDrn),
 	.MEMop(MEMop),
-	.MEMrd(MEMrd),
-	.MEMrs(MEMrs),
-	.MEMrt(MEMrt),
+	.MEMrm(MEMrm),
+	.MEMrn(MEMrn),
+	.MEMrp(MEMrp),
 	.WBop(WBop),
-	.WBrd(WBrd),
-	.WBrs(WBrs),
-	.WBrt(WBrt),
+	.WBrm(WBrm),
+	.WBrn(WBrn),
+	.WBrp(WBrp),
 	.ForwardA_EX(ForwardA_EX),
 	.ForwardA_ID(ForwardA_ID),
 	.ForwardB_EX(ForwardB_EX),
@@ -190,8 +190,8 @@ ID	b2v_IDStage(
 	.IDIR(IDIRwire),
 	.IDof(ID_beq_offset),
 	.IDop(IDop),
-	.IDrs(IDrs),
-	.IDrt(IDrt));
+	.IDrm(IDrm),
+	.IDrn(IDrn));
 
 
 IFIDTower	b2v_IF_ID_Tower(
@@ -234,22 +234,22 @@ MEMM	b2v_MEMStage(
 	.MEMForward(ForwardedValuefromMEM),
 	.MEMIR(MEMIRwire),
 	.MEMop(MEMop),
-	.MEMrd(MEMrd),
-	.MEMrs(MEMrs),
-	.MEMrt(MEMrt),
+	.MEMrm(MEMrm),
+	.MEMrn(MEMrn),
+	.MEMrp(MEMrp),
 	.MEMValue(MEMValue));
 
 
 StallDetection	b2v_StallDetectionUnit(
 	.EXop(EXop),
-	.EXrd(EXrd),
-	.EXrs(EXrs),
-	.EXrt(EXrt),
+	.EXrm(EXrm),
+	.EXrn(EXrn),
+	.EXrp(EXrp),
 	.IDop(IDop),
-	.IDrs(IDrs),
-	.IDrt(IDrt),
+	.IDrm(IDrm),
+	.IDrn(IDrn),
 	.MEMop(MEMop),
-	.MEMrt(MEMrt),
+	.MEMrn(MEMrn),
 	.IDStall(IDstall),
 	.EXStall(EXstall));
 
@@ -261,10 +261,10 @@ WB	b2v_WBStage(
 	.WBData(ValuetoWriteREG),
 	.WBForward(ForwardedValuefromWB),
 	.WBop(WBop),
-	.WBrd(WBrd),
 	.WBReg(REGtoWrite),
-	.WBrs(WBrs),
-	.WBrt(WBrt));
+	.WBrm(WBrm),
+	.WBrn(WBrn),
+	.WBrp(WBrp));
 
 assign	EXIR = EXIR_ALTERA_SYNTHESIZED;
 assign	IDIR = IDIRwire;

@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,13 +16,14 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.2"))
 (symbol
 	(rect 16 16 296 176)
-	(text "MEMM" (rect 5 0 43 19)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 8 139 24 156)(font "Intel Clear" ))
+	(text "MEMM" (rect 5 0 52 20)(font "Intel Clear" (font_size 10)))
+	(text "inst" (rect 8 136 33 156)(font "Intel Clear" (font_size 10)))
 	(port
 		(pt 0 32)
 		(input)
@@ -68,22 +69,22 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 280 64)
 		(output)
-		(text "MEMrs[4..0]" (rect 0 0 69 19)(font "Intel Clear" (font_size 8)))
-		(text "MEMrs[4..0]" (rect 190 59 259 78)(font "Intel Clear" (font_size 8)))
+		(text "MEMrm[4..0]" (rect 0 0 75 19)(font "Intel Clear" (font_size 8)))
+		(text "MEMrm[4..0]" (rect 184 59 259 78)(font "Intel Clear" (font_size 8)))
 		(line (pt 280 64)(pt 264 64)(line_width 3))
 	)
 	(port
 		(pt 280 80)
 		(output)
-		(text "MEMrt[4..0]" (rect 0 0 68 19)(font "Intel Clear" (font_size 8)))
-		(text "MEMrt[4..0]" (rect 191 75 259 94)(font "Intel Clear" (font_size 8)))
+		(text "MEMrn[4..0]" (rect 0 0 70 19)(font "Intel Clear" (font_size 8)))
+		(text "MEMrn[4..0]" (rect 189 75 259 94)(font "Intel Clear" (font_size 8)))
 		(line (pt 280 80)(pt 264 80)(line_width 3))
 	)
 	(port
 		(pt 280 96)
 		(output)
-		(text "MEMrd[4..0]" (rect 0 0 71 19)(font "Intel Clear" (font_size 8)))
-		(text "MEMrd[4..0]" (rect 188 91 259 110)(font "Intel Clear" (font_size 8)))
+		(text "MEMrp[4..0]" (rect 0 0 71 19)(font "Intel Clear" (font_size 8)))
+		(text "MEMrp[4..0]" (rect 188 91 259 110)(font "Intel Clear" (font_size 8)))
 		(line (pt 280 96)(pt 264 96)(line_width 3))
 	)
 	(port

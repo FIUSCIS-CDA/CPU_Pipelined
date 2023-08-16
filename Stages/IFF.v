@@ -15,14 +15,14 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Aug 17 11:58:18 2022"
+// CREATED		"Wed Aug 16 14:47:31 2023"
 
 module IFF(
 	stall,
 	reset,
 	clk,
-	Fix,
 	Taken,
+	Fix,
 	beq_offset,
 	Pick,
 	_PC,
@@ -34,8 +34,8 @@ module IFF(
 input wire	stall;
 input wire	reset;
 input wire	clk;
-input wire	Fix;
 input wire	Taken;
+input wire	Fix;
 input wire	[15:0] beq_offset;
 input wire	[1:0] Pick;
 output wire	[31:0] _PC;
@@ -45,7 +45,6 @@ output wire	[5:0] IFop;
 wire	[31:0] FixedBranchPC;
 wire	[31:0] FixforPredictNotTaken;
 wire	[31:0] FixforPredictTaken;
-wire	[31:0] IDbeqtarget;
 wire	[31:0] IDbeqtargettimes4;
 wire	[31:0] IFbeqtarget_SE;
 wire	[31:0] IFbeqtargettimes4;
@@ -55,14 +54,15 @@ wire	[31:0] Instruction;
 wire	[31:0] newPC;
 wire	[31:0] NewPCforBEQ;
 wire	[31:0] newValueForPC;
-wire	[4:0] Op;
+wire	[6:0] Op;
 wire	[31:0] PC;
 wire	[31:0] PCJump;
 wire	[31:0] PredictNotTakenNewPC;
 wire	[31:0] PredictTakenNewPC;
-wire	[31:0] TheConstant0;
-wire	wire_to_ground;
 wire	wire_to_ground2;
+wire	[31:0] SYNTHESIZED_WIRE_0;
+wire	[31:0] SYNTHESIZED_WIRE_1;
+wire	SYNTHESIZED_WIRE_2;
 
 
 
@@ -80,23 +80,24 @@ INC4_32	b2v_add4_2(
 
 
 
-ALU_32	b2v_inst(
-	.A(PC),
-	.alu_op(Op),
-	.B(IDbeqtargettimes4),
-	.Overflow(wire_to_ground),
-	.Zero(wire_to_ground2),
-	.Result(FixforPredictTaken));
-
-
 SL2_32	b2v_inst1(
-	.A(IDbeqtarget),
+	.A(SYNTHESIZED_WIRE_0),
 	.Y(IDbeqtargettimes4));
 
 
 SL2_32	b2v_inst2(
 	.A(IFbeqtarget_SE),
 	.Y(IFbeqtargettimes4));
+
+
+ALU_32	b2v_inst3(
+	.A(PC),
+	.alu_op(Op),
+	.B(IDbeqtargettimes4),
+	
+	.Overflow(wire_to_ground2),
+	.Zero(SYNTHESIZED_WIRE_2),
+	.Result(FixforPredictTaken));
 
 
 MUX2_32	b2v_MUXFixPC(
@@ -109,7 +110,7 @@ MUX2_32	b2v_MUXFixPC(
 MUX2_32	b2v_MUXIFIR(
 	.S(Fix),
 	.A(Instruction),
-	.B(TheConstant0),
+	.B(SYNTHESIZED_WIRE_1),
 	.Y(IFIR_ALTERA_SYNTHESIZED));
 
 
@@ -140,7 +141,7 @@ Adder_32	b2v_MYAdder2(
 
 
 Grounder	b2v_myGround(
-	.Input_To_Ground(wire_to_ground));
+	.Input_To_Ground(SYNTHESIZED_WIRE_2));
 
 
 Grounder	b2v_myGround2(
@@ -176,7 +177,7 @@ Flopr_32	b2v_PCREG(
 
 SE16_32	b2v_SignExtend(
 	.A(beq_offset),
-	.Y(IDbeqtarget));
+	.Y(SYNTHESIZED_WIRE_0));
 
 
 SE16_32	b2v_SignExtend2(
@@ -185,15 +186,17 @@ SE16_32	b2v_SignExtend2(
 
 
 Zero	b2v_Value0(
-	.Zero(TheConstant0));
+	.Zero(SYNTHESIZED_WIRE_1));
 
 assign	_PC = PC;
 assign	IFIR = IFIR_ALTERA_SYNTHESIZED;
 assign	IFop[5:0] = IFIR_ALTERA_SYNTHESIZED[31:26];
-assign	Op[3] = 1;
 assign	Op[0] = 0;
-assign	Op[2] = 1;
 assign	Op[1] = 1;
-assign	Op[4] = 0;
+assign	Op[2] = 0;
+assign	Op[3] = 1;
+assign	Op[4] = 1;
+assign	Op[5] = 0;
+assign	Op[6] = 0;
 
 endmodule

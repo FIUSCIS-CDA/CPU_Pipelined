@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed May 18 07:07:50 2022"
+// CREATED		"Wed Aug 16 14:45:47 2023"
 
 module Branch_Prediction(
 	Taken,

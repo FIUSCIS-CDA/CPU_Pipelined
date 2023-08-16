@@ -24,7 +24,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 88 80 256 96)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 174 174 0)(font_size 6)))
-	(text "EXrs[4..0]" (rect 5 0 49 17)(font "Intel Clear" (color 174 174 0)))
+	(text "EXrm[4..0]" (rect 5 0 54 17)(font "Intel Clear" (color 174 174 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 182 182 0))
@@ -40,7 +40,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 88 120 256 136)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 184 184 0)(font_size 6)))
-	(text "EXrt[4..0]" (rect 5 0 48 17)(font "Intel Clear" (color 184 184 0)))
+	(text "EXrn[4..0]" (rect 5 0 51 17)(font "Intel Clear" (color 184 184 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 206 206 0))
@@ -56,7 +56,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 88 160 256 176)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 192 192 0)(font_size 6)))
-	(text "EXrd[4..0]" (rect 5 0 51 17)(font "Intel Clear" (color 192 192 0)))
+	(text "EXrp[4..0]" (rect 5 0 51 17)(font "Intel Clear" (color 192 192 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 188 188 0))
@@ -88,7 +88,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 88 240 256 256)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 0 255)(font_size 6)))
-	(text "WBrs[4..0]" (rect 5 0 54 17)(font "Intel Clear" (color 0 0 255)))
+	(text "WBrm[4..0]" (rect 5 0 59 17)(font "Intel Clear" (color 0 0 255)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 0 255))
@@ -104,7 +104,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 88 280 256 296)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 0 255)(font_size 6)))
-	(text "WBrt[4..0]" (rect 5 0 53 17)(font "Intel Clear" (color 0 0 255)))
+	(text "WBrn[4..0]" (rect 5 0 55 17)(font "Intel Clear" (color 0 0 255)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 0 255))
@@ -120,7 +120,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 88 320 256 336)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 0 255)(font_size 6)))
-	(text "WBrd[4..0]" (rect 5 0 55 17)(font "Intel Clear" (color 0 0 255)))
+	(text "WBrp[4..0]" (rect 5 0 55 17)(font "Intel Clear" (color 0 0 255)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 0 255))
@@ -314,7 +314,7 @@ https://fpgasoftware.intel.com/eula.
 (symbol
 	(rect 440 464 560 560)
 	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "WBrdEXrs" (rect 8 75 56 92)(font "Intel Clear" ))
+	(text "WBrpEXrm" (rect 8 75 61 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -343,7 +343,7 @@ https://fpgasoftware.intel.com/eula.
 (symbol
 	(rect 448 816 568 912)
 	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "WBrtEXrs" (rect 8 75 54 92)(font "Intel Clear" ))
+	(text "WBrnEXrm" (rect 8 75 61 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -445,7 +445,7 @@ https://fpgasoftware.intel.com/eula.
 	(pt 624 384)
 )
 (connector
-	(text "WBrdisEXrs" (rect 570 480 625 497)(font "Intel Clear" ))
+	(text "WBrpisEXrm" (rect 570 480 630 497)(font "Intel Clear" ))
 	(pt 560 496)
 	(pt 624 496)
 )
@@ -467,7 +467,7 @@ https://fpgasoftware.intel.com/eula.
 	(pt 640 744)
 )
 (connector
-	(text "WBrtisEXrs" (rect 578 832 631 849)(font "Intel Clear" ))
+	(text "WBrnisEXrm" (rect 578 832 638 849)(font "Intel Clear" ))
 	(pt 616 848)
 	(pt 568 848)
 )
@@ -476,7 +476,7 @@ https://fpgasoftware.intel.com/eula.
 	(pt 744 448)
 )
 (connector
-	(text "WBopisRTYPE_and_WBrdisEXrs" (rect 728 451 745 605)(font "Intel Clear" )(vertical))
+	(text "WBopisRTYPE_and_WBrpisEXrm" (rect 728 451 745 610)(font "Intel Clear" )(vertical))
 	(pt 744 448)
 	(pt 744 592)
 )
@@ -497,7 +497,7 @@ https://fpgasoftware.intel.com/eula.
 	(pt 984 800)
 )
 (connector
-	(text "WBopisLWorADDI_and_WBrtisEXrs" (rect 992 655 1009 823)(font "Intel Clear" )(vertical))
+	(text "WBopisLWorADDI_and_WBrnisEXrm" (rect 992 655 1009 830)(font "Intel Clear" )(vertical))
 	(pt 1008 608)
 	(pt 1008 800)
 )

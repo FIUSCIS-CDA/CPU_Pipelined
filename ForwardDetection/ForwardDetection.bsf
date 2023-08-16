@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,25 +16,26 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.2"))
 (symbol
 	(rect 16 16 256 304)
-	(text "ForwardDetection" (rect 5 0 110 19)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 8 267 24 284)(font "Intel Clear" ))
+	(text "ForwardDetection" (rect 5 0 132 20)(font "Intel Clear" (font_size 10)))
+	(text "inst" (rect 8 264 33 284)(font "Intel Clear" (font_size 10)))
 	(port
 		(pt 0 32)
 		(input)
-		(text "IDrs[4..0]" (rect 0 0 54 19)(font "Intel Clear" (font_size 8)))
-		(text "IDrs[4..0]" (rect 21 27 75 46)(font "Intel Clear" (font_size 8)))
+		(text "IDrm[4..0]" (rect 0 0 60 19)(font "Intel Clear" (font_size 8)))
+		(text "IDrm[4..0]" (rect 21 27 81 46)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "IDrt[4..0]" (rect 0 0 53 19)(font "Intel Clear" (font_size 8)))
-		(text "IDrt[4..0]" (rect 21 43 74 62)(font "Intel Clear" (font_size 8)))
+		(text "IDrn[4..0]" (rect 0 0 55 19)(font "Intel Clear" (font_size 8)))
+		(text "IDrn[4..0]" (rect 21 43 76 62)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
@@ -47,22 +48,22 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 80)
 		(input)
-		(text "EXrs[4..0]" (rect 0 0 56 19)(font "Intel Clear" (font_size 8)))
-		(text "EXrs[4..0]" (rect 21 75 77 94)(font "Intel Clear" (font_size 8)))
+		(text "EXrm[4..0]" (rect 0 0 62 19)(font "Intel Clear" (font_size 8)))
+		(text "EXrm[4..0]" (rect 21 75 83 94)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
 		(pt 0 96)
 		(input)
-		(text "EXrt[4..0]" (rect 0 0 55 19)(font "Intel Clear" (font_size 8)))
-		(text "EXrt[4..0]" (rect 21 91 76 110)(font "Intel Clear" (font_size 8)))
+		(text "EXrn[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
+		(text "EXrn[4..0]" (rect 21 91 78 110)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 96)(pt 16 96)(line_width 3))
 	)
 	(port
 		(pt 0 112)
 		(input)
-		(text "EXrd[4..0]" (rect 0 0 59 19)(font "Intel Clear" (font_size 8)))
-		(text "EXrd[4..0]" (rect 21 107 80 126)(font "Intel Clear" (font_size 8)))
+		(text "EXrp[4..0]" (rect 0 0 59 19)(font "Intel Clear" (font_size 8)))
+		(text "EXrp[4..0]" (rect 21 107 80 126)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 112)(pt 16 112)(line_width 3))
 	)
 	(port
@@ -75,22 +76,22 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 144)
 		(input)
-		(text "MEMrs[4..0]" (rect 0 0 69 19)(font "Intel Clear" (font_size 8)))
-		(text "MEMrs[4..0]" (rect 21 139 90 158)(font "Intel Clear" (font_size 8)))
+		(text "MEMrm[4..0]" (rect 0 0 75 19)(font "Intel Clear" (font_size 8)))
+		(text "MEMrm[4..0]" (rect 21 139 96 158)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 144)(pt 16 144)(line_width 3))
 	)
 	(port
 		(pt 0 160)
 		(input)
-		(text "MEMrt[4..0]" (rect 0 0 68 19)(font "Intel Clear" (font_size 8)))
-		(text "MEMrt[4..0]" (rect 21 155 89 174)(font "Intel Clear" (font_size 8)))
+		(text "MEMrn[4..0]" (rect 0 0 70 19)(font "Intel Clear" (font_size 8)))
+		(text "MEMrn[4..0]" (rect 21 155 91 174)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 160)(pt 16 160)(line_width 3))
 	)
 	(port
 		(pt 0 176)
 		(input)
-		(text "MEMrd[4..0]" (rect 0 0 71 19)(font "Intel Clear" (font_size 8)))
-		(text "MEMrd[4..0]" (rect 21 171 92 190)(font "Intel Clear" (font_size 8)))
+		(text "MEMrp[4..0]" (rect 0 0 71 19)(font "Intel Clear" (font_size 8)))
+		(text "MEMrp[4..0]" (rect 21 171 92 190)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 176)(pt 16 176)(line_width 3))
 	)
 	(port
@@ -103,22 +104,22 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 208)
 		(input)
-		(text "WBrs[4..0]" (rect 0 0 61 19)(font "Intel Clear" (font_size 8)))
-		(text "WBrs[4..0]" (rect 21 203 82 222)(font "Intel Clear" (font_size 8)))
+		(text "WBrm[4..0]" (rect 0 0 67 19)(font "Intel Clear" (font_size 8)))
+		(text "WBrm[4..0]" (rect 21 203 88 222)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 208)(pt 16 208)(line_width 3))
 	)
 	(port
 		(pt 0 224)
 		(input)
-		(text "WBrt[4..0]" (rect 0 0 60 19)(font "Intel Clear" (font_size 8)))
-		(text "WBrt[4..0]" (rect 21 219 81 238)(font "Intel Clear" (font_size 8)))
+		(text "WBrn[4..0]" (rect 0 0 62 19)(font "Intel Clear" (font_size 8)))
+		(text "WBrn[4..0]" (rect 21 219 83 238)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 224)(pt 16 224)(line_width 3))
 	)
 	(port
 		(pt 0 240)
 		(input)
-		(text "WBrd[4..0]" (rect 0 0 63 19)(font "Intel Clear" (font_size 8)))
-		(text "WBrd[4..0]" (rect 21 235 84 254)(font "Intel Clear" (font_size 8)))
+		(text "WBrp[4..0]" (rect 0 0 63 19)(font "Intel Clear" (font_size 8)))
+		(text "WBrp[4..0]" (rect 21 235 84 254)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 240)(pt 16 240)(line_width 3))
 	)
 	(port

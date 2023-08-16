@@ -15,23 +15,23 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed May 18 07:04:59 2022"
+// CREATED		"Wed Aug 16 15:00:55 2023"
 
 module ForwardDetection(
 	EXop,
-	EXrd,
-	EXrs,
-	EXrt,
-	IDrs,
-	IDrt,
+	EXrm,
+	EXrn,
+	EXrp,
+	IDrm,
+	IDrn,
 	MEMop,
-	MEMrd,
-	MEMrs,
-	MEMrt,
+	MEMrm,
+	MEMrn,
+	MEMrp,
 	WBop,
-	WBrd,
-	WBrs,
-	WBrt,
+	WBrm,
+	WBrn,
+	WBrp,
 	ForwardA_EX,
 	ForwardA_ID,
 	ForwardB_EX,
@@ -40,19 +40,19 @@ module ForwardDetection(
 
 
 input wire	[5:0] EXop;
-input wire	[4:0] EXrd;
-input wire	[4:0] EXrs;
-input wire	[4:0] EXrt;
-input wire	[4:0] IDrs;
-input wire	[4:0] IDrt;
+input wire	[4:0] EXrm;
+input wire	[4:0] EXrn;
+input wire	[4:0] EXrp;
+input wire	[4:0] IDrm;
+input wire	[4:0] IDrn;
 input wire	[5:0] MEMop;
-input wire	[4:0] MEMrd;
-input wire	[4:0] MEMrs;
-input wire	[4:0] MEMrt;
+input wire	[4:0] MEMrm;
+input wire	[4:0] MEMrn;
+input wire	[4:0] MEMrp;
 input wire	[5:0] WBop;
-input wire	[4:0] WBrd;
-input wire	[4:0] WBrs;
-input wire	[4:0] WBrt;
+input wire	[4:0] WBrm;
+input wire	[4:0] WBrn;
+input wire	[4:0] WBrp;
 output wire	[1:0] ForwardA_EX;
 output wire	[1:0] ForwardA_ID;
 output wire	[1:0] ForwardB_EX;
@@ -75,87 +75,87 @@ wire	NOTBMEMtoID;
 
 
 
-ForwardAfromMEMtoEX	b2v_AMEMEX(
-	.EXrd(EXrd),
-	.EXrs(EXrs),
-	.EXrt(EXrt),
+ForwardAfromMEMtoEX	b2v_FWAMEMEX(
+	.EXrm(EXrm),
+	.EXrn(EXrn),
+	.EXrp(EXrp),
 	.MEMop(MEMop),
-	.MEMrd(MEMrd),
-	.MEMrs(MEMrs),
-	.MEMrt(MEMrt),
+	.MEMrm(MEMrm),
+	.MEMrn(MEMrn),
+	.MEMrp(MEMrp),
 	.Y(ForwardA_EX_ALTERA_SYNTHESIZED[0]));
 
 
-ForwardAfromMEMtoID	b2v_AMEMID(
-	.IDrs(IDrs),
-	.IDrt(IDrt),
+ForwardAfromMEMtoID	b2v_FWAMEMID(
+	.IDrm(IDrm),
+	.IDrn(IDrn),
 	.MEMop(MEMop),
-	.MEMrd(MEMrd),
-	.MEMrs(MEMrs),
-	.MEMrt(MEMrt),
+	.MEMrm(MEMrm),
+	.MEMrn(MEMrn),
+	.MEMrp(MEMrp),
 	.Y(ForwardA_ID_ALTERA_SYNTHESIZED[0]));
 
 
-ForwardAfromWBtoEX	b2v_AWBEX(
-	.EXrd(EXrd),
-	.EXrs(EXrs),
-	.EXrt(EXrt),
+ForwardAfromWBtoEX	b2v_FWAWBEX(
+	.EXrm(EXrm),
+	.EXrn(EXrn),
+	.EXrp(EXrp),
 	.WBop(WBop),
-	.WBrd(WBrd),
-	.WBrs(WBrs),
-	.WBrt(WBrt),
+	.WBrm(WBrm),
+	.WBrn(WBrn),
+	.WBrp(WBrp),
 	.Y(AWBtoEX));
 
 
-ForwardAfromWBtoID	b2v_AWBID(
-	.IDrs(IDrs),
-	.IDrt(IDrt),
+ForwardAfromWBtoID	b2v_FWAWBID(
+	.IDrm(IDrm),
+	.IDrn(IDrn),
 	.WBop(WBop),
-	.WBrd(WBrd),
-	.WBrs(WBrs),
-	.WBrt(WBrt),
+	.WBrm(WBrm),
+	.WBrn(WBrn),
+	.WBrp(WBrp),
 	.Y(AWBtoID));
 
 
-ForwardBfromMEMtoEX	b2v_BMEMEX(
-	.EXrd(EXrd),
-	.EXrs(EXrs),
-	.EXrt(EXrt),
+ForwardBfromMEMtoEX	b2v_FWBMEMEX(
+	.EXrm(EXrm),
+	.EXrn(EXrn),
+	.EXrp(EXrp),
 	.MEMop(MEMop),
-	.MEMrd(MEMrd),
-	.MEMrs(MEMrs),
-	.MEMrt(MEMrt),
+	.MEMrm(MEMrm),
+	.MEMrn(MEMrn),
+	.MEMrp(MEMrp),
 	.Y(ForwardB_EX_ALTERA_SYNTHESIZED[0]));
 
 
-ForwardBfromMEMtoID	b2v_BMEMID(
-	.IDrs(IDrs),
-	.IDrt(IDrt),
+ForwardBfromMEMtoID	b2v_FWBMEMID(
+	.IDrm(IDrm),
+	.IDrn(IDrn),
 	.MEMop(MEMop),
-	.MEMrd(MEMrd),
-	.MEMrs(MEMrs),
-	.MEMrt(MEMrt),
+	.MEMrm(MEMrm),
+	.MEMrn(MEMrn),
+	.MEMrp(MEMrp),
 	.Y(ForwardB_ID_ALTERA_SYNTHESIZED[0]));
 
 
-ForwardBfromWBtoEX	b2v_BWBEX(
-	.EXrd(EXrd),
-	.EXrs(EXrs),
-	.EXrt(EXrt),
+ForwardBfromWBtoEX	b2v_FWBWBEX(
+	.EXrm(EXrm),
+	.EXrn(EXrn),
+	.EXrp(EXrp),
 	.WBop(WBop),
-	.WBrd(WBrd),
-	.WBrs(WBrs),
-	.WBrt(WBrt),
+	.WBrm(WBrm),
+	.WBrn(WBrn),
+	.WBrp(WBrp),
 	.Y(BWBtoEX));
 
 
-ForwardBfromWBtoID	b2v_BWBID(
-	.IDrs(IDrs),
-	.IDrt(IDrt),
+ForwardBfromWBtoID	b2v_FWBWBID(
+	.IDrm(IDrm),
+	.IDrn(IDrn),
 	.WBop(WBop),
-	.WBrd(WBrd),
-	.WBrs(WBrs),
-	.WBrt(WBrt),
+	.WBrm(WBrm),
+	.WBrn(WBrn),
+	.WBrp(WBrp),
 	.Y(BWBtoID));
 
 assign	NOTBMEMtoEX =  ~ForwardB_EX_ALTERA_SYNTHESIZED[0];

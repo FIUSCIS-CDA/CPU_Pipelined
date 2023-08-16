@@ -54,7 +54,7 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(output)
-	(rect 1016 408 1192 424)
+	(rect 1040 408 1216 424)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (color 0 0 255)(font_size 6)))
 	(text "Y" (rect 90 0 98 12)(font "Arial" (color 0 0 255)))
 	(pt 0 8)
@@ -472,23 +472,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 776 336)
 )
 (connector
-	(pt 680 360)
-	(pt 704 360)
-)
-(connector
-	(pt 704 360)
-	(pt 704 376)
-)
-(connector
-	(text "NOTOp29" (rect 704 360 751 377)(font "Intel Clear" ))
-	(pt 704 376)
-	(pt 736 376)
-)
-(connector
-	(pt 736 376)
-	(pt 736 352)
-)
-(connector
 	(pt 736 352)
 	(pt 776 352)
 )
@@ -825,28 +808,22 @@ https://fpgasoftware.intel.com/eula.
 	(color 255 0 255)
 )
 (connector
+	(pt 736 352)
+	(pt 736 360)
+)
+(connector
+	(text "NOTOp29" (rect 704 344 751 361)(font "Intel Clear" ))
+	(pt 680 360)
+	(pt 736 360)
+)
+(connector
 	(pt 992 480)
-	(pt 1016 480)
+	(pt 1040 480)
 	(color 0 0 255)
 )
 (connector
-	(pt 1016 480)
-	(pt 1016 440)
-	(color 0 0 255)
-)
-(connector
-	(pt 1016 440)
-	(pt 984 440)
-	(color 0 0 255)
-)
-(connector
-	(pt 984 440)
-	(pt 984 416)
-	(color 0 0 255)
-)
-(connector
-	(pt 984 416)
-	(pt 1016 416)
+	(pt 1040 480)
+	(pt 1040 416)
 	(color 0 0 255)
 )
 (junction (pt 544 280))
