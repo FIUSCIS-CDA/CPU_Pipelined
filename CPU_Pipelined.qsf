@@ -127,6 +127,8 @@ set_global_assignment -name VERILOG_FILE ../DM/DM_synch.v
 set_global_assignment -name BDF_FILE ../ALU_32/OverflowDetection.bdf
 set_global_assignment -name BDF_FILE ../MUX4_32/MUX4_32.bdf
 set_global_assignment -name BDF_FILE ../Grounder/Grounder.bdf
+set_global_assignment -name BDF_FILE ../Multiplier_32/Multiplier_32.bdf
+set_global_assignment -name BDF_FILE ../OneBitAdderHalf/OneBitAdderHalf.bdf
 set_global_assignment -name BDF_FILE ../SLL_32/SLL_32.bdf
 
 
