@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Aug 16 14:47:10 2023"
+// CREATED		"Wed Nov 22 09:23:02 2023"
 
 module StallDetection(
 	EXop,
@@ -53,6 +53,7 @@ wire	EXopisLWorSWorADDI_and_EXRAWhazard;
 wire	EXopisRTYPE;
 wire	EXopisRTYPE_and_EXRAWhazard;
 wire	EXopisRTYPE_and_RAWhazardonEXrp;
+wire	EXopisSLTI;
 wire	EXopisSW;
 wire	EXrnisIDrm;
 wire	EXrnisIDrmorIDrn;
@@ -154,6 +155,13 @@ assign	IDRAWhazard = EXopisLWorADDI_and_RAWhazardonEXrn | MEMopisLW_and_RAWhazar
 
 assign	EXStall = EXopisRTYPE_and_EXRAWhazard | EXopisLWorSWorADDI_and_EXRAWhazard | SYNTHESIZED_WIRE_0;
 
+
+SLTI	b2v_inst11(
+	.Op(EXop),
+	.slti_output(EXopisSLTI));
+
+assign	EXopisLWorSWorADDI = EXopisSLTI | EXopisSW | EXopisADDI | EXopisLW;
+
 assign	IDStall = SYNTHESIZED_WIRE_1 & IDRAWhazard;
 
 assign	EXrpisIDrmorIDrn = EXrpisIDrn | EXrpisIDrm;
@@ -171,8 +179,6 @@ assign	EXopisRTYPE_and_EXRAWhazard = EXopisRTYPE & MEMopisLW_and_RAWhazardonMEMr
 assign	EXopisLWorSWorADDI_and_EXRAWhazard = EXopisLWorSWorADDI & MEMopisLW_and_MEMrnisNOT0;
 
 assign	EXopisRTYPE_and_RAWhazardonEXrp = EXopisRTYPE & EXrpisIDrmorIDrn;
-
-assign	EXopisLWorSWorADDI = EXopisSW | EXopisADDI | EXopisLW;
 
 assign	MEMopisLW_and_RAWhazardonMEMrn = MEMopisLW & MEMrnisIDrmorIDrn;
 
