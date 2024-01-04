@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Aug 16 14:46:28 2023"
+// CREATED		"Thu Jan 04 11:29:21 2024"
 
 module ALUCtl(
 	Functcode,
@@ -36,8 +36,10 @@ wire	ORinstruction;
 wire	SLTinstruction;
 wire	SUBinstruction;
 wire	SWinstruction;
-wire	SYNTHESIZED_WIRE_4;
+wire	SYNTHESIZED_WIRE_6;
 wire	SYNTHESIZED_WIRE_3;
+wire	SYNTHESIZED_WIRE_4;
+wire	SYNTHESIZED_WIRE_5;
 
 
 
@@ -46,27 +48,34 @@ wire	SYNTHESIZED_WIRE_3;
 
 SLTI	b2v_inst1(
 	.Op(Opcode),
-	.slti_output(SYNTHESIZED_WIRE_4));
+	.slti_output(SYNTHESIZED_WIRE_6));
 
 assign	SYNTHESIZED_WIRE_3 = LWinstruction | ADDinstruction | SWinstruction | SUBinstruction | SLTinstruction | ADDIinstruction;
 
-assign	ALUOp_ALTERA_SYNTHESIZED[4] = SLTinstruction | SYNTHESIZED_WIRE_4 | SUBinstruction;
+assign	ALUOp_ALTERA_SYNTHESIZED[4] = SLTinstruction | SYNTHESIZED_WIRE_6 | SUBinstruction;
 
-assign	ALUOp_ALTERA_SYNTHESIZED[0] = SYNTHESIZED_WIRE_4 | ORinstruction | SLTinstruction;
+assign	ALUOp_ALTERA_SYNTHESIZED[0] = SYNTHESIZED_WIRE_6 | ORinstruction | SLTinstruction;
 
-assign	ALUOp_ALTERA_SYNTHESIZED[1] = SYNTHESIZED_WIRE_4 | SYNTHESIZED_WIRE_3;
+assign	ALUOp_ALTERA_SYNTHESIZED[1] = SYNTHESIZED_WIRE_6 | SYNTHESIZED_WIRE_3;
 
 
 SLL	b2v_inst6(
 	.Functcode(Functcode),
 	.Opcode(Opcode),
-	.Y(ALUOp_ALTERA_SYNTHESIZED[6]));
+	.Y(SYNTHESIZED_WIRE_4));
 
 
 MULT	b2v_inst7(
 	.Funct(Functcode),
 	.Op(Opcode),
 	.Y(ALUOp_ALTERA_SYNTHESIZED[2]));
+
+
+LUI	b2v_inst8(
+	.Op(Opcode),
+	.lui_output(SYNTHESIZED_WIRE_5));
+
+assign	ALUOp_ALTERA_SYNTHESIZED[6] = SYNTHESIZED_WIRE_4 | SYNTHESIZED_WIRE_5;
 
 
 ADD	b2v_isADD(
