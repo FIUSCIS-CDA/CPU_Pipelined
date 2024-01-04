@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Aug 16 14:48:55 2023"
+// CREATED		"Thu Jan 04 12:08:08 2024"
 
 module ForwardAfromMEMtoEX(
 	EXrm,
@@ -46,6 +46,7 @@ wire	MEMrnisEXrm;
 wire	MEMrpisEXrm;
 wire	SYNTHESIZED_WIRE_0;
 wire	SYNTHESIZED_WIRE_1;
+wire	SYNTHESIZED_WIRE_2;
 
 
 
@@ -53,15 +54,20 @@ wire	SYNTHESIZED_WIRE_1;
 
 SLTI	b2v_inst(
 	.Op(MEMop),
-	.slti_output(SYNTHESIZED_WIRE_0));
+	.slti_output(SYNTHESIZED_WIRE_1));
 
-assign	SYNTHESIZED_WIRE_1 = SYNTHESIZED_WIRE_0 | MEMopisADDI;
+
+LUI	b2v_inst1(
+	.Op(MEMop),
+	.lui_output(SYNTHESIZED_WIRE_0));
+
+assign	SYNTHESIZED_WIRE_2 = SYNTHESIZED_WIRE_0 | SYNTHESIZED_WIRE_1 | MEMopisADDI;
 
 assign	MEMopisRTYPE_and_MEMrpisEXrm = MEMopisRTYPE & MEMrpisEXrm;
 
 assign	Y = MEMopisADDI_and_MEMrnisEXrm | MEMopisRTYPE_and_MEMrpisEXrm;
 
-assign	MEMopisADDI_and_MEMrnisEXrm = SYNTHESIZED_WIRE_1 & MEMrnisEXrm;
+assign	MEMopisADDI_and_MEMrnisEXrm = SYNTHESIZED_WIRE_2 & MEMrnisEXrm;
 
 
 ADDI	b2v_MEMopADDI(
