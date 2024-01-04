@@ -5,7 +5,8 @@
        SameBit,  MUX2,  Flopr_32, Flopenr_32, Flopr, DSwitch, MUX2_5, MUX2_32,
        Four,  SE16_32,  SL2_32,  RF,  Flopenr,  DESwitch,  MUX4_32,   MUX3_32,
        MUX32_32,  MUX32,  Decoder_32, MUX4, MUX3, ALU_32, IM, DM_synch, SPLICE_PCJ, 
-       ALUBit31, ALUBits0To30, OneBitAdder, INC4_32, Adder_32, Grounder, OverflowDetection
+       ALUBit31, ALUBits0To30, OneBitAdder, INC4_32, Adder_32, Grounder, OverflowDetection,
+       Sixteen
 
 #### INPUTS
 Name  | Size(Bits)
@@ -38,6 +39,9 @@ WBIR  | 32
        WBIR: Instruction in WB state
 
 #### SUPPORTED INSTRUCTIONS
+       LUI (FA23)
+       MFLO (SP23)
+       MULT (SP23)
        SLL (FA22)
        SLTI (SP22)
        BNE (SP21)
