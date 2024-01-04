@@ -11,10 +11,10 @@ module testbench();
 `include "../../Test/Test.v"
 ///////////////////////////////////////////////////////////////////////////////////
 // Inputs: MEMop, WBop (6-bit)
-//         EXrd, EXrs, EXrt, IDs, IDrt, MEMrt,
-//         MEMrd, WBrt, WBrd, MEMrs, WBrs (5-bit)
+//         EXrp, EXrm, EXrn, IDs, IDrn, MEMrn,
+//         MEMrp, WBrn, WBrp, MEMrm, WBrm (5-bit)
   reg[5:0] MEMop, WBop;
-  reg[4:0] EXrd, EXrs, EXrt, IDrs, IDrt, MEMrt, MEMrd, WBrt, WBrd, MEMrs, WBrs;
+  reg[4:0] EXrp, EXrm, EXrn, IDrm, IDrn, MEMrn, MEMrp, WBrn, WBrp, MEMrm, WBrm;
 ///////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 // Outputs: forwardBfromWBtoID, forwardBfromWBtoEX, forwardBfromMEMtoID, forwardBfromMEMtoEX,
@@ -33,6 +33,7 @@ module testbench();
    parameter ADDI = 6'b001000;
    parameter BNE = 6'b000101;
    parameter SLTI = 6'b001010;
+   parameter LUI = 6'b001111;
    ///////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
@@ -43,15 +44,15 @@ task initialState;
    begin
       WBop = 6'b000000;
       MEMop = 6'b000000;      
-      EXrd = 5'b00001;
-      EXrs = 5'b00010;
-      EXrt = 5'b00011;
-      IDrs = 5'b00100;
-      IDrt = 5'b00101;
-      MEMrt = 5'b00110;
-      MEMrd = 5'b00111;
-      WBrt = 5'b01000;
-      WBrd = 5'b01001;
+      EXrp = 5'b00001;
+      EXrm = 5'b00010;
+      EXrn = 5'b00011;
+      IDrm = 5'b00100;
+      IDrn = 5'b00101;
+      MEMrn = 5'b00110;
+      MEMrp = 5'b00111;
+      WBrn = 5'b01000;
+      WBrp = 5'b01001;
    end
 endtask
 ///////////////////////////////////////////////////////////////////////////
@@ -74,160 +75,192 @@ endtask
 ///////////////////////////////////////////////////////////////////////////
 
 
-ForwardAfromMEMtoEX unit0(.EXrd(EXrd),.EXrs(EXrs),.EXrt(EXrt),.MEMop(MEMop),
-                          .MEMrd(MEMrd),.MEMrs(MEMrs),.MEMrt(MEMrt),.Y(forwardAfromMEMtoEX));
-ForwardAfromMEMtoID unit1(.IDrs(IDrs),.IDrt(IDrt),.MEMop(MEMop),.MEMrd(MEMrd),
-                          .MEMrs(MEMrs),.MEMrt(MEMrt),.Y(forwardAfromMEMtoID));
-ForwardAfromWBtoEX unit2(.EXrd(EXrd),.EXrs(EXrs),.EXrt(EXrt),.WBop(WBop),
-                         .WBrd(WBrd),.WBrs(WBrs),.WBrt(WBrt),.Y(forwardAfromWBtoEX));
-ForwardAfromWBtoID unit3(.IDrs(IDrs),.IDrt(IDrt),.WBop(WBop),.WBrd(WBrd),
-                         .WBrs(WBrs),.WBrt(WBrt),.Y(forwardAfromWBtoID));
-ForwardBfromMEMtoEX unit4(.EXrd(EXrd),.EXrs(EXrs),.EXrt(EXrt),.MEMop(MEMop),
-                          .MEMrd(MEMrd),.MEMrs(MEMrs),.MEMrt(MEMrt),.Y(forwardBfromMEMtoEX));
-ForwardBfromMEMtoID unit5(.IDrs(IDrs),.IDrt(IDrt),.MEMop(MEMop),.MEMrd(MEMrd),
-                          .MEMrs(MEMrs),.MEMrt(MEMrt),.Y(forwardBfromMEMtoID));
-ForwardBfromWBtoEX unit6(.EXrd(EXrd),.EXrs(EXrs),.EXrt(EXrt),.WBop(WBop),
-                         .WBrd(WBrd),.WBrs(WBrs),.WBrt(WBrt),.Y(forwardBfromWBtoEX));
-ForwardBfromWBtoID unit7(.IDrs(IDrs),.IDrt(IDrt),.WBop(WBop),.WBrd(WBrd),
-                         .WBrs(WBrs),.WBrt(WBrt),.Y(forwardBfromWBtoID));
+ForwardAfromMEMtoEX unit0(.EXrp(EXrp),.EXrm(EXrm),.EXrn(EXrn),.MEMop(MEMop),
+                          .MEMrp(MEMrp),.MEMrm(MEMrm),.MEMrn(MEMrn),.Y(forwardAfromMEMtoEX));
+ForwardAfromMEMtoID unit1(.IDrm(IDrm),.IDrn(IDrn),.MEMop(MEMop),.MEMrp(MEMrp),
+                          .MEMrm(MEMrm),.MEMrn(MEMrn),.Y(forwardAfromMEMtoID));
+ForwardAfromWBtoEX unit2(.EXrp(EXrp),.EXrm(EXrm),.EXrn(EXrn),.WBop(WBop),
+                         .WBrp(WBrp),.WBrm(WBrm),.WBrn(WBrn),.Y(forwardAfromWBtoEX));
+ForwardAfromWBtoID unit3(.IDrm(IDrm),.IDrn(IDrn),.WBop(WBop),.WBrp(WBrp),
+                         .WBrm(WBrm),.WBrn(WBrn),.Y(forwardAfromWBtoID));
+ForwardBfromMEMtoEX unit4(.EXrp(EXrp),.EXrm(EXrm),.EXrn(EXrn),.MEMop(MEMop),
+                          .MEMrp(MEMrp),.MEMrm(MEMrm),.MEMrn(MEMrn),.Y(forwardBfromMEMtoEX));
+ForwardBfromMEMtoID unit5(.IDrm(IDrm),.IDrn(IDrn),.MEMop(MEMop),.MEMrp(MEMrp),
+                          .MEMrm(MEMrm),.MEMrn(MEMrn),.Y(forwardBfromMEMtoID));
+ForwardBfromWBtoEX unit6(.EXrp(EXrp),.EXrm(EXrm),.EXrn(EXrn),.WBop(WBop),
+                         .WBrp(WBrp),.WBrm(WBrm),.WBrn(WBrn),.Y(forwardBfromWBtoEX));
+ForwardBfromWBtoID unit7(.IDrm(IDrm),.IDrn(IDrn),.WBop(WBop),.WBrp(WBrp),
+                         .WBrm(WBrm),.WBrn(WBrn),.Y(forwardBfromWBtoID));
    
    initial begin
    ////////////////////////////////////////////////////////////////////
    // Each test is 20 time units total
    ///////////////////////////////////////////////////////////////////
    // A, MEM->ID
-   $display("[A, MEM->ID] MEMop=RTYPE, MEMrd=IDrs");
-   setupForward(MEMop, RTYPE, MEMrd, IDrs); #10;
+   $display("[A, MEM->ID] MEMop=RTYPE, MEMrp=IDrm");
+   setupForward(MEMop, RTYPE, MEMrp, IDrm); #10;
    verifyEqual(forwardAfromMEMtoID, 1); 
 
-   $display("[A, MEM->ID] MEMop=ADDI, MEMrt=IDrs");
-   setupForward(MEMop, ADDI, MEMrt, IDrs); #10;
+   $display("[A, MEM->ID] MEMop=ADDI, MEMrn=IDrm");
+   setupForward(MEMop, ADDI, MEMrn, IDrm); #10;
    verifyEqual(forwardAfromMEMtoID, 1);
 
-   $display("[A, MEM->ID] MEMop=SLTI, MEMrt=IDrs");
-   setupForward(MEMop, SLTI, MEMrt, IDrs); #10;
+   $display("[A, MEM->ID] MEMop=SLTI, MEMrn=IDrm");
+   setupForward(MEMop, SLTI, MEMrn, IDrm); #10;
+   verifyEqual(forwardAfromMEMtoID, 1); 
+
+   $display("[A, MEM->ID] MEMop=LUI, MEMrn=IDrm");
+   setupForward(MEMop, LUI, MEMrn, IDrm); #10;
    verifyEqual(forwardAfromMEMtoID, 1); 
    ///////////////////////////////////////////////////////////////////
 
    ///////////////////////////////////////////////////////////////////
    // A, WB->ID
-   $display("[A, WB->ID] WBop=RTYPE, WBrd=IDrs");
-   setupForward(WBop, RTYPE, WBrd, IDrs); #10;
+   $display("[A, WB->ID] WBop=RTYPE, WBrp=IDrm");
+   setupForward(WBop, RTYPE, WBrp, IDrm); #10;
    verifyEqual(forwardAfromWBtoID, 1); 
 
-   $display("[A, WB->ID] WBop=ADDI, WBrt=IDrs");
-   setupForward(WBop, ADDI, WBrt, IDrs); #10;
+   $display("[A, WB->ID] WBop=ADDI, WBrn=IDrm");
+   setupForward(WBop, ADDI, WBrn, IDrm); #10;
    verifyEqual(forwardAfromWBtoID, 1); 
 
-   $display("[A, WB->ID] WBop=LW, WBrt=IDrs");
-   setupForward(WBop, LW, WBrt, IDrs); #10;
+   $display("[A, WB->ID] WBop=LW, WBrn=IDrm");
+   setupForward(WBop, LW, WBrn, IDrm); #10;
    verifyEqual(forwardAfromWBtoID, 1); 
 
-   $display("[A, WB->ID] WBop=SLTI, WBrt=IDrs");
-   setupForward(WBop, SLTI, WBrt, IDrs); #10;
+   $display("[A, WB->ID] WBop=SLTI, WBrn=IDrm");
+   setupForward(WBop, SLTI, WBrn, IDrm); #10;
+   verifyEqual(forwardAfromWBtoID, 1); 
+
+   $display("[A, WB->ID] WBop=LUI, WBrn=IDrm");
+   setupForward(WBop, LUI, WBrn, IDrm); #10;
    verifyEqual(forwardAfromWBtoID, 1); 
    ///////////////////////////////////////////////////////////////////
    
    ///////////////////////////////////////////////////////////////////
    // B, MEM->ID
-   $display("[B, MEM->ID] MEMop=RTYPE, MEMrd=IDrt");
-   setupForward(MEMop, RTYPE, MEMrd, IDrt); #10;
+   $display("[B, MEM->ID] MEMop=RTYPE, MEMrp=IDrn");
+   setupForward(MEMop, RTYPE, MEMrp, IDrn); #10;
    verifyEqual(forwardBfromMEMtoID, 1); 
 
-   $display("[B, MEM->ID] MEMop=ADDI, MEMrt=IDrt");
-   setupForward(MEMop, ADDI, MEMrt, IDrt); #10;
+   $display("[B, MEM->ID] MEMop=ADDI, MEMrn=IDrn");
+   setupForward(MEMop, ADDI, MEMrn, IDrn); #10;
    verifyEqual(forwardBfromMEMtoID, 1); 
 
-   $display("[B, MEM->ID] MEMop=SLTI, MEMrt=IDrt");
-   setupForward(MEMop, SLTI, MEMrt, IDrt); #10;
+   $display("[B, MEM->ID] MEMop=SLTI, MEMrn=IDrn");
+   setupForward(MEMop, SLTI, MEMrn, IDrn); #10;
+   verifyEqual(forwardBfromMEMtoID, 1); 
+
+   $display("[B, MEM->ID] MEMop=LUI, MEMrn=IDrn");
+   setupForward(MEMop, LUI, MEMrn, IDrn); #10;
    verifyEqual(forwardBfromMEMtoID, 1); 
    ///////////////////////////////////////////////////////////////////
 
    ///////////////////////////////////////////////////////////////////
    // B, WB->ID
-   $display("[B, WB->ID] WBop=RTYPE, WBrd=IDrt");
-   setupForward(WBop, RTYPE, WBrd, IDrt); #10;
+   $display("[B, WB->ID] WBop=RTYPE, WBrp=IDrn");
+   setupForward(WBop, RTYPE, WBrp, IDrn); #10;
    verifyEqual(forwardBfromWBtoID, 1); 
 
-   $display("[B, WB->ID] WBop=ADDI, WBrt=IDrt");
-   setupForward(WBop, ADDI, WBrt, IDrt); #10;
+   $display("[B, WB->ID] WBop=ADDI, WBrn=IDrn");
+   setupForward(WBop, ADDI, WBrn, IDrn); #10;
    verifyEqual(forwardBfromWBtoID, 1); 
 
-   $display("[B, WB->ID] WBop=LW, WBrt=IDrt");
-   setupForward(WBop, LW, WBrt, IDrt); #10;
+   $display("[B, WB->ID] WBop=LW, WBrn=IDrn");
+   setupForward(WBop, LW, WBrn, IDrn); #10;
    verifyEqual(forwardBfromWBtoID, 1); 
 
-   $display("[B, WB->ID] WBop=SLTI, WBrt=IDrt");
-   setupForward(WBop, SLTI, WBrt, IDrt); #10;
+   $display("[B, WB->ID] WBop=SLTI, WBrn=IDrn");
+   setupForward(WBop, SLTI, WBrn, IDrn); #10;
+   verifyEqual(forwardBfromWBtoID, 1); 
+
+   $display("[B, WB->ID] WBop=LUI, WBrn=IDrn");
+   setupForward(WBop, LUI, WBrn, IDrn); #10;
    verifyEqual(forwardBfromWBtoID, 1); 
    ///////////////////////////////////////////////////////////////////
 
 
    ///////////////////////////////////////////////////////////////////
    // A, MEM->EX
-   $display("[A, MEM->EX] MEMop=RTYPE, MEMrd=EXrs");
-   setupForward(MEMop, RTYPE, MEMrd, EXrs); #10;
+   $display("[A, MEM->EX] MEMop=RTYPE, MEMrp=EXrm");
+   setupForward(MEMop, RTYPE, MEMrp, EXrm); #10;
    verifyEqual(forwardAfromMEMtoEX, 1); 
 
-   $display("[A, MEM->EX] MEMop=ADDI, MEMrt=EXrs");
-   setupForward(MEMop, ADDI, MEMrt, EXrs); #10;
+   $display("[A, MEM->EX] MEMop=ADDI, MEMrn=EXrm");
+   setupForward(MEMop, ADDI, MEMrn, EXrm); #10;
    verifyEqual(forwardAfromMEMtoEX, 1); 
 
-   $display("[A, MEM->EX] MEMop=SLTI, MEMrt=EXrs");
-   setupForward(MEMop, SLTI, MEMrt, EXrs); #10;
+   $display("[A, MEM->EX] MEMop=SLTI, MEMrn=EXrm");
+   setupForward(MEMop, SLTI, MEMrn, EXrm); #10;
+   verifyEqual(forwardAfromMEMtoEX, 1); 
+
+   $display("[A, MEM->EX] MEMop=LUI, MEMrn=EXrm");
+   setupForward(MEMop, LUI, MEMrn, EXrm); #10;
    verifyEqual(forwardAfromMEMtoEX, 1); 
    //////////////////////////////////////////////////////////////////
    
    //////////////////////////////////////////////////////////////////
    // A, WB->EX
-   $display("[A, WB->EX] WBop=RTYPE, WBrd=EXrs");
-   setupForward(WBop, RTYPE, WBrd, EXrs); #10;
+   $display("[A, WB->EX] WBop=RTYPE, WBrp=EXrm");
+   setupForward(WBop, RTYPE, WBrp, EXrm); #10;
    verifyEqual(forwardAfromWBtoEX, 1); 
 
-   $display("[A, WB->EX] WBop=ADDI, WBrt=EXrs");
-   setupForward(WBop, ADDI, WBrt, EXrs); #10;
+   $display("[A, WB->EX] WBop=ADDI, WBrn=EXrm");
+   setupForward(WBop, ADDI, WBrn, EXrm); #10;
    verifyEqual(forwardAfromWBtoEX, 1); 
 
-   $display("[A, WB->EX] WBop=LW, WBrt=EXrs");
-   setupForward(WBop, LW, WBrt, EXrs); #10;
+   $display("[A, WB->EX] WBop=LW, WBrn=EXrm");
+   setupForward(WBop, LW, WBrn, EXrm); #10;
    verifyEqual(forwardAfromWBtoEX, 1); 
 
-   $display("[A, WB->EX] WBop=SLTI, WBrt=EXrs");
-   setupForward(WBop, SLTI, WBrt, EXrs); #10;
+   $display("[A, WB->EX] WBop=SLTI, WBrn=EXrm");
+   setupForward(WBop, SLTI, WBrn, EXrm); #10;
+   verifyEqual(forwardAfromWBtoEX, 1); 
+
+   $display("[A, WB->EX] WBop=LUI, WBrn=EXrm");
+   setupForward(WBop, LUI, WBrn, EXrm); #10;
    verifyEqual(forwardAfromWBtoEX, 1); 
    /////////////////////////////////////////////////////////////////
 
    /////////////////////////////////////////////////////////////////
    // B, MEM->EX
-   $display("[A, MEM->EX] MEMop=RTYPE, MEMrd=EXrt");
-   setupForward(MEMop, RTYPE, MEMrd, EXrt); #10;
+   $display("[A, MEM->EX] MEMop=RTYPE, MEMrp=EXrn");
+   setupForward(MEMop, RTYPE, MEMrp, EXrn); #10;
    verifyEqual(forwardBfromMEMtoEX, 1); 
 
-   $display("[A, MEM->EX] MEMop=ADDI, MEMrt=EXrt");
-   setupForward(MEMop, ADDI, MEMrt, EXrt); #10;
+   $display("[A, MEM->EX] MEMop=ADDI, MEMrn=EXrn");
+   setupForward(MEMop, ADDI, MEMrn, EXrn); #10;
    verifyEqual(forwardBfromMEMtoEX, 1); 
 
-   $display("[A, MEM->EX] MEMop=SLTI, MEMrt=EXrt");
-   setupForward(MEMop, SLTI, MEMrt, EXrt); #10;
+   $display("[A, MEM->EX] MEMop=SLTI, MEMrn=EXrn");
+   setupForward(MEMop, SLTI, MEMrn, EXrn); #10;
+   verifyEqual(forwardBfromMEMtoEX, 1); 
+
+   $display("[A, MEM->EX] MEMop=LUI, MEMrn=EXrn");
+   setupForward(MEMop, LUI, MEMrn, EXrn); #10;
    verifyEqual(forwardBfromMEMtoEX, 1); 
    /////////////////////////////////////////////////////////////////
 
    /////////////////////////////////////////////////////////////////
    // B, WB->EX
-   $display("[A, WB->EX] WBop=RTYPE, WBrd=EXrt");
-   setupForward(WBop, RTYPE, WBrd, EXrt); #10;
+   $display("[A, WB->EX] WBop=RTYPE, WBrp=EXrn");
+   setupForward(WBop, RTYPE, WBrp, EXrn); #10;
    verifyEqual(forwardBfromWBtoEX, 1); 
 
-   $display("[A, WB->EX] WBop=ADDI, WBrt=EXrt");
-   setupForward(WBop, ADDI, WBrt, EXrt); #10;
+   $display("[A, WB->EX] WBop=ADDI, WBrn=EXrn");
+   setupForward(WBop, ADDI, WBrn, EXrn); #10;
    verifyEqual(forwardBfromWBtoEX, 1); 
 
-   $display("[A, WB->EX] WBop=LW, WBrt=EXrt");
-   setupForward(WBop, LW, WBrt, EXrt); #10;
+   $display("[A, WB->EX] WBop=LW, WBrn=EXrn");
+   setupForward(WBop, LW, WBrn, EXrn); #10;
    verifyEqual(forwardBfromWBtoEX, 1); 
 
-   $display("[A, WB->EX] WBop=SLTI, WBrt=EXrt");
-   setupForward(WBop, SLTI, WBrt, EXrt); #10;
+   $display("[A, WB->EX] WBop=SLTI, WBrn=EXrn");
+   setupForward(WBop, SLTI, WBrn, EXrn); #10;
+   verifyEqual(forwardBfromWBtoEX, 1);
+
+   $display("[A, WB->EX] WBop=LUI, WBrn=EXrn");
+   setupForward(WBop, LUI, WBrn, EXrn); #10;
    verifyEqual(forwardBfromWBtoEX, 1);
    /////////////////////////////////////////////////////////////////
 
