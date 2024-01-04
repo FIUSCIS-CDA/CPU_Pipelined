@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Nov 22 09:23:02 2023"
+// CREATED		"Thu Jan 04 12:08:56 2024"
 
 module StallDetection(
 	EXop,
@@ -46,15 +46,12 @@ output wire	EXStall;
 
 wire	EXopisADDI;
 wire	EXopisLW;
-wire	EXopisLWorADDI;
 wire	EXopisLWorADDI_and_RAWhazardonEXrn;
 wire	EXopisLWorSWorADDI;
 wire	EXopisLWorSWorADDI_and_EXRAWhazard;
 wire	EXopisRTYPE;
 wire	EXopisRTYPE_and_EXRAWhazard;
 wire	EXopisRTYPE_and_RAWhazardonEXrp;
-wire	EXopisSLTI;
-wire	EXopisSW;
 wire	EXrnisIDrm;
 wire	EXrnisIDrmorIDrn;
 wire	EXrnisIDrn;
@@ -78,6 +75,11 @@ wire	SYNTHESIZED_WIRE_2;
 wire	SYNTHESIZED_WIRE_3;
 wire	SYNTHESIZED_WIRE_4;
 wire	SYNTHESIZED_WIRE_5;
+wire	SYNTHESIZED_WIRE_6;
+wire	SYNTHESIZED_WIRE_7;
+wire	SYNTHESIZED_WIRE_8;
+wire	SYNTHESIZED_WIRE_9;
+wire	SYNTHESIZED_WIRE_10;
 
 
 
@@ -100,7 +102,7 @@ LW	b2v_EXopLW(
 
 LW	b2v_EXopLW2(
 	.Op(EXop),
-	.Y(EXopisLW));
+	.Y(SYNTHESIZED_WIRE_1));
 
 
 RTYPE	b2v_EXopRTYPE(
@@ -115,7 +117,7 @@ RTYPE	b2v_EXopRTYPE2(
 
 SW	b2v_EXopSW(
 	.Op(EXop),
-	.Y(EXopisSW));
+	.Y(SYNTHESIZED_WIRE_2));
 
 
 REGCheck	b2v_EXrnIDrm(
@@ -144,27 +146,27 @@ REGCheck	b2v_EXrpIDrn(
 
 BEQ	b2v_IDopBEQ(
 	.Op(IDop),
-	.Y(SYNTHESIZED_WIRE_2));
+	.Y(SYNTHESIZED_WIRE_7));
 
 
 BNE	b2v_inst(
 	.Op(IDop),
-	.Y(SYNTHESIZED_WIRE_3));
+	.Y(SYNTHESIZED_WIRE_8));
 
 assign	IDRAWhazard = EXopisLWorADDI_and_RAWhazardonEXrn | MEMopisLW_and_RAWhazardonMEMrn | EXopisRTYPE_and_RAWhazardonEXrp;
 
 assign	EXStall = EXopisRTYPE_and_EXRAWhazard | EXopisLWorSWorADDI_and_EXRAWhazard | SYNTHESIZED_WIRE_0;
 
+assign	EXopisLWorSWorADDI = SYNTHESIZED_WIRE_1 | EXopisADDI | SYNTHESIZED_WIRE_2;
 
-SLTI	b2v_inst11(
-	.Op(EXop),
-	.slti_output(EXopisSLTI));
-
-assign	EXopisLWorSWorADDI = EXopisSLTI | EXopisSW | EXopisADDI | EXopisLW;
-
-assign	IDStall = SYNTHESIZED_WIRE_1 & IDRAWhazard;
+assign	IDStall = SYNTHESIZED_WIRE_3 & IDRAWhazard;
 
 assign	EXrpisIDrmorIDrn = EXrpisIDrn | EXrpisIDrm;
+
+
+LUI	b2v_inst21(
+	.Op(EXop),
+	.lui_output(SYNTHESIZED_WIRE_4));
 
 assign	EXrnisIDrmorIDrn = EXrnisIDrn | EXrnisIDrm;
 
@@ -172,7 +174,9 @@ assign	MEMrnisIDrmorIDrn = MEMrnisIDrn | MEMrnisIDrm;
 
 assign	MEMrnisEXrmorEXrn = MEMrnisEXrn | MEMrnisEXrm;
 
-assign	EXopisLWorADDI_and_RAWhazardonEXrn = EXopisLWorADDI & EXrnisIDrmorIDrn;
+assign	SYNTHESIZED_WIRE_6 = SYNTHESIZED_WIRE_4 | SYNTHESIZED_WIRE_5;
+
+assign	EXopisLWorADDI_and_RAWhazardonEXrn = SYNTHESIZED_WIRE_6 & EXrnisIDrmorIDrn;
 
 assign	EXopisRTYPE_and_EXRAWhazard = EXopisRTYPE & MEMopisLW_and_RAWhazardonMEMrnEXrmorrt;
 
@@ -187,20 +191,20 @@ assign	MEMopisLW_and_RAWhazardonMEMrnEXrmorrt = MEMopisLW & MEMrnisEXrmorEXrn;
 
 SLTI	b2v_inst5(
 	.Op(EXop),
-	.slti_output(SYNTHESIZED_WIRE_5));
+	.slti_output(SYNTHESIZED_WIRE_10));
 
 assign	MEMopisLW_and_MEMrnisNOT0 = MEMopisLW & MEMrnisEXrm;
 
-assign	SYNTHESIZED_WIRE_1 = SYNTHESIZED_WIRE_2 | SYNTHESIZED_WIRE_3;
+assign	SYNTHESIZED_WIRE_3 = SYNTHESIZED_WIRE_7 | SYNTHESIZED_WIRE_8;
 
 
 SLTI	b2v_inst7(
 	.Op(EXop),
-	.slti_output(SYNTHESIZED_WIRE_4));
+	.slti_output(SYNTHESIZED_WIRE_9));
 
-assign	EXopisLWorADDI = EXopisLW | SYNTHESIZED_WIRE_4 | EXopisADDI;
+assign	SYNTHESIZED_WIRE_5 = EXopisLW | SYNTHESIZED_WIRE_9 | EXopisADDI;
 
-assign	SYNTHESIZED_WIRE_0 = SYNTHESIZED_WIRE_5 & MEMrnisEXrm;
+assign	SYNTHESIZED_WIRE_0 = SYNTHESIZED_WIRE_10 & MEMrnisEXrm;
 
 
 LW	b2v_MEMopLW(
