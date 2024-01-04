@@ -750,6 +750,114 @@ https://fpgasoftware.intel.com/eula.
 	)
 	(fill (color 158 158 158))
 )
+(symbol
+	(rect 1256 864 1536 960)
+	(text "LUI" (rect 5 0 25 19)(font "Intel Clear" (font_size 8)))
+	(text "inst7" (rect 8 67 30 84)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Op[31..26]" (rect 0 0 64 19)(font "Intel Clear" (font_size 8)))
+		(text "Op[31..26]" (rect 21 27 85 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 280 32)
+		(output)
+		(text "lui_output" (rect -8 0 52 19)(font "Intel Clear" (font_size 8)))
+		(text "lui_output" (rect 145 27 205 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 280 32)(pt 264 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 272 80))
+	)
+)
+(symbol
+	(rect 1392 576 1456 624)
+	(text "OR2" (rect 1 0 19 10)(font "Arial" (font_size 6)))
+	(text "inst9" (rect 3 37 25 54)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
+		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
+		(line (pt 0 32)(pt 15 32))
+	)
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
+		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 15 16))
+	)
+	(port
+		(pt 64 24)
+		(output)
+		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
+		(line (pt 48 24)(pt 64 24))
+	)
+	(drawing
+		(line (pt 14 36)(pt 25 36))
+		(line (pt 14 13)(pt 25 13))
+		(arc (pt 7 29)(pt 7 19)(rect -14 8 19 41))
+		(arc (pt 49 24)(pt 25 13)(rect -6 13 57 76))
+		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
+	)
+)
+(symbol
+	(rect 696 848 824 944)
+	(text "Sixteen" (rect 5 0 48 19)(font "Intel Clear" (color 255 255 255)(font_size 8)))
+	(text "inst5" (rect 8 67 30 84)(font "Intel Clear" (color 255 255 255)))
+	(port
+		(pt 128 32)
+		(output)
+		(text "Y[4..0]" (rect 0 0 38 19)(font "Intel Clear" (font_size 8)))
+		(text "Y[4..0]" (rect 36 27 74 46)(font "Intel Clear" (color 255 255 255)(font_size 8)))
+		(line (pt 128 32)(pt 112 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 112 80)(color 255 255 255))
+	)
+	(fill (color 0 0 0))
+)
+(symbol
+	(rect 1400 728 1528 824)
+	(text "MUX2_5" (rect 5 0 56 19)(font "Intel Clear" (color 0 0 0)(font_size 8)))
+	(text "inst3" (rect 8 75 30 92)(font "Intel Clear" (color 0 0 0)))
+	(port
+		(pt 0 32)
+		(input)
+		(text "S" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
+		(text "S" (rect 21 27 29 46)(font "Intel Clear" (color 0 0 0)(font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "A[4..0]" (rect 0 0 38 19)(font "Intel Clear" (font_size 8)))
+		(text "A[4..0]" (rect 21 43 59 62)(font "Intel Clear" (color 0 0 0)(font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "B[4..0]" (rect 0 0 38 19)(font "Intel Clear" (font_size 8)))
+		(text "B[4..0]" (rect 21 59 59 78)(font "Intel Clear" (color 0 0 0)(font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 128 32)
+		(output)
+		(text "Y[4..0]" (rect 0 0 38 19)(font "Intel Clear" (font_size 8)))
+		(text "Y[4..0]" (rect 69 27 107 46)(font "Intel Clear" (color 0 0 0)(font_size 8)))
+		(line (pt 128 32)(pt 112 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 112 80))
+	)
+	(fill (color 85 170 255))
+)
 (connector
 	(pt 1128 592)
 	(pt 1144 592)
@@ -1037,13 +1145,6 @@ https://fpgasoftware.intel.com/eula.
 	(color 192 192 0)
 )
 (connector
-	(text "EXIROUT[31..26]" (rect 944 766 961 845)(font "Intel Clear" (color 169 169 0))(vertical))
-	(pt 960 696)
-	(pt 960 840)
-	(bus)
-	(color 192 192 0)
-)
-(connector
 	(pt 712 312)
 	(pt 752 312)
 	(bus)
@@ -1178,13 +1279,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 1184 656)
 )
 (connector
-	(text "EXIROUT[31..26]" (rect 944 875 961 954)(font "Intel Clear" (color 170 170 0))(vertical))
-	(pt 960 840)
-	(pt 960 952)
-	(bus)
-	(color 192 192 0)
-)
-(connector
 	(pt 904 448)
 	(pt 944 448)
 	(bus)
@@ -1234,19 +1328,8 @@ https://fpgasoftware.intel.com/eula.
 	(pt 1928 376)
 )
 (connector
-	(text "Temp[10..6]" (rect 330 760 386 777)(font "Intel Clear" ))
-	(pt 320 776)
-	(pt 1632 776)
-	(bus)
-)
-(connector
 	(pt 1648 344)
 	(pt 1632 344)
-	(bus)
-)
-(connector
-	(pt 1632 344)
-	(pt 1632 776)
 	(bus)
 )
 (connector
@@ -1297,15 +1380,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 1592 456)
 	(pt 1592 1008)
 	(bus)
-)
-(connector
-	(pt 1392 472)
-	(pt 1288 472)
-)
-(connector
-	(text "EXopisLWorSWorADDI" (rect 1272 531 1289 638)(font "Intel Clear" )(vertical))
-	(pt 1288 472)
-	(pt 1288 632)
 )
 (connector
 	(pt 944 488)
@@ -1496,6 +1570,119 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 	(color 192 192 0)
 )
+(connector
+	(text "Temp[10..6]" (rect 330 760 386 777)(font "Intel Clear" ))
+	(pt 320 776)
+	(pt 1400 776)
+	(bus)
+)
+(connector
+	(pt 1528 760)
+	(pt 1632 760)
+	(bus)
+)
+(connector
+	(pt 1632 344)
+	(pt 1632 760)
+	(bus)
+)
+(connector
+	(pt 1400 792)
+	(pt 856 792)
+	(bus)
+)
+(connector
+	(pt 856 792)
+	(pt 856 880)
+	(bus)
+)
+(connector
+	(pt 824 880)
+	(pt 856 880)
+	(bus)
+)
+(connector
+	(pt 1400 760)
+	(pt 1360 760)
+)
+(connector
+	(pt 1536 896)
+	(pt 1568 896)
+)
+(connector
+	(pt 1360 856)
+	(pt 1568 856)
+)
+(connector
+	(pt 1568 856)
+	(pt 1568 896)
+)
+(connector
+	(pt 1256 896)
+	(pt 960 896)
+	(bus)
+)
+(connector
+	(pt 960 840)
+	(pt 960 896)
+	(bus)
+	(color 192 192 0)
+)
+(connector
+	(text "EXIROUT[31..26]" (rect 944 875 961 954)(font "Intel Clear" (color 170 170 0))(vertical))
+	(pt 960 896)
+	(pt 960 952)
+	(bus)
+	(color 192 192 0)
+)
+(connector
+	(pt 1392 608)
+	(pt 1360 608)
+)
+(connector
+	(pt 1360 608)
+	(pt 1360 760)
+)
+(connector
+	(pt 1360 760)
+	(pt 1360 856)
+)
+(connector
+	(text "EXopisLWorSWorADDI" (rect 1272 531 1289 638)(font "Intel Clear" )(vertical))
+	(pt 1288 592)
+	(pt 1288 632)
+)
+(connector
+	(pt 1456 600)
+	(pt 1504 600)
+)
+(connector
+	(pt 1392 472)
+	(pt 1360 472)
+)
+(connector
+	(pt 1360 472)
+	(pt 1360 544)
+)
+(connector
+	(pt 1360 544)
+	(pt 1504 544)
+)
+(connector
+	(pt 1504 544)
+	(pt 1504 600)
+)
+(connector
+	(text "EXIROUT[31..26]" (rect 944 766 961 845)(font "Intel Clear" (color 169 169 0))(vertical))
+	(pt 960 696)
+	(pt 960 840)
+	(bus)
+	(color 192 192 0)
+)
+(connector
+	(pt 1288 592)
+	(pt 1392 592)
+)
 (junction (pt 568 56))
 (junction (pt 584 56))
 (junction (pt 616 56))
@@ -1514,3 +1701,5 @@ https://fpgasoftware.intel.com/eula.
 (junction (pt 1600 376))
 (junction (pt 424 288))
 (junction (pt 368 264))
+(junction (pt 960 896))
+(junction (pt 1360 760))
