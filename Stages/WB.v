@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Aug 16 14:46:49 2023"
+// CREATED		"Thu Jan 04 12:56:13 2024"
 
 module WB(
 	Instruction,
@@ -50,6 +50,7 @@ wire	WBopRTYPE;
 wire	WBrdisNOT0;
 wire	SYNTHESIZED_WIRE_0;
 wire	SYNTHESIZED_WIRE_1;
+wire	SYNTHESIZED_WIRE_2;
 
 assign	WBData = WBValue;
 assign	WBForward = WBValue;
@@ -60,12 +61,17 @@ assign	WBwe = SYNTHESIZED_WIRE_0 | WBopisLWADDIorSLTI;
 
 assign	SYNTHESIZED_WIRE_0 = WBopRTYPE & WBrdisNOT0;
 
+assign	WBopisLWADDIorSLTI = WBopisADDI | WBopisLW | SYNTHESIZED_WIRE_1 | SYNTHESIZED_WIRE_2;
+
 
 SLTI	b2v_inst5(
 	.Op(WBIR[31:26]),
-	.slti_output(SYNTHESIZED_WIRE_1));
+	.slti_output(SYNTHESIZED_WIRE_2));
 
-assign	WBopisLWADDIorSLTI = SYNTHESIZED_WIRE_1 | WBopisLW | WBopisADDI;
+
+LUI	b2v_inst8(
+	.Op(WBIR[31:26]),
+	.lui_output(SYNTHESIZED_WIRE_1));
 
 
 ADDI	b2v_isADDI(
