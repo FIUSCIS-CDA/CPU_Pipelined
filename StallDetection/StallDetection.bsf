@@ -22,8 +22,8 @@ https://fpgasoftware.intel.com/eula.
 (header "symbol" (version "1.2"))
 (symbol
 	(rect 16 16 184 208)
-	(text "StallDetection" (rect 5 0 106 20)(font "Intel Clear" (font_size 10)))
-	(text "inst" (rect 8 168 33 188)(font "Intel Clear" (font_size 10)))
+	(text "StallDetection" (rect 5 0 88 19)(font "Intel Clear" (font_size 8)))
+	(text "inst" (rect 8 171 24 188)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
