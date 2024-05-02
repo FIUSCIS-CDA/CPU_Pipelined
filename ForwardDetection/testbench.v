@@ -34,6 +34,7 @@ module testbench();
    parameter BNE = 6'b000101;
    parameter SLTI = 6'b001010;
    parameter LUI = 6'b001111;
+   parameter ORI = 6'b001101;
    ///////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
@@ -75,22 +76,14 @@ endtask
 ///////////////////////////////////////////////////////////////////////////
 
 
-ForwardAfromMEMtoEX unit0(.EXrp(EXrp),.EXrm(EXrm),.EXrn(EXrn),.MEMop(MEMop),
-                          .MEMrp(MEMrp),.MEMrm(MEMrm),.MEMrn(MEMrn),.Y(forwardAfromMEMtoEX));
-ForwardAfromMEMtoID unit1(.IDrm(IDrm),.IDrn(IDrn),.MEMop(MEMop),.MEMrp(MEMrp),
-                          .MEMrm(MEMrm),.MEMrn(MEMrn),.Y(forwardAfromMEMtoID));
-ForwardAfromWBtoEX unit2(.EXrp(EXrp),.EXrm(EXrm),.EXrn(EXrn),.WBop(WBop),
-                         .WBrp(WBrp),.WBrm(WBrm),.WBrn(WBrn),.Y(forwardAfromWBtoEX));
-ForwardAfromWBtoID unit3(.IDrm(IDrm),.IDrn(IDrn),.WBop(WBop),.WBrp(WBrp),
-                         .WBrm(WBrm),.WBrn(WBrn),.Y(forwardAfromWBtoID));
-ForwardBfromMEMtoEX unit4(.EXrp(EXrp),.EXrm(EXrm),.EXrn(EXrn),.MEMop(MEMop),
-                          .MEMrp(MEMrp),.MEMrm(MEMrm),.MEMrn(MEMrn),.Y(forwardBfromMEMtoEX));
-ForwardBfromMEMtoID unit5(.IDrm(IDrm),.IDrn(IDrn),.MEMop(MEMop),.MEMrp(MEMrp),
-                          .MEMrm(MEMrm),.MEMrn(MEMrn),.Y(forwardBfromMEMtoID));
-ForwardBfromWBtoEX unit6(.EXrp(EXrp),.EXrm(EXrm),.EXrn(EXrn),.WBop(WBop),
-                         .WBrp(WBrp),.WBrm(WBrm),.WBrn(WBrn),.Y(forwardBfromWBtoEX));
-ForwardBfromWBtoID unit7(.IDrm(IDrm),.IDrn(IDrn),.WBop(WBop),.WBrp(WBrp),
-                         .WBrm(WBrm),.WBrn(WBrn),.Y(forwardBfromWBtoID));
+ForwardAfromMEMtoEX unit0(.EXrm(EXrm),.MEMop(MEMop),.MEMrp(MEMrp),.MEMrn(MEMrn),.Y(forwardAfromMEMtoEX));
+ForwardAfromMEMtoID unit1(.IDrm(IDrm),.MEMop(MEMop),.MEMrp(MEMrp),.MEMrn(MEMrn),.Y(forwardAfromMEMtoID));
+ForwardAfromWBtoEX unit2(.EXrm(EXrm),.WBop(WBop),.WBrp(WBrp),.WBrn(WBrn),.Y(forwardAfromWBtoEX));
+ForwardAfromWBtoID unit3(.IDrm(IDrm),.WBop(WBop),.WBrp(WBrp),.WBrn(WBrn),.Y(forwardAfromWBtoID));
+ForwardBfromMEMtoEX unit4(.EXrn(EXrn),.MEMop(MEMop),.MEMrp(MEMrp),.MEMrn(MEMrn),.Y(forwardBfromMEMtoEX));
+ForwardBfromMEMtoID unit5(.IDrn(IDrn),.MEMop(MEMop),.MEMrp(MEMrp),.MEMrn(MEMrn),.Y(forwardBfromMEMtoID));
+ForwardBfromWBtoEX unit6(.EXrn(EXrn),.WBop(WBop),.WBrp(WBrp),.WBrn(WBrn),.Y(forwardBfromWBtoEX));
+ForwardBfromWBtoID unit7(.IDrn(IDrn),.WBop(WBop),.WBrp(WBrp),.WBrn(WBrn),.Y(forwardBfromWBtoID));
    
    initial begin
    ////////////////////////////////////////////////////////////////////
@@ -112,6 +105,10 @@ ForwardBfromWBtoID unit7(.IDrm(IDrm),.IDrn(IDrn),.WBop(WBop),.WBrp(WBrp),
    $display("[A, MEM->ID] MEMop=LUI, MEMrn=IDrm");
    setupForward(MEMop, LUI, MEMrn, IDrm); #10;
    verifyEqual(forwardAfromMEMtoID, 1); 
+
+   $display("[A, MEM->ID] MEMop=ORI, MEMrn=IDrm");
+   setupForward(MEMop, ORI, MEMrn, IDrm); #10;
+   verifyEqual(forwardAfromMEMtoID, 1);
    ///////////////////////////////////////////////////////////////////
 
    ///////////////////////////////////////////////////////////////////
@@ -135,6 +132,10 @@ ForwardBfromWBtoID unit7(.IDrm(IDrm),.IDrn(IDrn),.WBop(WBop),.WBrp(WBrp),
    $display("[A, WB->ID] WBop=LUI, WBrn=IDrm");
    setupForward(WBop, LUI, WBrn, IDrm); #10;
    verifyEqual(forwardAfromWBtoID, 1); 
+
+   $display("[A, WB->ID] WBop=ORI, WBrn=IDrm");
+   setupForward(WBop, ORI, WBrn, IDrm); #10;
+   verifyEqual(forwardAfromWBtoID, 1); 
    ///////////////////////////////////////////////////////////////////
    
    ///////////////////////////////////////////////////////////////////
@@ -153,6 +154,10 @@ ForwardBfromWBtoID unit7(.IDrm(IDrm),.IDrn(IDrn),.WBop(WBop),.WBrp(WBrp),
 
    $display("[B, MEM->ID] MEMop=LUI, MEMrn=IDrn");
    setupForward(MEMop, LUI, MEMrn, IDrn); #10;
+   verifyEqual(forwardBfromMEMtoID, 1); 
+
+   $display("[B, MEM->ID] MEMop=ORI, MEMrn=IDrn");
+   setupForward(MEMop, ORI, MEMrn, IDrn); #10;
    verifyEqual(forwardBfromMEMtoID, 1); 
    ///////////////////////////////////////////////////////////////////
 
@@ -177,6 +182,10 @@ ForwardBfromWBtoID unit7(.IDrm(IDrm),.IDrn(IDrn),.WBop(WBop),.WBrp(WBrp),
    $display("[B, WB->ID] WBop=LUI, WBrn=IDrn");
    setupForward(WBop, LUI, WBrn, IDrn); #10;
    verifyEqual(forwardBfromWBtoID, 1); 
+
+   $display("[B, WB->ID] WBop=ORI, WBrn=IDrn");
+   setupForward(WBop, ORI, WBrn, IDrn); #10;
+   verifyEqual(forwardBfromWBtoID, 1); 
    ///////////////////////////////////////////////////////////////////
 
 
@@ -196,6 +205,10 @@ ForwardBfromWBtoID unit7(.IDrm(IDrm),.IDrn(IDrn),.WBop(WBop),.WBrp(WBrp),
 
    $display("[A, MEM->EX] MEMop=LUI, MEMrn=EXrm");
    setupForward(MEMop, LUI, MEMrn, EXrm); #10;
+   verifyEqual(forwardAfromMEMtoEX, 1); 
+
+   $display("[A, MEM->EX] MEMop=ORI, MEMrn=EXrm");
+   setupForward(MEMop, ORI, MEMrn, EXrm); #10;
    verifyEqual(forwardAfromMEMtoEX, 1); 
    //////////////////////////////////////////////////////////////////
    
@@ -220,6 +233,10 @@ ForwardBfromWBtoID unit7(.IDrm(IDrm),.IDrn(IDrn),.WBop(WBop),.WBrp(WBrp),
    $display("[A, WB->EX] WBop=LUI, WBrn=EXrm");
    setupForward(WBop, LUI, WBrn, EXrm); #10;
    verifyEqual(forwardAfromWBtoEX, 1); 
+
+   $display("[A, WB->EX] WBop=ORI, WBrn=EXrm");
+   setupForward(WBop, ORI, WBrn, EXrm); #10;
+   verifyEqual(forwardAfromWBtoEX, 1); 
    /////////////////////////////////////////////////////////////////
 
    /////////////////////////////////////////////////////////////////
@@ -238,6 +255,10 @@ ForwardBfromWBtoID unit7(.IDrm(IDrm),.IDrn(IDrn),.WBop(WBop),.WBrp(WBrp),
 
    $display("[A, MEM->EX] MEMop=LUI, MEMrn=EXrn");
    setupForward(MEMop, LUI, MEMrn, EXrn); #10;
+   verifyEqual(forwardBfromMEMtoEX, 1); 
+
+   $display("[A, MEM->EX] MEMop=ORI, MEMrn=EXrn");
+   setupForward(MEMop, ORI, MEMrn, EXrn); #10;
    verifyEqual(forwardBfromMEMtoEX, 1); 
    /////////////////////////////////////////////////////////////////
 
@@ -261,6 +282,10 @@ ForwardBfromWBtoID unit7(.IDrm(IDrm),.IDrn(IDrn),.WBop(WBop),.WBrp(WBrp),
 
    $display("[A, WB->EX] WBop=LUI, WBrn=EXrn");
    setupForward(WBop, LUI, WBrn, EXrn); #10;
+   verifyEqual(forwardBfromWBtoEX, 1);
+
+   $display("[A, WB->EX] WBop=ORI, WBrn=EXrn");
+   setupForward(WBop, ORI, WBrn, EXrn); #10;
    verifyEqual(forwardBfromWBtoEX, 1);
    /////////////////////////////////////////////////////////////////
 
