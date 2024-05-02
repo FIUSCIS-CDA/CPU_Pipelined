@@ -40,7 +40,7 @@ localparam TERMINALPC=92;
 // 00=NOT TAKEN 
 // 01=TAKEN 
 // 10=DELAY SLOT (works if the program uses delay slots - the bubble sort below does not)  
-localparam BRANCH_PRED=2'b00;
+localparam BRANCH_PRED=2'b01;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
  

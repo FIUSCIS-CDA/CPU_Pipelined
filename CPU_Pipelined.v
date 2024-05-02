@@ -15,11 +15,11 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Aug 16 15:04:53 2023"
+// CREATED		"Thu May 02 08:30:08 2024"
 
 module CPU_Pipelined(
-	clk,
 	reset,
+	clk,
 	Strategy,
 	EXIR,
 	IDIR,
@@ -30,8 +30,8 @@ module CPU_Pipelined(
 );
 
 
-input wire	clk;
 input wire	reset;
+input wire	clk;
 input wire	[1:0] Strategy;
 output wire	[31:0] EXIR;
 output wire	[31:0] IDIR;
@@ -46,7 +46,6 @@ wire	[31:0] EXIR_ALTERA_SYNTHESIZED;
 wire	[31:0] EXMEMTower_ALUOut;
 wire	[31:0] EXMEMTower_B;
 wire	[31:0] EXMEMTower_IR;
-wire	[5:0] EXop;
 wire	[4:0] EXrm;
 wire	[4:0] EXrn;
 wire	[4:0] EXrp;
@@ -75,7 +74,6 @@ wire	[31:0] IFIRwire;
 wire	[5:0] IFop;
 wire	[31:0] MEMIRwire;
 wire	[5:0] MEMop;
-wire	[4:0] MEMrm;
 wire	[4:0] MEMrn;
 wire	[4:0] MEMrp;
 wire	[31:0] MEMValue;
@@ -88,9 +86,9 @@ wire	[4:0] REGtoWrite;
 wire	RF_we;
 wire	[31:0] ValuetoWriteREG;
 wire	[5:0] WBop;
-wire	[4:0] WBrm;
 wire	[4:0] WBrn;
 wire	[4:0] WBrp;
+wire	[5:0] SYNTHESIZED_WIRE_0;
 
 
 
@@ -130,7 +128,7 @@ EX	b2v_EXStage(
 	.EXALUB(EXB),
 	.EXALUOut(EXALUOut),
 	.EXIR(EXIR_ALTERA_SYNTHESIZED),
-	.Exop(EXop),
+	.Exop(SYNTHESIZED_WIRE_0),
 	.EXrm(EXrm),
 	.EXrn(EXrn),
 	.EXrp(EXrp),
@@ -139,18 +137,14 @@ EX	b2v_EXStage(
 
 
 ForwardDetection	b2v_ForwardDetectionUnit(
-	.EXop(EXop),
 	.EXrm(EXrm),
 	.EXrn(EXrn),
-	.EXrp(EXrp),
 	.IDrm(IDrm),
 	.IDrn(IDrn),
 	.MEMop(MEMop),
-	.MEMrm(MEMrm),
 	.MEMrn(MEMrn),
 	.MEMrp(MEMrp),
 	.WBop(WBop),
-	.WBrm(WBrm),
 	.WBrn(WBrn),
 	.WBrp(WBrp),
 	.ForwardA_EX(ForwardA_EX),
@@ -234,14 +228,13 @@ MEMM	b2v_MEMStage(
 	.MEMForward(ForwardedValuefromMEM),
 	.MEMIR(MEMIRwire),
 	.MEMop(MEMop),
-	.MEMrm(MEMrm),
 	.MEMrn(MEMrn),
 	.MEMrp(MEMrp),
 	.MEMValue(MEMValue));
 
 
 StallDetection	b2v_StallDetectionUnit(
-	.EXop(EXop),
+	.EXop(SYNTHESIZED_WIRE_0),
 	.EXrm(EXrm),
 	.EXrn(EXrn),
 	.EXrp(EXrp),
@@ -262,7 +255,6 @@ WB	b2v_WBStage(
 	.WBForward(ForwardedValuefromWB),
 	.WBop(WBop),
 	.WBReg(REGtoWrite),
-	.WBrm(WBrm),
 	.WBrn(WBrn),
 	.WBrp(WBrp));
 

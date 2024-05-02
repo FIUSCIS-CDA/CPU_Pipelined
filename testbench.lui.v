@@ -32,7 +32,7 @@ localparam CLK_PERIOD=100;
 // CPU will perform check once PC hits this value
 // Note for this CPU you want to go *two* past the end
 // With the pipeline, PC+4 is done in the IF stage (before the instruction completes)
-localparam TERMINALPC=20;
+localparam TERMINALPC=24;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -51,10 +51,11 @@ CPU_Pipelined myCPU(.clk(clk), .reset(rst), .Strategy(BRANCH_PRED), .EXIR(EXIR),
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       // Initialize Instruction Memory with LUI		                         //          INSTRUCTION                    PC
       myCPU.b2v_IFStage.b2v_MYIM.memory[0] = 'b00111100000010000000000000000001; // lui $t0, 1		                     0
-      myCPU.b2v_IFStage.b2v_MYIM.memory[1] = 'b00000000000000000000000000000000; 
+      myCPU.b2v_IFStage.b2v_MYIM.memory[1] = 'b00110101000010000000000000000011; // ori $t0, $t0, 3                          4
       myCPU.b2v_IFStage.b2v_MYIM.memory[2] = 'b00000000000000000000000000000000; 
       myCPU.b2v_IFStage.b2v_MYIM.memory[3] = 'b00000000000000000000000000000000; 
       myCPU.b2v_IFStage.b2v_MYIM.memory[4] = 'b00000000000000000000000000000000; 
+      myCPU.b2v_IFStage.b2v_MYIM.memory[5] = 'b00000000000000000000000000000000; 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
        
       /////////////////////////////////////////////////////////////////////////////////////////////
@@ -72,7 +73,7 @@ CPU_Pipelined myCPU(.clk(clk), .reset(rst), .Strategy(BRANCH_PRED), .EXIR(EXIR),
         // This implies the array is sorted, and bubble sort worked correctly
         if(PC === TERMINALPC) begin
              $display("Testing lui with immediate=1");
-             verifyEqual32(myCPU.b2v_IDStage.b2v_MYRF.contents_t0, 65536);
+             verifyEqual32(myCPU.b2v_IDStage.b2v_MYRF.contents_t0, 65539);
           $display("CPU functional");
           $stop;
          end

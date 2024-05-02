@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Thu Jan 04 11:29:21 2024"
+// CREATED		"Thu May 02 08:46:59 2024"
 
 module ALUCtl(
 	Functcode,
@@ -36,33 +36,44 @@ wire	ORinstruction;
 wire	SLTinstruction;
 wire	SUBinstruction;
 wire	SWinstruction;
-wire	SYNTHESIZED_WIRE_6;
-wire	SYNTHESIZED_WIRE_3;
+wire	SYNTHESIZED_WIRE_0;
+wire	SYNTHESIZED_WIRE_7;
 wire	SYNTHESIZED_WIRE_4;
 wire	SYNTHESIZED_WIRE_5;
+wire	SYNTHESIZED_WIRE_6;
 
 
 
 
 
+assign	SYNTHESIZED_WIRE_4 = LWinstruction | ADDinstruction | SWinstruction | SUBinstruction | SLTinstruction | ADDIinstruction;
 
-SLTI	b2v_inst1(
+assign	ALUOp_ALTERA_SYNTHESIZED[0] = SLTinstruction | ORinstruction | SYNTHESIZED_WIRE_0 | SYNTHESIZED_WIRE_7;
+
+
+ADDI	b2v_inst12(
 	.Op(Opcode),
-	.slti_output(SYNTHESIZED_WIRE_6));
+	.Y(ADDIinstruction));
 
-assign	SYNTHESIZED_WIRE_3 = LWinstruction | ADDinstruction | SWinstruction | SUBinstruction | SLTinstruction | ADDIinstruction;
 
-assign	ALUOp_ALTERA_SYNTHESIZED[4] = SLTinstruction | SYNTHESIZED_WIRE_6 | SUBinstruction;
+ORI	b2v_inst13(
+	.Op(Opcode),
+	.Y(SYNTHESIZED_WIRE_0));
 
-assign	ALUOp_ALTERA_SYNTHESIZED[0] = SYNTHESIZED_WIRE_6 | ORinstruction | SLTinstruction;
+assign	ALUOp_ALTERA_SYNTHESIZED[4] = SLTinstruction | SYNTHESIZED_WIRE_7 | SUBinstruction;
 
-assign	ALUOp_ALTERA_SYNTHESIZED[1] = SYNTHESIZED_WIRE_6 | SYNTHESIZED_WIRE_3;
+assign	ALUOp_ALTERA_SYNTHESIZED[1] = SYNTHESIZED_WIRE_7 | SYNTHESIZED_WIRE_4;
+
+
+LUI	b2v_inst5(
+	.Op(Opcode),
+	.Y(SYNTHESIZED_WIRE_6));
 
 
 SLL	b2v_inst6(
 	.Functcode(Functcode),
 	.Opcode(Opcode),
-	.Y(SYNTHESIZED_WIRE_4));
+	.Y(SYNTHESIZED_WIRE_5));
 
 
 MULT	b2v_inst7(
@@ -71,22 +82,17 @@ MULT	b2v_inst7(
 	.Y(ALUOp_ALTERA_SYNTHESIZED[2]));
 
 
-LUI	b2v_inst8(
+SLTI	b2v_inst8(
 	.Op(Opcode),
-	.lui_output(SYNTHESIZED_WIRE_5));
+	.Y(SYNTHESIZED_WIRE_7));
 
-assign	ALUOp_ALTERA_SYNTHESIZED[6] = SYNTHESIZED_WIRE_4 | SYNTHESIZED_WIRE_5;
+assign	ALUOp_ALTERA_SYNTHESIZED[6] = SYNTHESIZED_WIRE_5 | SYNTHESIZED_WIRE_6;
 
 
 ADD	b2v_isADD(
 	.Funct(Functcode),
 	.Op(Opcode),
 	.Y(ADDinstruction));
-
-
-ADDI	b2v_isADDI(
-	.Op(Opcode),
-	.addi_output(ADDIinstruction));
 
 
 LW	b2v_isLW(

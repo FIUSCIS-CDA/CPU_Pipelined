@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Thu Jan 04 12:07:57 2024"
+// CREATED		"Thu May 02 08:40:36 2024"
 
 module EX(
 	EXStall,
@@ -60,7 +60,6 @@ wire	[31:0] EXALUBwire;
 wire	[31:0] EXIROUT;
 wire	EXopisADDI;
 wire	EXopisLW;
-wire	EXopisLWorSWorADDI;
 wire	EXopisSLTI;
 wire	EXopisSW;
 wire	[31:0] OLDAwire;
@@ -69,12 +68,13 @@ wire	[31:0] Temp;
 wire	[31:0] TheConstant0;
 wire	wire_to_ground;
 wire	wire_to_ground2;
-wire	SYNTHESIZED_WIRE_7;
-wire	[4:0] SYNTHESIZED_WIRE_1;
-wire	[6:0] SYNTHESIZED_WIRE_2;
+wire	SYNTHESIZED_WIRE_0;
+wire	SYNTHESIZED_WIRE_8;
 wire	[4:0] SYNTHESIZED_WIRE_3;
-wire	SYNTHESIZED_WIRE_5;
-wire	[31:0] SYNTHESIZED_WIRE_6;
+wire	[6:0] SYNTHESIZED_WIRE_4;
+wire	[4:0] SYNTHESIZED_WIRE_5;
+wire	SYNTHESIZED_WIRE_6;
+wire	[31:0] SYNTHESIZED_WIRE_7;
 
 
 
@@ -106,47 +106,50 @@ MUX2_32	b2v_EXIROUTMUX(
 ALUCtl	b2v_inst(
 	.Functcode(EXIROUT[5:0]),
 	.Opcode(Temp[31:26]),
-	.ALUOp(SYNTHESIZED_WIRE_2));
+	.ALUOp(SYNTHESIZED_WIRE_4));
 
-assign	EXopisLWorSWorADDI = EXopisLW | EXopisADDI | EXopisSLTI | EXopisSW;
+assign	SYNTHESIZED_WIRE_6 = EXopisLW | EXopisADDI | EXopisSW | EXopisSLTI | SYNTHESIZED_WIRE_0 | SYNTHESIZED_WIRE_8;
 
 
-SLTI	b2v_inst2(
+ADDI	b2v_inst2(
 	.Op(EXIROUT[31:26]),
-	.slti_output(EXopisSLTI));
+	.Y(EXopisADDI));
 
 
 MUX2_5	b2v_inst3(
-	.S(SYNTHESIZED_WIRE_7),
+	.S(SYNTHESIZED_WIRE_8),
 	.A(Temp[10:6]),
-	.B(SYNTHESIZED_WIRE_1),
-	.Y(SYNTHESIZED_WIRE_3));
+	.B(SYNTHESIZED_WIRE_3),
+	.Y(SYNTHESIZED_WIRE_5));
 
 
 ALU_32	b2v_inst4(
 	.A(OLDAwire),
-	.alu_op(SYNTHESIZED_WIRE_2),
+	.alu_op(SYNTHESIZED_WIRE_4),
 	.B(OLDBwire),
-	.H(SYNTHESIZED_WIRE_3),
+	.H(SYNTHESIZED_WIRE_5),
 	.Overflow(wire_to_ground),
 	.Zero(wire_to_ground2),
 	.Result(EXALUOut));
 
 
 Sixteen	b2v_inst5(
-	.Y(SYNTHESIZED_WIRE_1));
+	.Y(SYNTHESIZED_WIRE_3));
 
 
-LUI	b2v_inst7(
+SLTI	b2v_inst6(
 	.Op(EXIROUT[31:26]),
-	.lui_output(SYNTHESIZED_WIRE_7));
-
-assign	SYNTHESIZED_WIRE_5 = SYNTHESIZED_WIRE_7 | EXopisLWorSWorADDI;
+	.Y(EXopisSLTI));
 
 
-ADDI	b2v_isADDI(
+ORI	b2v_inst7(
 	.Op(EXIROUT[31:26]),
-	.addi_output(EXopisADDI));
+	.Y(SYNTHESIZED_WIRE_0));
+
+
+LUI	b2v_inst8(
+	.Op(EXIROUT[31:26]),
+	.Y(SYNTHESIZED_WIRE_8));
 
 
 LW	b2v_isLW(
@@ -168,15 +171,15 @@ Grounder	b2v_myGrounder2(
 
 
 MUX2_32	b2v_OLDBMUX(
-	.S(SYNTHESIZED_WIRE_5),
+	.S(SYNTHESIZED_WIRE_6),
 	.A(EXALUBwire),
-	.B(SYNTHESIZED_WIRE_6),
+	.B(SYNTHESIZED_WIRE_7),
 	.Y(OLDBwire));
 
 
 SE16_32	b2v_SignExtend(
 	.A(EXIROUT[15:0]),
-	.Y(SYNTHESIZED_WIRE_6));
+	.Y(SYNTHESIZED_WIRE_7));
 
 
 Zero	b2v_Value0(
