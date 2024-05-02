@@ -31,6 +31,7 @@ module testbench();
    parameter ADDI = 6'b001000;
    parameter SLTI = 6'b001010;
    parameter LUI = 6'b001111;
+   parameter ORI = 6'b001101;
    ///////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
@@ -176,6 +177,14 @@ StallDetection stallDetector(.EXop(EXop), .EXrp(EXrp), .EXrm(EXrm), .EXrn(EXrn),
    $display("[IDSTALL] IDop=BNE, EXop=LUI, EXrn=IDrn");
    setupStall(IDstall, IDop, BNE, EXop, LUI, EXrn, IDrn); #10;
    verifyEqual(IDstall, 1);
+
+   $display("[IDSTALL] IDop=BNE, EXop=ORI, EXrn=IDrm");
+   setupStall(IDstall, IDop, BNE, EXop, ORI, EXrn, IDrm); #10;
+   verifyEqual(IDstall, 1);
+   
+   $display("[IDSTALL] IDop=BNE, EXop=ORI, EXrn=IDrn");
+   setupStall(IDstall, IDop, BNE, EXop, ORI, EXrn, IDrn); #10;
+   verifyEqual(IDstall, 1);
    ///////////////////////////////////////////////////////////////////////////////
 
    ///////////////////////////////////////////////////////////////////////////////
@@ -202,6 +211,10 @@ StallDetection stallDetector(.EXop(EXop), .EXrp(EXrp), .EXrm(EXrm), .EXrn(EXrn),
 
    $display("[EXSTALL] MEMop=LW, EXop=SLTI, MEMrn=EXrm");
    setupStall(EXstall, MEMop, LW, EXop, SLTI, MEMrn, EXrm); #10;
+   verifyEqual(EXstall, 1);
+
+   $display("[EXSTALL] MEMop=LW, EXop=ORI, MEMrn=EXrm");
+   setupStall(EXstall, MEMop, LW, EXop, ORI, MEMrn, EXrm); #10;
    verifyEqual(EXstall, 1);
    ///////////////////////////////////////////////////////////////////////////////
    $display("All tests passed.");
