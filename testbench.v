@@ -40,7 +40,7 @@ localparam TERMINALPC=92;
 // 00=NOT TAKEN 
 // 01=TAKEN 
 // 10=DELAY SLOT (works if the program uses delay slots - the bubble sort below does not)  
-localparam BRANCH_PRED=2'b01;
+localparam BRANCH_PRED=2'b00;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
  
@@ -75,8 +75,6 @@ CPU_Pipelined myCPU(.clk(clk), .reset(rst), .Strategy(BRANCH_PRED), .EXIR(EXIR),
       myCPU.b2v_IFStage.b2v_MYIM.memory[22] = 'b00000000000000000000000000000000; // doneloop1:                             88
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
        
-
-      /////////////////////////////////////////////////////////////////////////////////////////////
       // Initial Array (Unsorted)
       myCPU.b2v_MEMStage.b2v_MYDM.memory[512 >> 2] = 55;
       myCPU.b2v_MEMStage.b2v_MYDM.memory[516 >> 2] = 88;
