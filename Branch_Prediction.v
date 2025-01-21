@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Aug 16 14:45:47 2023"
+// CREATED		"Tue Jan 21 10:49:37 2025"
 
 module Branch_Prediction(
 	Taken,
@@ -42,27 +42,26 @@ wire	FixMUXOut;
 wire	Ground;
 wire	IDAeqIDB;
 wire	IDAnoteqIDB;
-wire	IDopBEQ;
-wire	IFopisBEQorisNotTakenBranch;
+wire	IDopisnotATakenBranch;
+wire	IDopisTakenBranch;
 wire	IFopisBEQorJandNoFix;
+wire	IFopisBranch;
+wire	IFopisBranchorIDisNotTakenBranch;
 wire	IFopisJandNOTaNOTTakenBranch;
 wire	IFopisJandNOTaTakenBranch;
 wire	IFopJ;
 wire	isNotTakenBranch;
 wire	isTakenBranch2;
 wire	NOTaNotTakenBranch;
-wire	NOTaTakenBranch;
 wire	[1:0] S;
-wire	SYNTHESIZED_WIRE_14;
-wire	SYNTHESIZED_WIRE_15;
-wire	SYNTHESIZED_WIRE_16;
+wire	SYNTHESIZED_WIRE_10;
+wire	SYNTHESIZED_WIRE_11;
 wire	SYNTHESIZED_WIRE_4;
+wire	SYNTHESIZED_WIRE_5;
 wire	SYNTHESIZED_WIRE_6;
 wire	SYNTHESIZED_WIRE_7;
 wire	SYNTHESIZED_WIRE_8;
 wire	SYNTHESIZED_WIRE_9;
-wire	SYNTHESIZED_WIRE_10;
-wire	SYNTHESIZED_WIRE_11;
 
 
 
@@ -70,12 +69,12 @@ wire	SYNTHESIZED_WIRE_11;
 
 BEQ	b2v_BEQ1(
 	.Op(IFop),
-	.Y(SYNTHESIZED_WIRE_7));
+	.Y(SYNTHESIZED_WIRE_5));
 
 
 BEQ	b2v_BEQ2(
 	.Op(IDop),
-	.Y(IDopBEQ));
+	.Y(SYNTHESIZED_WIRE_10));
 
 
 MUX2	b2v_DelaySlotMUX(
@@ -97,45 +96,43 @@ MUX2	b2v_FixMUX(
 	.B(isNotTakenBranch),
 	.Y(FixMUXOut));
 
-assign	NOTaTakenBranch =  ~SYNTHESIZED_WIRE_14;
+assign	IDopisnotATakenBranch =  ~IDopisTakenBranch;
 
 
 BNE	b2v_inst1(
 	.Op(IFop),
-	.Y(SYNTHESIZED_WIRE_6));
+	.Y(SYNTHESIZED_WIRE_4));
 
 assign	IDAnoteqIDB =  ~IDAeqIDB;
 
-assign	IFopisJandNOTaTakenBranch = IFopJ & NOTaTakenBranch;
-
-assign	SYNTHESIZED_WIRE_4 =  ~IDAeqIDB;
+assign	IFopisJandNOTaTakenBranch = IFopJ & IDopisnotATakenBranch;
 
 assign	IFopisJandNOTaNOTTakenBranch = IFopJ & NOTaNotTakenBranch;
 
-assign	SYNTHESIZED_WIRE_8 = IDopBEQ & IDAeqIDB;
+assign	SYNTHESIZED_WIRE_6 = SYNTHESIZED_WIRE_10 & IDAeqIDB;
 
-assign	SYNTHESIZED_WIRE_10 = IDopBEQ & IDAnoteqIDB;
+assign	SYNTHESIZED_WIRE_8 = SYNTHESIZED_WIRE_10 & IDAnoteqIDB;
 
-assign	IFopisBEQorisNotTakenBranch = isNotTakenBranch | SYNTHESIZED_WIRE_15;
+assign	IFopisBranchorIDisNotTakenBranch = isNotTakenBranch | IFopisBranch;
 
-assign	IFopisBEQorJandNoFix = SYNTHESIZED_WIRE_15 | IFopisJandNOTaNOTTakenBranch;
+assign	IFopisBEQorJandNoFix = IFopisBranch | IFopisJandNOTaNOTTakenBranch;
 
-assign	SYNTHESIZED_WIRE_9 = SYNTHESIZED_WIRE_16 & SYNTHESIZED_WIRE_4;
+assign	SYNTHESIZED_WIRE_7 = SYNTHESIZED_WIRE_11 & IDAnoteqIDB;
 
 assign	NOTaNotTakenBranch =  ~isNotTakenBranch;
 
-assign	SYNTHESIZED_WIRE_11 = SYNTHESIZED_WIRE_16 & IDAeqIDB;
+assign	SYNTHESIZED_WIRE_9 = SYNTHESIZED_WIRE_11 & IDAeqIDB;
 
-assign	SYNTHESIZED_WIRE_15 = SYNTHESIZED_WIRE_6 | SYNTHESIZED_WIRE_7;
+assign	IFopisBranch = SYNTHESIZED_WIRE_4 | SYNTHESIZED_WIRE_5;
 
 
 BNE	b2v_inst4(
 	.Op(IDop),
-	.Y(SYNTHESIZED_WIRE_16));
+	.Y(SYNTHESIZED_WIRE_11));
 
-assign	SYNTHESIZED_WIRE_14 = SYNTHESIZED_WIRE_8 | SYNTHESIZED_WIRE_9;
+assign	IDopisTakenBranch = SYNTHESIZED_WIRE_6 | SYNTHESIZED_WIRE_7;
 
-assign	isNotTakenBranch = SYNTHESIZED_WIRE_10 | SYNTHESIZED_WIRE_11;
+assign	isNotTakenBranch = SYNTHESIZED_WIRE_8 | SYNTHESIZED_WIRE_9;
 
 
 
@@ -153,13 +150,13 @@ MUX2	b2v_pickMUX(
 
 MUX2	b2v_S0MUX(
 	.S(Taken),
-	.A(SYNTHESIZED_WIRE_14),
-	.B(IFopisBEQorisNotTakenBranch),
+	.A(IDopisTakenBranch),
+	.B(IFopisBranchorIDisNotTakenBranch),
 	.Y(S[0]));
 
 
 SameBit	b2v_sameBit(
-	.Ain(SYNTHESIZED_WIRE_14),
+	.Ain(IDopisTakenBranch),
 	.Aout(isTakenBranch2));
 
 assign	Pick = S;
