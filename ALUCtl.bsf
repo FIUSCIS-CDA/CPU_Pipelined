@@ -21,14 +21,14 @@ https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 232 112)
+	(rect 16 16 240 112)
 	(text "ALUCtl" (rect 5 0 46 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 75 24 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "Opcode[5..0]" (rect 0 0 76 19)(font "Intel Clear" (font_size 8)))
-		(text "Opcode[5..0]" (rect 21 27 97 46)(font "Intel Clear" (font_size 8)))
+		(text "Opcode[31..26]" (rect 0 0 93 19)(font "Intel Clear" (font_size 8)))
+		(text "Opcode[31..26]" (rect 21 27 114 46)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
@@ -39,13 +39,13 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
-		(pt 216 32)
+		(pt 224 32)
 		(output)
 		(text "ALUOp[6..0]" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
-		(text "ALUOp[6..0]" (rect 122 27 195 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 216 32)(pt 200 32)(line_width 3))
+		(text "ALUOp[6..0]" (rect 130 27 203 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 224 32)(pt 208 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 200 80))
+		(rectangle (rect 16 16 208 80))
 	)
 )

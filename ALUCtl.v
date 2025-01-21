@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Thu May 02 08:46:59 2024"
+// CREATED		"Tue Jan 21 11:20:49 2025"
 
 module ALUCtl(
 	Functcode,
@@ -25,30 +25,30 @@ module ALUCtl(
 
 
 input wire	[5:0] Functcode;
-input wire	[5:0] Opcode;
+input wire	[31:26] Opcode;
 output wire	[6:0] ALUOp;
 
 wire	ADDIinstruction;
 wire	ADDinstruction;
 wire	[6:0] ALUOp_ALTERA_SYNTHESIZED;
+wire	LUIinstruction;
 wire	LWinstruction;
+wire	ORIInstruction;
 wire	ORinstruction;
+wire	SLLinstruction;
 wire	SLTinstruction;
 wire	SUBinstruction;
 wire	SWinstruction;
-wire	SYNTHESIZED_WIRE_0;
-wire	SYNTHESIZED_WIRE_7;
 wire	SYNTHESIZED_WIRE_4;
-wire	SYNTHESIZED_WIRE_5;
-wire	SYNTHESIZED_WIRE_6;
+wire	SYNTHESIZED_WIRE_3;
 
 
 
 
 
-assign	SYNTHESIZED_WIRE_4 = LWinstruction | ADDinstruction | SWinstruction | SUBinstruction | SLTinstruction | ADDIinstruction;
+assign	SYNTHESIZED_WIRE_3 = LWinstruction | ADDinstruction | SWinstruction | SUBinstruction | SLTinstruction | ADDIinstruction;
 
-assign	ALUOp_ALTERA_SYNTHESIZED[0] = SLTinstruction | ORinstruction | SYNTHESIZED_WIRE_0 | SYNTHESIZED_WIRE_7;
+assign	ALUOp_ALTERA_SYNTHESIZED[0] = SLTinstruction | ORinstruction | ORIInstruction | SYNTHESIZED_WIRE_4;
 
 
 ADDI	b2v_inst12(
@@ -58,22 +58,22 @@ ADDI	b2v_inst12(
 
 ORI	b2v_inst13(
 	.Op(Opcode),
-	.Y(SYNTHESIZED_WIRE_0));
+	.Y(ORIInstruction));
 
-assign	ALUOp_ALTERA_SYNTHESIZED[4] = SLTinstruction | SYNTHESIZED_WIRE_7 | SUBinstruction;
+assign	ALUOp_ALTERA_SYNTHESIZED[4] = SLTinstruction | SYNTHESIZED_WIRE_4 | SUBinstruction;
 
-assign	ALUOp_ALTERA_SYNTHESIZED[1] = SYNTHESIZED_WIRE_7 | SYNTHESIZED_WIRE_4;
+assign	ALUOp_ALTERA_SYNTHESIZED[1] = SYNTHESIZED_WIRE_4 | SYNTHESIZED_WIRE_3;
 
 
 LUI	b2v_inst5(
 	.Op(Opcode),
-	.Y(SYNTHESIZED_WIRE_6));
+	.Y(LUIinstruction));
 
 
 SLL	b2v_inst6(
 	.Functcode(Functcode),
 	.Opcode(Opcode),
-	.Y(SYNTHESIZED_WIRE_5));
+	.Y(SLLinstruction));
 
 
 MULT	b2v_inst7(
@@ -84,9 +84,9 @@ MULT	b2v_inst7(
 
 SLTI	b2v_inst8(
 	.Op(Opcode),
-	.Y(SYNTHESIZED_WIRE_7));
+	.Y(SYNTHESIZED_WIRE_4));
 
-assign	ALUOp_ALTERA_SYNTHESIZED[6] = SYNTHESIZED_WIRE_5 | SYNTHESIZED_WIRE_6;
+assign	ALUOp_ALTERA_SYNTHESIZED[6] = SLLinstruction | LUIinstruction;
 
 
 ADD	b2v_isADD(
