@@ -24,7 +24,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 8 80 176 96)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 255 85 0)(font_size 6)))
-	(text "IDrn[4..0]" (rect 5 0 47 17)(font "Intel Clear" (color 255 85 0)))
+	(text "IDrn[20..16]" (rect 5 0 60 17)(font "Intel Clear" (color 255 85 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 255 85 0))
@@ -40,7 +40,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 8 120 176 136)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 170 0)(font_size 6)))
-	(text "MEMop[5..0]" (rect 5 0 65 17)(font "Intel Clear" (color 0 170 0)))
+	(text "MEMop[31..26]" (rect 5 0 77 17)(font "Intel Clear" (color 0 170 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 170 0))
@@ -56,7 +56,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 8 200 176 216)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 170 0)(font_size 6)))
-	(text "MEMrn[4..0]" (rect 5 0 62 17)(font "Intel Clear" (color 0 170 0)))
+	(text "MEMrn[20..16]" (rect 5 0 75 17)(font "Intel Clear" (color 0 170 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 170 0))
@@ -72,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 8 240 176 256)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 170 0)(font_size 6)))
-	(text "MEMrp[4..0]" (rect 5 0 62 17)(font "Intel Clear" (color 0 170 0)))
+	(text "MEMrp[15..11]" (rect 5 0 75 17)(font "Intel Clear" (color 0 170 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 170 0))
@@ -220,65 +220,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 336 416 456 512)
-	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "MEMrpIDrn" (rect 8 75 61 92)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "reg1[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
-		(text "reg1[4..0]" (rect 21 27 78 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "reg2[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
-		(text "reg2[4..0]" (rect 21 43 78 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 120 32)
-		(output)
-		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
-		(text "Y" (rect 91 27 99 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 120 32)(pt 104 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 104 80))
-	)
-)
-(symbol
-	(rect 336 712 456 808)
-	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
-	(text "MEMrnIDrn" (rect 8 75 61 92)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "reg1[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
-		(text "reg1[4..0]" (rect 21 27 78 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "reg2[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
-		(text "reg2[4..0]" (rect 21 43 78 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 120 32)
-		(output)
-		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
-		(text "Y" (rect 91 27 99 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 120 32)(pt 104 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 104 80))
-	)
-)
-(symbol
-	(rect 656 784 720 864)
+	(rect 672 640 736 720)
 	(text "OR4" (rect 1 0 19 10)(font "Arial" (font_size 6)))
 	(text "inst6" (rect 3 69 25 86)(font "Intel Clear" ))
 	(port
@@ -327,7 +269,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 368 1048 496 1144)
+	(rect 344 856 472 952)
 	(text "ORI" (rect 5 0 26 19)(font "Intel Clear" (font_size 8)))
 	(text "inst7" (rect 8 75 30 92)(font "Intel Clear" ))
 	(port
@@ -349,7 +291,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 336 584 464 680)
+	(rect 336 536 464 632)
 	(text "ADDI" (rect 5 0 35 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 75 24 92)(font "Intel Clear" ))
 	(port
@@ -371,7 +313,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 336 816 464 912)
+	(rect 344 744 472 840)
 	(text "SLTI" (rect 5 0 32 19)(font "Intel Clear" (font_size 8)))
 	(text "inst9" (rect 8 75 30 92)(font "Intel Clear" ))
 	(port
@@ -393,7 +335,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 336 936 464 1032)
+	(rect 344 640 472 736)
 	(text "LUI" (rect 5 0 25 19)(font "Intel Clear" (font_size 8)))
 	(text "inst10" (rect 8 75 36 92)(font "Intel Clear" ))
 	(port
@@ -414,25 +356,65 @@ https://fpgasoftware.intel.com/eula.
 		(rectangle (rect 16 16 112 80))
 	)
 )
-(connector
-	(pt 176 248)
-	(pt 200 248)
-	(bus)
+(symbol
+	(rect 336 416 456 512)
+	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (color 255 255 255)(font_size 8)))
+	(text "MEMrpIDrn" (rect 8 75 61 92)(font "Intel Clear" (color 255 255 255)))
+	(port
+		(pt 0 32)
+		(input)
+		(text "reg1[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
+		(text "reg1[4..0]" (rect 21 27 78 46)(font "Intel Clear" (color 255 255 255)(font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reg2[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
+		(text "reg2[4..0]" (rect 21 43 78 62)(font "Intel Clear" (color 255 255 255)(font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 120 32)
+		(output)
+		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
+		(text "Y" (rect 91 27 99 46)(font "Intel Clear" (color 255 255 255)(font_size 8)))
+		(line (pt 120 32)(pt 104 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 104 80)(color 255 255 255))
+	)
+	(fill (color 0 0 0))
 )
-(connector
-	(pt 336 464)
-	(pt 200 464)
-	(bus)
-)
-(connector
-	(pt 200 808)
-	(pt 192 808)
-	(bus)
-)
-(connector
-	(pt 200 464)
-	(pt 200 808)
-	(bus)
+(symbol
+	(rect 352 968 472 1064)
+	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (color 255 255 255)(font_size 8)))
+	(text "MEMrnIDrn" (rect 8 75 61 92)(font "Intel Clear" (color 255 255 255)))
+	(port
+		(pt 0 32)
+		(input)
+		(text "reg1[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
+		(text "reg1[4..0]" (rect 21 27 78 46)(font "Intel Clear" (color 255 255 255)(font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reg2[4..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
+		(text "reg2[4..0]" (rect 21 43 78 62)(font "Intel Clear" (color 255 255 255)(font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 120 32)
+		(output)
+		(text "Y" (rect 0 0 8 19)(font "Intel Clear" (font_size 8)))
+		(text "Y" (rect 91 27 99 46)(font "Intel Clear" (color 255 255 255)(font_size 8)))
+		(line (pt 120 32)(pt 104 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 104 80)(color 255 255 255))
+	)
+	(fill (color 0 0 0))
 )
 (connector
 	(pt 464 328)
@@ -461,11 +443,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 496 408)
 )
 (connector
-	(text "MEMrnisIDrn" (rect 466 728 526 745)(font "Intel Clear" ))
-	(pt 456 744)
-	(pt 560 744)
-)
-(connector
 	(pt 560 400)
 	(pt 576 400)
 )
@@ -483,15 +460,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 912 528)
 )
 (connector
-	(text "MEMopisADDI" (rect 544 613 561 680)(font "Intel Clear" )(vertical))
-	(pt 560 616)
-	(pt 560 680)
-)
-(connector
-	(pt 560 744)
-	(pt 560 696)
-)
-(connector
 	(pt 912 688)
 	(pt 880 688)
 )
@@ -501,56 +469,97 @@ https://fpgasoftware.intel.com/eula.
 	(pt 912 688)
 )
 (connector
-	(pt 560 696)
+	(pt 1120 520)
+	(pt 1040 520)
+	(color 124 186 186)
+)
+(connector
+	(pt 600 688)
+	(pt 672 688)
+)
+(connector
+	(pt 640 704)
+	(pt 672 704)
+)
+(connector
+	(pt 736 680)
+	(pt 816 680)
+)
+(connector
 	(pt 816 696)
+	(pt 792 696)
 )
 (connector
-	(pt 560 680)
-	(pt 600 680)
+	(pt 560 656)
+	(pt 672 656)
 )
 (connector
-	(pt 600 680)
-	(pt 600 800)
+	(pt 560 568)
+	(pt 464 568)
 )
 (connector
-	(pt 600 800)
-	(pt 656 800)
+	(text "MEMopisADDI" (rect 544 613 561 680)(font "Intel Clear" )(vertical))
+	(pt 560 656)
+	(pt 560 568)
+)
+(connector
+	(pt 472 672)
+	(pt 672 672)
+)
+(connector
+	(pt 600 776)
+	(pt 472 776)
+)
+(connector
+	(pt 600 688)
+	(pt 600 776)
+)
+(connector
+	(pt 640 888)
+	(pt 472 888)
+)
+(connector
+	(pt 640 704)
+	(pt 640 888)
+)
+(connector
+	(text "MEMrnisIDrn" (rect 482 984 542 1001)(font "Intel Clear" ))
+	(pt 792 1000)
+	(pt 472 1000)
+)
+(connector
+	(pt 792 696)
+	(pt 792 1000)
 )
 (connector
 	(pt 176 88)
 	(pt 264 88)
 	(bus)
-	(color 255 85 0)
+	(color 170 85 0)
 )
 (connector
 	(pt 336 448)
 	(pt 264 448)
 	(bus)
-	(color 255 85 0)
+	(color 170 85 0)
+)
+(connector
+	(pt 264 1000)
+	(pt 352 1000)
+	(bus)
+	(color 170 85 0)
 )
 (connector
 	(pt 264 88)
 	(pt 264 448)
 	(bus)
-	(color 255 85 0)
-)
-(connector
-	(pt 336 744)
-	(pt 264 744)
-	(bus)
-	(color 255 85 0)
+	(color 170 85 0)
 )
 (connector
 	(pt 264 448)
-	(pt 264 744)
+	(pt 264 1000)
 	(bus)
-	(color 255 85 0)
-)
-(connector
-	(pt 264 744)
-	(pt 264 808)
-	(bus)
-	(color 255 85 0)
+	(color 170 85 0)
 )
 (connector
 	(pt 176 128)
@@ -571,38 +580,50 @@ https://fpgasoftware.intel.com/eula.
 	(color 0 170 0)
 )
 (connector
-	(pt 336 616)
-	(pt 248 616)
+	(pt 248 568)
+	(pt 336 568)
 	(bus)
 	(color 0 170 0)
 )
 (connector
 	(pt 248 328)
-	(pt 248 616)
+	(pt 248 568)
 	(bus)
 	(color 0 170 0)
 )
 (connector
-	(pt 248 704)
-	(pt 304 704)
+	(pt 248 568)
+	(pt 248 672)
 	(bus)
 	(color 0 170 0)
 )
 (connector
-	(pt 248 704)
-	(pt 248 808)
+	(pt 248 672)
+	(pt 344 672)
 	(bus)
 	(color 0 170 0)
 )
 (connector
-	(pt 304 704)
-	(pt 304 848)
+	(pt 248 776)
+	(pt 344 776)
 	(bus)
 	(color 0 170 0)
 )
 (connector
-	(pt 304 848)
-	(pt 336 848)
+	(pt 248 672)
+	(pt 248 776)
+	(bus)
+	(color 0 170 0)
+)
+(connector
+	(pt 248 776)
+	(pt 248 888)
+	(bus)
+	(color 0 170 0)
+)
+(connector
+	(pt 248 888)
+	(pt 344 888)
 	(bus)
 	(color 0 170 0)
 )
@@ -613,129 +634,50 @@ https://fpgasoftware.intel.com/eula.
 	(color 0 170 0)
 )
 (connector
-	(pt 336 760)
-	(pt 216 760)
+	(pt 216 1016)
+	(pt 352 1016)
 	(bus)
 	(color 0 170 0)
 )
 (connector
 	(pt 216 208)
-	(pt 216 760)
+	(pt 216 1016)
 	(bus)
 	(color 0 170 0)
 )
 (connector
-	(pt 216 760)
-	(pt 216 808)
+	(pt 176 248)
+	(pt 200 248)
 	(bus)
-	(color 0 170 0)
+	(color 85 170 0)
+)
+(connector
+	(pt 336 464)
+	(pt 200 464)
+	(bus)
+	(color 85 170 0)
+)
+(connector
+	(pt 200 808)
+	(pt 192 808)
+	(bus)
+	(color 85 170 0)
+)
+(connector
+	(pt 200 464)
+	(pt 200 808)
+	(bus)
+	(color 85 170 0)
 )
 (connector
 	(pt 200 248)
 	(pt 200 464)
 	(bus)
-	(color 0 170 0)
-)
-(connector
-	(pt 1120 520)
-	(pt 1040 520)
-	(color 124 186 186)
-)
-(connector
-	(pt 248 648)
-	(pt 320 648)
-	(bus)
-)
-(connector
-	(pt 248 616)
-	(pt 248 648)
-	(bus)
-	(color 0 170 0)
-)
-(connector
-	(pt 248 648)
-	(pt 248 704)
-	(bus)
-	(color 0 170 0)
-)
-(connector
-	(pt 320 968)
-	(pt 336 968)
-	(bus)
-)
-(connector
-	(pt 816 680)
-	(pt 792 680)
-)
-(connector
-	(pt 600 848)
-	(pt 600 832)
-)
-(connector
-	(pt 600 832)
-	(pt 656 832)
-)
-(connector
-	(pt 624 968)
-	(pt 624 816)
-)
-(connector
-	(pt 624 816)
-	(pt 656 816)
-)
-(connector
-	(pt 720 824)
-	(pt 792 824)
-)
-(connector
-	(pt 792 680)
-	(pt 792 824)
-)
-(connector
-	(pt 464 616)
-	(pt 560 616)
-)
-(connector
-	(pt 464 848)
-	(pt 600 848)
-)
-(connector
-	(pt 464 968)
-	(pt 624 968)
-)
-(connector
-	(pt 496 1080)
-	(pt 640 1080)
-)
-(connector
-	(pt 640 1080)
-	(pt 640 848)
-)
-(connector
-	(pt 640 848)
-	(pt 656 848)
-)
-(connector
-	(pt 320 1080)
-	(pt 368 1080)
-	(bus)
-)
-(connector
-	(pt 320 648)
-	(pt 320 968)
-	(bus)
-)
-(connector
-	(pt 320 968)
-	(pt 320 1080)
-	(bus)
+	(color 85 170 0)
 )
 (junction (pt 248 328))
 (junction (pt 264 448))
 (junction (pt 200 464))
-(junction (pt 248 616))
-(junction (pt 264 744))
-(junction (pt 216 760))
-(junction (pt 248 704))
-(junction (pt 248 648))
-(junction (pt 320 968))
+(junction (pt 248 568))
+(junction (pt 248 672))
+(junction (pt 248 776))

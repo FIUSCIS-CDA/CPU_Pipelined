@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed May 01 13:56:15 2024"
+// CREATED		"Tue Jan 21 10:35:47 2025"
 
 module ForwardAfromMEMtoID(
 	IDrm,
@@ -26,10 +26,10 @@ module ForwardAfromMEMtoID(
 );
 
 
-input wire	[4:0] IDrm;
-input wire	[5:0] MEMop;
-input wire	[4:0] MEMrn;
-input wire	[4:0] MEMrp;
+input wire	[25:21] IDrm;
+input wire	[31:26] MEMop;
+input wire	[20:16] MEMrn;
+input wire	[15:11] MEMrp;
 output wire	Y;
 
 wire	MEMopisRTYPE;

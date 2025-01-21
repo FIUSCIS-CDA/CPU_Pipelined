@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed May 01 13:45:42 2024"
+// CREATED		"Tue Jan 21 10:31:41 2025"
 
 module ForwardAfromWBtoEX(
 	EXrm,
@@ -26,10 +26,10 @@ module ForwardAfromWBtoEX(
 );
 
 
-input wire	[4:0] EXrm;
-input wire	[5:0] WBop;
-input wire	[4:0] WBrn;
-input wire	[4:0] WBrp;
+input wire	[25:21] EXrm;
+input wire	[31:26] WBop;
+input wire	[20:16] WBrn;
+input wire	[15:11] WBrp;
 output wire	Y;
 
 wire	WBopisADDI;

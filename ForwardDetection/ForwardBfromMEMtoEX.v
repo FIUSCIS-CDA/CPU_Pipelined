@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed May 01 13:42:12 2024"
+// CREATED		"Tue Jan 21 10:23:27 2025"
 
 module ForwardBfromMEMtoEX(
 	EXrn,
@@ -26,10 +26,10 @@ module ForwardBfromMEMtoEX(
 );
 
 
-input wire	[4:0] EXrn;
-input wire	[5:0] MEMop;
-input wire	[4:0] MEMrn;
-input wire	[4:0] MEMrp;
+input wire	[20:16] EXrn;
+input wire	[31:26] MEMop;
+input wire	[20:16] MEMrn;
+input wire	[15:11] MEMrp;
 output wire	Y;
 
 wire	MEMopisADDI;

@@ -24,7 +24,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 80 136 248 152)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 255 85 0)(font_size 6)))
-	(text "IDrn[4..0]" (rect 5 0 47 17)(font "Intel Clear" (color 255 85 0)))
+	(text "IDrn[20..16]" (rect 5 0 60 17)(font "Intel Clear" (color 255 85 0)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 255 85 0))
@@ -40,7 +40,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 80 176 248 192)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 0 255)(font_size 6)))
-	(text "WBop[5..0]" (rect 5 0 58 17)(font "Intel Clear" (color 0 0 255)))
+	(text "WBop[31..26]" (rect 5 0 70 17)(font "Intel Clear" (color 0 0 255)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 0 255))
@@ -56,7 +56,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 80 256 248 272)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 0 255)(font_size 6)))
-	(text "WBrn[4..0]" (rect 5 0 55 17)(font "Intel Clear" (color 0 0 255)))
+	(text "WBrn[20..16]" (rect 5 0 68 17)(font "Intel Clear" (color 0 0 255)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 0 255))
@@ -72,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 80 296 248 312)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 0 0 255)(font_size 6)))
-	(text "WBrp[4..0]" (rect 5 0 55 17)(font "Intel Clear" (color 0 0 255)))
+	(text "WBrp[15..11]" (rect 5 0 68 17)(font "Intel Clear" (color 0 0 255)))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12)(color 0 0 255))
@@ -198,7 +198,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 440 872 560 968)
+	(rect 648 1064 768 1160)
 	(text "REGCheck" (rect 5 0 65 19)(font "Intel Clear" (font_size 8)))
 	(text "WBrnIDrn" (rect 8 75 54 92)(font "Intel Clear" ))
 	(port
@@ -278,7 +278,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 440 728 568 824)
+	(rect 440 576 568 672)
 	(text "LW" (rect 5 0 23 19)(font "Intel Clear" (font_size 8)))
 	(text "WBopLW" (rect 8 75 54 92)(font "Intel Clear" ))
 	(port
@@ -363,7 +363,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 464 1216 592 1312)
+	(rect 440 992 568 1088)
 	(text "ORI" (rect 5 0 26 19)(font "Intel Clear" (font_size 8)))
 	(text "inst3" (rect 8 75 30 92)(font "Intel Clear" ))
 	(port
@@ -385,7 +385,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 424 608 552 704)
+	(rect 448 688 576 784)
 	(text "ADDI" (rect 5 0 35 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 75 24 92)(font "Intel Clear" ))
 	(port
@@ -407,7 +407,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 432 984 560 1080)
+	(rect 448 792 576 888)
 	(text "SLTI" (rect 5 0 32 19)(font "Intel Clear" (font_size 8)))
 	(text "inst8" (rect 8 75 30 92)(font "Intel Clear" ))
 	(port
@@ -429,7 +429,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 432 1112 560 1208)
+	(rect 448 896 576 992)
 	(text "LUI" (rect 5 0 25 19)(font "Intel Clear" (font_size 8)))
 	(text "inst9" (rect 8 75 30 92)(font "Intel Clear" ))
 	(port
@@ -494,16 +494,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 592 512)
 )
 (connector
-	(text "WBopisLW" (rect 578 744 631 761)(font "Intel Clear" ))
-	(pt 568 760)
-	(pt 624 760)
-)
-(connector
-	(text "WBrnisIDrn" (rect 560 888 613 905)(font "Intel Clear" ))
-	(pt 600 904)
-	(pt 560 904)
-)
-(connector
 	(text "WBopisRTYPE_and_WBrpisIDrn" (rect 672 440 824 457)(font "Intel Clear" ))
 	(pt 672 456)
 	(pt 728 456)
@@ -521,10 +511,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 1016 584)
 )
 (connector
-	(pt 600 904)
-	(pt 600 848)
-)
-(connector
 	(pt 1016 840)
 	(pt 976 840)
 )
@@ -532,19 +518,6 @@ https://fpgasoftware.intel.com/eula.
 	(text "WBopisLWorADDI_and_WBrnisIDrn" (rect 1000 679 1017 847)(font "Intel Clear" )(vertical))
 	(pt 1016 584)
 	(pt 1016 840)
-)
-(connector
-	(pt 600 848)
-	(pt 912 848)
-)
-(connector
-	(text "WBopisADDI" (rect 608 625 625 685)(font "Intel Clear" )(vertical))
-	(pt 624 640)
-	(pt 624 680)
-)
-(connector
-	(pt 624 760)
-	(pt 624 696)
 )
 (connector
 	(pt 864 792)
@@ -557,156 +530,6 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 880 832)
 	(pt 912 832)
-)
-(connector
-	(pt 768 1016)
-	(pt 768 800)
-)
-(connector
-	(pt 768 800)
-	(pt 800 800)
-)
-(connector
-	(pt 624 696)
-	(pt 768 696)
-)
-(connector
-	(pt 776 680)
-	(pt 776 784)
-)
-(connector
-	(pt 624 680)
-	(pt 776 680)
-)
-(connector
-	(pt 776 784)
-	(pt 800 784)
-)
-(connector
-	(pt 248 144)
-	(pt 328 144)
-	(bus)
-	(color 255 85 0)
-)
-(connector
-	(pt 328 512)
-	(pt 432 512)
-	(bus)
-	(color 255 85 0)
-)
-(connector
-	(pt 328 144)
-	(pt 328 512)
-	(bus)
-	(color 255 85 0)
-)
-(connector
-	(pt 328 904)
-	(pt 440 904)
-	(bus)
-	(color 255 85 0)
-)
-(connector
-	(pt 328 512)
-	(pt 328 904)
-	(bus)
-	(color 255 85 0)
-)
-(connector
-	(pt 328 904)
-	(pt 328 984)
-	(bus)
-	(color 255 85 0)
-)
-(connector
-	(pt 248 184)
-	(pt 312 184)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 312 392)
-	(pt 432 392)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 312 184)
-	(pt 312 392)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 312 760)
-	(pt 440 760)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 312 640)
-	(pt 424 640)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 312 392)
-	(pt 312 640)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 312 640)
-	(pt 312 760)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 312 840)
-	(pt 392 840)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 312 840)
-	(pt 312 984)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 392 840)
-	(pt 392 1016)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 392 1016)
-	(pt 432 1016)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 248 264)
-	(pt 280 264)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 440 920)
-	(pt 280 920)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 280 264)
-	(pt 280 920)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 280 920)
-	(pt 280 984)
-	(bus)
-	(color 0 0 255)
 )
 (connector
 	(pt 248 304)
@@ -738,83 +561,6 @@ https://fpgasoftware.intel.com/eula.
 	(color 125 188 188)
 )
 (connector
-	(pt 312 792)
-	(pt 408 792)
-	(bus)
-)
-(connector
-	(pt 312 760)
-	(pt 312 792)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 312 792)
-	(pt 312 840)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 432 1144)
-	(pt 408 1144)
-	(bus)
-)
-(connector
-	(pt 800 768)
-	(pt 768 768)
-)
-(connector
-	(pt 768 768)
-	(pt 768 696)
-)
-(connector
-	(pt 800 816)
-	(pt 712 816)
-)
-(connector
-	(pt 712 816)
-	(pt 712 1144)
-)
-(connector
-	(pt 552 640)
-	(pt 624 640)
-)
-(connector
-	(pt 560 1016)
-	(pt 768 1016)
-)
-(connector
-	(pt 408 1248)
-	(pt 464 1248)
-	(bus)
-)
-(connector
-	(pt 408 792)
-	(pt 408 1144)
-	(bus)
-)
-(connector
-	(pt 408 1144)
-	(pt 408 1248)
-	(bus)
-)
-(connector
-	(pt 560 1144)
-	(pt 712 1144)
-)
-(connector
-	(pt 592 1248)
-	(pt 784 1248)
-)
-(connector
-	(pt 784 1248)
-	(pt 784 832)
-)
-(connector
-	(pt 784 832)
-	(pt 800 832)
-)
-(connector
 	(pt 800 752)
 	(pt 792 752)
 )
@@ -830,13 +576,222 @@ https://fpgasoftware.intel.com/eula.
 	(pt 856 656)
 	(pt 856 672)
 )
+(connector
+	(text "WBopisLW" (rect 578 592 631 609)(font "Intel Clear" ))
+	(pt 624 608)
+	(pt 568 608)
+)
+(connector
+	(pt 624 696)
+	(pt 624 608)
+)
+(connector
+	(pt 624 696)
+	(pt 784 696)
+)
+(connector
+	(pt 800 768)
+	(pt 784 768)
+)
+(connector
+	(pt 784 768)
+	(pt 784 696)
+)
+(connector
+	(pt 912 848)
+	(pt 880 848)
+)
+(connector
+	(text "WBrnisIDrn" (rect 768 1080 821 1097)(font "Intel Clear" ))
+	(pt 880 1096)
+	(pt 768 1096)
+)
+(connector
+	(pt 880 848)
+	(pt 880 1096)
+)
+(connector
+	(pt 776 784)
+	(pt 800 784)
+)
+(connector
+	(pt 776 784)
+	(pt 776 720)
+)
+(connector
+	(text "WBopisADDI" (rect 586 704 646 721)(font "Intel Clear" ))
+	(pt 576 720)
+	(pt 776 720)
+)
+(connector
+	(pt 800 800)
+	(pt 672 800)
+)
+(connector
+	(pt 672 800)
+	(pt 672 824)
+)
+(connector
+	(text "WBopisSLTI" (rect 586 808 642 825)(font "Intel Clear" ))
+	(pt 576 824)
+	(pt 672 824)
+)
+(connector
+	(pt 800 816)
+	(pt 712 816)
+)
+(connector
+	(pt 712 816)
+	(pt 712 928)
+)
+(connector
+	(text "WBopisLUI" (rect 586 912 637 929)(font "Intel Clear" ))
+	(pt 712 928)
+	(pt 576 928)
+)
+(connector
+	(pt 784 832)
+	(pt 800 832)
+)
+(connector
+	(text "WBopisORI" (rect 578 1008 632 1025)(font "Intel Clear" ))
+	(pt 784 1024)
+	(pt 568 1024)
+)
+(connector
+	(pt 784 832)
+	(pt 784 1024)
+)
+(connector
+	(pt 248 184)
+	(pt 312 184)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 312 392)
+	(pt 432 392)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 312 608)
+	(pt 440 608)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 312 720)
+	(pt 448 720)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 312 824)
+	(pt 448 824)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 312 184)
+	(pt 312 392)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 312 392)
+	(pt 312 608)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 312 608)
+	(pt 312 720)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 312 720)
+	(pt 312 824)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 312 824)
+	(pt 312 928)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 312 928)
+	(pt 312 1024)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 312 928)
+	(pt 448 928)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 312 1024)
+	(pt 440 1024)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 248 264)
+	(pt 280 264)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 280 264)
+	(pt 280 1112)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 280 1112)
+	(pt 648 1112)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 248 144)
+	(pt 328 144)
+	(bus)
+	(color 170 85 0)
+)
+(connector
+	(pt 328 512)
+	(pt 432 512)
+	(bus)
+	(color 170 85 0)
+)
+(connector
+	(pt 328 1096)
+	(pt 648 1096)
+	(bus)
+	(color 170 85 0)
+)
+(connector
+	(pt 328 512)
+	(pt 328 1096)
+	(bus)
+	(color 170 85 0)
+)
+(connector
+	(pt 328 144)
+	(pt 328 512)
+	(bus)
+	(color 170 85 0)
+)
 (junction (pt 264 528))
 (junction (pt 312 392))
 (junction (pt 328 512))
-(junction (pt 328 904))
-(junction (pt 312 760))
-(junction (pt 312 640))
-(junction (pt 280 920))
-(junction (pt 312 840))
-(junction (pt 312 792))
-(junction (pt 408 1144))
+(junction (pt 312 608))
+(junction (pt 312 720))
+(junction (pt 312 824))
+(junction (pt 312 928))
