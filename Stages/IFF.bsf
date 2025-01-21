@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,25 +16,26 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 232 176)
+	(rect 16 16 248 176)
 	(text "IFF" (rect 5 0 22 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 139 24 156)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "reset" (rect 0 0 29 19)(font "Intel Clear" (font_size 8)))
-		(text "reset" (rect 21 27 50 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
+		(text "beq_offset[15..0]" (rect 0 0 103 19)(font "Intel Clear" (font_size 8)))
+		(text "beq_offset[15..0]" (rect 21 27 124 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "clk" (rect 0 0 16 19)(font "Intel Clear" (font_size 8)))
-		(text "clk" (rect 21 43 37 62)(font "Intel Clear" (font_size 8)))
+		(text "stall" (rect 0 0 24 19)(font "Intel Clear" (font_size 8)))
+		(text "stall" (rect 21 43 45 62)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 48)(pt 16 48))
 	)
 	(port
@@ -47,8 +48,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 80)
 		(input)
-		(text "beq_offset[15..0]" (rect 0 0 103 19)(font "Intel Clear" (font_size 8)))
-		(text "beq_offset[15..0]" (rect 21 75 124 94)(font "Intel Clear" (font_size 8)))
+		(text "Pick[1..0]" (rect 0 0 55 19)(font "Intel Clear" (font_size 8)))
+		(text "Pick[1..0]" (rect 21 75 76 94)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
@@ -61,39 +62,39 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 112)
 		(input)
-		(text "Pick[1..0]" (rect 0 0 55 19)(font "Intel Clear" (font_size 8)))
-		(text "Pick[1..0]" (rect 21 107 76 126)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 112)(pt 16 112)(line_width 3))
+		(text "reset" (rect 0 0 29 19)(font "Intel Clear" (font_size 8)))
+		(text "reset" (rect 21 107 50 126)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 112)(pt 16 112))
 	)
 	(port
 		(pt 0 128)
 		(input)
-		(text "stall" (rect 0 0 24 19)(font "Intel Clear" (font_size 8)))
-		(text "stall" (rect 21 123 45 142)(font "Intel Clear" (font_size 8)))
+		(text "clk" (rect 0 0 16 19)(font "Intel Clear" (font_size 8)))
+		(text "clk" (rect 21 123 37 142)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 128)(pt 16 128))
 	)
 	(port
-		(pt 216 32)
+		(pt 232 32)
 		(output)
 		(text "_PC[31..0]" (rect 0 0 62 19)(font "Intel Clear" (font_size 8)))
-		(text "_PC[31..0]" (rect 133 27 195 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 216 32)(pt 200 32)(line_width 3))
+		(text "_PC[31..0]" (rect 149 27 211 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 232 32)(pt 216 32)(line_width 3))
 	)
 	(port
-		(pt 216 48)
+		(pt 232 48)
 		(output)
 		(text "IFIR[31..0]" (rect 0 0 61 19)(font "Intel Clear" (font_size 8)))
-		(text "IFIR[31..0]" (rect 134 43 195 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 216 48)(pt 200 48)(line_width 3))
+		(text "IFIR[31..0]" (rect 150 43 211 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 232 48)(pt 216 48)(line_width 3))
 	)
 	(port
-		(pt 216 64)
+		(pt 232 64)
 		(output)
-		(text "IFop[5..0]" (rect 0 0 56 19)(font "Intel Clear" (font_size 8)))
-		(text "IFop[5..0]" (rect 139 59 195 78)(font "Intel Clear" (font_size 8)))
-		(line (pt 216 64)(pt 200 64)(line_width 3))
+		(text "IFop[31..26]" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
+		(text "IFop[31..26]" (rect 138 59 211 78)(font "Intel Clear" (font_size 8)))
+		(line (pt 232 64)(pt 216 64)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 200 144))
+		(rectangle (rect 16 16 216 144))
 	)
 )

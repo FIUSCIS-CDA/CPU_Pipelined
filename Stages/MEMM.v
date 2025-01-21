@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Thu May 02 08:23:54 2024"
+// CREATED		"Tue Jan 21 11:36:34 2025"
 
 module MEMM(
 	clk,
@@ -37,9 +37,9 @@ input wire	[31:0] MEMALUOut;
 input wire	[31:0] MEMB;
 output wire	[31:0] MEMForward;
 output wire	[31:0] MEMIR;
-output wire	[5:0] MEMop;
-output wire	[4:0] MEMrn;
-output wire	[4:0] MEMrp;
+output wire	[31:26] MEMop;
+output wire	[20:16] MEMrn;
+output wire	[15:11] MEMrp;
 output wire	[31:0] MEMValue;
 
 wire	[31:0] IR;
@@ -78,8 +78,8 @@ DM_synch	b2v_MYDM(
 
 assign	MEMIR = IR;
 assign	IR = Instruction;
-assign	MEMop[5:0] = IR[31:26];
-assign	MEMrn[4:0] = IR[20:16];
-assign	MEMrp[4:0] = IR[15:11];
+assign	MEMop[31:26] = IR[31:26];
+assign	MEMrn[20:16] = IR[20:16];
+assign	MEMrp[15:11] = IR[15:11];
 
 endmodule

@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Aug 16 14:47:31 2023"
+// CREATED		"Tue Jan 21 09:21:10 2025"
 
 module IFF(
 	stall,
@@ -40,7 +40,7 @@ input wire	[15:0] beq_offset;
 input wire	[1:0] Pick;
 output wire	[31:0] _PC;
 output wire	[31:0] IFIR;
-output wire	[5:0] IFop;
+output wire	[31:26] IFop;
 
 wire	[31:0] FixedBranchPC;
 wire	[31:0] FixforPredictNotTaken;
@@ -48,12 +48,10 @@ wire	[31:0] FixforPredictTaken;
 wire	[31:0] IDbeqtargettimes4;
 wire	[31:0] IFbeqtarget_SE;
 wire	[31:0] IFbeqtargettimes4;
-wire	[31:0] IFbeqtargettimes4plus4;
 wire	[31:0] IFIR_ALTERA_SYNTHESIZED;
 wire	[31:0] Instruction;
 wire	[31:0] newPC;
 wire	[31:0] NewPCforBEQ;
-wire	[31:0] newValueForPC;
 wire	[6:0] Op;
 wire	[31:0] PC;
 wire	[31:0] PCJump;
@@ -63,6 +61,7 @@ wire	wire_to_ground2;
 wire	[31:0] SYNTHESIZED_WIRE_0;
 wire	[31:0] SYNTHESIZED_WIRE_1;
 wire	SYNTHESIZED_WIRE_2;
+wire	[31:0] SYNTHESIZED_WIRE_3;
 
 
 
@@ -71,11 +70,6 @@ wire	SYNTHESIZED_WIRE_2;
 INC4_32	b2v_add4(
 	.A(PC),
 	.S(PredictNotTakenNewPC));
-
-
-INC4_32	b2v_add4_2(
-	.A(IFbeqtargettimes4),
-	.S(IFbeqtargettimes4plus4));
 
 
 
@@ -100,6 +94,12 @@ ALU_32	b2v_inst3(
 	.Result(FixforPredictTaken));
 
 
+SPLICE_PCJ	b2v_inst4(
+	.ir25_0(Instruction[25:0]),
+	.pc31_28(PC[31:28]),
+	.Y(PCJump));
+
+
 MUX2_32	b2v_MUXFixPC(
 	.S(Taken),
 	.A(FixforPredictNotTaken),
@@ -118,7 +118,7 @@ MUX2_32	b2v_MUXPCREG(
 	.S(stall),
 	.A(newPC),
 	.B(PC),
-	.Y(newValueForPC));
+	.Y(SYNTHESIZED_WIRE_3));
 
 
 MUX2_32	b2v_MUXPredictPC(
@@ -135,8 +135,8 @@ Adder_32	b2v_MYAdder(
 
 
 Adder_32	b2v_MYAdder2(
-	.A(PC),
-	.B(IFbeqtargettimes4plus4),
+	.A(PredictNotTakenNewPC),
+	.B(IFbeqtargettimes4),
 	.S(PredictTakenNewPC));
 
 
@@ -162,16 +162,10 @@ MUX4_32	b2v_PCBranch(
 	.Y(newPC));
 
 
-SPLICE_PCJ	b2v_PCJCompute(
-	.ir25_0(Instruction[25:0]),
-	.pc31_28(PC[31:28]),
-	.Y(PCJump));
-
-
 Flopr_32	b2v_PCREG(
 	.reset(reset),
 	.clk(clk),
-	.D(newValueForPC),
+	.D(SYNTHESIZED_WIRE_3),
 	.Q(PC));
 
 
@@ -190,13 +184,13 @@ Zero	b2v_Value0(
 
 assign	_PC = PC;
 assign	IFIR = IFIR_ALTERA_SYNTHESIZED;
-assign	IFop[5:0] = IFIR_ALTERA_SYNTHESIZED[31:26];
+assign	IFop[31:26] = IFIR_ALTERA_SYNTHESIZED[31:26];
 assign	Op[0] = 0;
 assign	Op[1] = 1;
 assign	Op[2] = 0;
-assign	Op[3] = 1;
 assign	Op[4] = 1;
-assign	Op[5] = 0;
 assign	Op[6] = 0;
+assign	Op[3] = 1;
+assign	Op[5] = 0;
 
 endmodule

@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Aug 16 14:46:05 2023"
+// CREATED		"Tue Jan 21 10:57:24 2025"
 
 module ID(
 	IDStall,
@@ -54,9 +54,9 @@ output wire	[31:0] IDA;
 output wire	[31:0] IDB;
 output wire	[31:0] IDIR;
 output wire	[15:0] IDof;
-output wire	[5:0] IDop;
-output wire	[4:0] IDrm;
-output wire	[4:0] IDrn;
+output wire	[31:26] IDop;
+output wire	[25:21] IDrm;
+output wire	[20:16] IDrn;
 
 wire	[31:0] IDIRWire;
 wire	[31:0] ReadData1;
@@ -108,7 +108,7 @@ Zero	b2v_Value0(
 
 assign	IDIR = IDIRWire;
 assign	IDof[15:0] = IDIRWire[15:0];
-assign	IDrm[4:0] = Instruction[25:21];
-assign	IDrn[4:0] = Instruction[20:16];
+assign	IDrm[25:21] = Instruction[25:21];
+assign	IDrn[20:16] = Instruction[20:16];
 
 endmodule

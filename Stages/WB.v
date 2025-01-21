@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Thu May 02 08:34:20 2024"
+// CREATED		"Tue Jan 21 11:40:12 2025"
 
 module WB(
 	Instruction,
@@ -35,10 +35,10 @@ input wire	[31:0] WBValue;
 output wire	WBwe;
 output wire	[31:0] WBData;
 output wire	[31:0] WBForward;
-output wire	[5:0] WBop;
+output wire	[31:26] WBop;
 output wire	[4:0] WBReg;
-output wire	[4:0] WBrn;
-output wire	[4:0] WBrp;
+output wire	[20:16] WBrn;
+output wire	[15:11] WBrp;
 
 wire	[31:0] WBIR;
 wire	WBopisADDI;
@@ -71,19 +71,19 @@ ADDI	b2v_inst3(
 
 SLTI	b2v_inst4(
 	.Op(WBIR[31:26]),
-	.Y(SYNTHESIZED_WIRE_3));
+	.Y(SYNTHESIZED_WIRE_4));
 
 
 LUI	b2v_inst5(
 	.Op(WBIR[31:26]),
-	.Y(SYNTHESIZED_WIRE_4));
+	.Y(SYNTHESIZED_WIRE_2));
 
 
 ORI	b2v_inst6(
 	.Op(WBIR[31:26]),
-	.Y(SYNTHESIZED_WIRE_2));
+	.Y(SYNTHESIZED_WIRE_3));
 
-assign	WBopisLWADDIorSLTI = SYNTHESIZED_WIRE_1 | WBopisADDI | SYNTHESIZED_WIRE_2 | SYNTHESIZED_WIRE_3 | WBopisLW | SYNTHESIZED_WIRE_4;
+assign	WBopisLWADDIorSLTI = SYNTHESIZED_WIRE_1 | SYNTHESIZED_WIRE_2 | SYNTHESIZED_WIRE_3 | SYNTHESIZED_WIRE_4 | WBopisADDI | WBopisLW;
 
 
 LW	b2v_isLW(
@@ -108,8 +108,8 @@ NONZERO	b2v_nonZeroReg(
 	.Y(WBrdisNOT0));
 
 assign	WBIR = Instruction;
-assign	WBop[5:0] = WBIR[31:26];
-assign	WBrn[4:0] = WBIR[20:16];
-assign	WBrp[4:0] = WBIR[15:11];
+assign	WBop[31:26] = WBIR[31:26];
+assign	WBrn[20:16] = WBIR[20:16];
+assign	WBrp[15:11] = WBIR[15:11];
 
 endmodule
