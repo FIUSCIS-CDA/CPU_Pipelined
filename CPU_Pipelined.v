@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Thu May 02 08:30:08 2024"
+// CREATED		"Tue Jan 21 11:51:34 2025"
 
 module CPU_Pipelined(
 	reset,
@@ -46,9 +46,6 @@ wire	[31:0] EXIR_ALTERA_SYNTHESIZED;
 wire	[31:0] EXMEMTower_ALUOut;
 wire	[31:0] EXMEMTower_B;
 wire	[31:0] EXMEMTower_IR;
-wire	[4:0] EXrm;
-wire	[4:0] EXrn;
-wire	[4:0] EXrp;
 wire	EXstall;
 wire	EXstall_or_IDstall;
 wire	Fix;
@@ -62,7 +59,6 @@ wire	[15:0] ID_beq_offset;
 wire	[31:0] IDA;
 wire	[31:0] IDB;
 wire	[31:0] IDEXTower_A;
-wire	[31:0] IDEXTower_B;
 wire	[31:0] IDEXTower_IR;
 wire	[31:0] IDIRwire;
 wire	[5:0] IDop;
@@ -88,13 +84,17 @@ wire	[31:0] ValuetoWriteREG;
 wire	[5:0] WBop;
 wire	[4:0] WBrn;
 wire	[4:0] WBrp;
-wire	[5:0] SYNTHESIZED_WIRE_0;
+wire	[31:0] SYNTHESIZED_WIRE_0;
+wire	[25:21] SYNTHESIZED_WIRE_7;
+wire	[20:16] SYNTHESIZED_WIRE_8;
+wire	[31:26] SYNTHESIZED_WIRE_3;
+wire	[15:11] SYNTHESIZED_WIRE_6;
 
 
 
 
 
-Branch_Prediction	b2v_BranchPredictionHW(
+Branch_Prediction	b2v_BranchPredictionUnit(
 	.Taken(Strategy[0]),
 	.DelaySlot(Strategy[1]),
 	.IDA(IDA),
@@ -119,7 +119,7 @@ EXMEMTower	b2v_EX_MEM_Tower(
 EX	b2v_EXStage(
 	.EXStall(EXstall),
 	.EXA(IDEXTower_A),
-	.EXB(IDEXTower_B),
+	.EXB(SYNTHESIZED_WIRE_0),
 	.Forward_MEM(ForwardedValuefromMEM),
 	.Forward_WB(ForwardedValuefromWB),
 	.ForwardA_EX(ForwardA_EX),
@@ -128,17 +128,17 @@ EX	b2v_EXStage(
 	.EXALUB(EXB),
 	.EXALUOut(EXALUOut),
 	.EXIR(EXIR_ALTERA_SYNTHESIZED),
-	.Exop(SYNTHESIZED_WIRE_0),
-	.EXrm(EXrm),
-	.EXrn(EXrn),
-	.EXrp(EXrp),
+	.Exop(SYNTHESIZED_WIRE_3),
+	.EXrm(SYNTHESIZED_WIRE_7),
+	.EXrn(SYNTHESIZED_WIRE_8),
+	.EXrp(SYNTHESIZED_WIRE_6),
 	.OLDA(OLDA),
 	.OLDB(OLDB));
 
 
 ForwardDetection	b2v_ForwardDetectionUnit(
-	.EXrm(EXrm),
-	.EXrn(EXrn),
+	.EXrm(SYNTHESIZED_WIRE_7),
+	.EXrn(SYNTHESIZED_WIRE_8),
 	.IDrm(IDrm),
 	.IDrn(IDrn),
 	.MEMop(MEMop),
@@ -163,7 +163,7 @@ IDEXTower	b2v_ID_EX_Tower(
 	.OLDA(OLDA),
 	.OLDB(OLDB),
 	.EXA(IDEXTower_A),
-	.EXB(IDEXTower_B),
+	.EXB(SYNTHESIZED_WIRE_0),
 	.EXIR(IDEXTower_IR));
 
 
@@ -197,11 +197,11 @@ IFIDTower	b2v_IF_ID_Tower(
 
 
 IFF	b2v_IFStage(
-	.reset(reset),
-	.clk(clk),
+	.stall(EXstall_or_IDstall),
 	.Taken(Strategy[0]),
 	.Fix(Fix),
-	.stall(EXstall_or_IDstall),
+	.reset(reset),
+	.clk(clk),
 	.beq_offset(ID_beq_offset),
 	.Pick(Pick),
 	._PC(PC),
@@ -234,10 +234,10 @@ MEMM	b2v_MEMStage(
 
 
 StallDetection	b2v_StallDetectionUnit(
-	.EXop(SYNTHESIZED_WIRE_0),
-	.EXrm(EXrm),
-	.EXrn(EXrn),
-	.EXrp(EXrp),
+	.EXop(SYNTHESIZED_WIRE_3),
+	.EXrm(SYNTHESIZED_WIRE_7),
+	.EXrn(SYNTHESIZED_WIRE_8),
+	.EXrp(SYNTHESIZED_WIRE_6),
 	.IDop(IDop),
 	.IDrm(IDrm),
 	.IDrn(IDrn),
