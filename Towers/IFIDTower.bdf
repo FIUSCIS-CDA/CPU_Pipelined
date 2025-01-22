@@ -54,7 +54,7 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(input)
-	(rect 56 416 224 432)
+	(rect 8 216 176 232)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (color 255 0 0)(font_size 6)))
 	(text "stall" (rect 5 0 25 12)(font "Arial" (color 255 0 0)))
 	(pt 168 8)
@@ -101,7 +101,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 304 408 352 440)
+	(rect 200 208 248 240)
 	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "inst" (rect 3 21 20 33)(font "Arial" ))
 	(port
@@ -170,27 +170,6 @@ https://fpgasoftware.intel.com/eula.
 	(fill (color 85 255 0))
 )
 (connector
-	(pt 352 424)
-	(pt 400 424)
-)
-(connector
-	(pt 400 424)
-	(pt 400 320)
-)
-(connector
-	(text "NOTstall" (rect 274 304 316 321)(font "Intel Clear" ))
-	(pt 400 320)
-	(pt 264 320)
-)
-(connector
-	(pt 264 320)
-	(pt 264 224)
-)
-(connector
-	(pt 264 224)
-	(pt 320 224)
-)
-(connector
 	(pt 248 56)
 	(pt 304 56)
 	(color 255 170 0)
@@ -221,11 +200,6 @@ https://fpgasoftware.intel.com/eula.
 	(color 0 85 0)
 )
 (connector
-	(pt 224 424)
-	(pt 304 424)
-	(color 255 0 0)
-)
-(connector
 	(pt 232 208)
 	(pt 320 208)
 	(bus)
@@ -236,4 +210,13 @@ https://fpgasoftware.intel.com/eula.
 	(pt 592 176)
 	(bus)
 	(color 255 85 0)
+)
+(connector
+	(pt 248 224)
+	(pt 320 224)
+)
+(connector
+	(pt 176 224)
+	(pt 200 224)
+	(color 255 0 0)
 )
