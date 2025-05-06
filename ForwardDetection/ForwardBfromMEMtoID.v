@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Tue Jan 21 10:16:13 2025"
+// CREATED		"Tue May 06 11:26:50 2025"
 
 module ForwardBfromMEMtoID(
 	IDrn,
@@ -26,10 +26,10 @@ module ForwardBfromMEMtoID(
 );
 
 
-input wire	[4:0] IDrn;
-input wire	[5:0] MEMop;
-input wire	[4:0] MEMrn;
-input wire	[4:0] MEMrp;
+input wire	[20:16] IDrn;
+input wire	[31:26] MEMop;
+input wire	[20:16] MEMrn;
+input wire	[15:11] MEMrp;
 output wire	Y;
 
 wire	MEMopisADDI;
@@ -42,7 +42,10 @@ wire	SYNTHESIZED_WIRE_0;
 wire	SYNTHESIZED_WIRE_1;
 wire	SYNTHESIZED_WIRE_2;
 wire	SYNTHESIZED_WIRE_3;
+wire	SYNTHESIZED_WIRE_4;
+wire	SYNTHESIZED_WIRE_5;
 
+assign	SYNTHESIZED_WIRE_5 = 0;
 
 
 
@@ -52,9 +55,14 @@ ADDI	b2v_inst(
 	.Y(MEMopisADDI));
 
 
+ANDI	b2v_inst1(
+	.Op(MEMop),
+	.Y(SYNTHESIZED_WIRE_4));
+
+
 LUI	b2v_inst10(
 	.Op(MEMop),
-	.Y(SYNTHESIZED_WIRE_3));
+	.Y(SYNTHESIZED_WIRE_2));
 
 assign	MEMopisRTYPE_and_MEMrpisIDrn = MEMopisRTYPE & MEMrpisIDrn;
 
@@ -62,12 +70,13 @@ assign	MEMopisADDI_and_MEMrnisIDrn = SYNTHESIZED_WIRE_0 & MEMrnisIDrn;
 
 assign	Y = MEMopisADDI_and_MEMrnisIDrn | MEMopisRTYPE_and_MEMrpisIDrn;
 
-assign	SYNTHESIZED_WIRE_0 = MEMopisADDI | SYNTHESIZED_WIRE_1 | SYNTHESIZED_WIRE_2 | SYNTHESIZED_WIRE_3;
+assign	SYNTHESIZED_WIRE_0 = MEMopisADDI | SYNTHESIZED_WIRE_1 | SYNTHESIZED_WIRE_2 | SYNTHESIZED_WIRE_3 | SYNTHESIZED_WIRE_4 | SYNTHESIZED_WIRE_5;
+
 
 
 ORI	b2v_inst7(
 	.Op(MEMop),
-	.Y(SYNTHESIZED_WIRE_2));
+	.Y(SYNTHESIZED_WIRE_3));
 
 
 SLTI	b2v_inst9(

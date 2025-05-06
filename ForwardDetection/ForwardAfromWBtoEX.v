@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Tue Jan 21 10:31:41 2025"
+// CREATED		"Tue May 06 11:27:11 2025"
 
 module ForwardAfromWBtoEX(
 	EXrm,
@@ -45,14 +45,13 @@ wire	SYNTHESIZED_WIRE_2;
 wire	SYNTHESIZED_WIRE_3;
 wire	SYNTHESIZED_WIRE_4;
 
-assign	SYNTHESIZED_WIRE_0 = 0;
 
 
 
 
 SLTI	b2v_inst(
 	.Op(WBop),
-	.Y(SYNTHESIZED_WIRE_1));
+	.Y(SYNTHESIZED_WIRE_0));
 
 
 ADDI	b2v_inst1(
@@ -60,17 +59,21 @@ ADDI	b2v_inst1(
 	.Y(WBopisADDI));
 
 
+ANDI	b2v_inst2(
+	.Op(WBop),
+	.Y(SYNTHESIZED_WIRE_3));
+
 
 LUI	b2v_inst3(
 	.Op(WBop),
-	.Y(SYNTHESIZED_WIRE_2));
+	.Y(SYNTHESIZED_WIRE_1));
 
-assign	SYNTHESIZED_WIRE_4 = SYNTHESIZED_WIRE_0 | WBopisLW | WBopisADDI | SYNTHESIZED_WIRE_1 | SYNTHESIZED_WIRE_2 | SYNTHESIZED_WIRE_3;
+assign	SYNTHESIZED_WIRE_4 = WBopisADDI | SYNTHESIZED_WIRE_0 | WBopisLW | SYNTHESIZED_WIRE_1 | SYNTHESIZED_WIRE_2 | SYNTHESIZED_WIRE_3;
 
 
 ORI	b2v_inst5(
 	.Op(WBop),
-	.Y(SYNTHESIZED_WIRE_3));
+	.Y(SYNTHESIZED_WIRE_2));
 
 assign	WBopisRTYPE_and_WBrpisEXrm = WBopisRTYPE & WBrpisEXrm;
 
