@@ -39,6 +39,7 @@ WBIR  | 32
        WBIR: Instruction in WB state
 
 #### SUPPORTED INSTRUCTIONS
+       ANDI (SP25)
        ORI (SP24)
        LUI (FA23)
        MFLO (SP23)
