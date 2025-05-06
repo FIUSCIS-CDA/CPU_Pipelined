@@ -41,7 +41,7 @@ set_global_assignment -name DEVICE 5CGXFC7C7F23C8
 set_global_assignment -name TOP_LEVEL_ENTITY CPU_Pipelined
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "19:28:44  OCTOBER 20, 2020"
-set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
@@ -53,36 +53,25 @@ set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
 set_global_assignment -name BDF_FILE Zero.bdf
-set_global_assignment -name BDF_FILE IFIDTower.bdf
+set_global_assignment -name BDF_FILE Towers/IFIDTower.bdf
 set_global_assignment -name BDF_FILE Branch_Prediction.bdf
-set_global_assignment -name BDF_FILE J.bdf
-set_global_assignment -name BDF_FILE BEQ.bdf
-set_global_assignment -name BDF_FILE EQ_32.bdf
-set_global_assignment -name BDF_FILE ID.bdf
-set_global_assignment -name BDF_FILE IDEXTower.bdf
-set_global_assignment -name BDF_FILE SW.bdf
-set_global_assignment -name BDF_FILE LW.bdf
-set_global_assignment -name BDF_FILE RTYPE.bdf
-set_global_assignment -name BDF_FILE SLL.bdf
-set_global_assignment -name BDF_FILE EX.bdf
-set_global_assignment -name BDF_FILE ADD.bdf
-set_global_assignment -name BDF_FILE SUB.bdf
-set_global_assignment -name BDF_FILE SLT.bdf
+set_global_assignment -name BDF_FILE Checks/EQ_32.bdf
+set_global_assignment -name BDF_FILE Stages/ID.bdf
+set_global_assignment -name BDF_FILE Towers/IDEXTower.bdf
+set_global_assignment -name BDF_FILE Stages/EX.bdf
 set_global_assignment -name BDF_FILE ALUCtl.bdf
-set_global_assignment -name BDF_FILE EXMEMTower.bdf
-set_global_assignment -name BDF_FILE MEMWBTower.bdf
-set_global_assignment -name BDF_FILE WB.bdf
-set_global_assignment -name BDF_FILE StallDetection.bdf
-set_global_assignment -name BDF_FILE NONZERO.bdf
-set_global_assignment -name BDF_FILE EQ_5.bdf
-set_global_assignment -name BDF_FILE ForwardDetection.bdf
-set_global_assignment -name BDF_FILE REGCheck.bdf
+set_global_assignment -name BDF_FILE Towers/EXMEMTower.bdf
+set_global_assignment -name BDF_FILE Towers/MEMWBTower.bdf
+set_global_assignment -name BDF_FILE Stages/WB.bdf
+set_global_assignment -name BDF_FILE StallDetection/StallDetection.bdf
+set_global_assignment -name BDF_FILE Checks/NONZERO.bdf
+set_global_assignment -name BDF_FILE Checks/EQ_5.bdf
+set_global_assignment -name BDF_FILE Checks/REGCheck.bdf
 set_global_assignment -name BDF_FILE CPU_Pipelined.bdf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name BDF_FILE ORR.bdf
-set_global_assignment -name BDF_FILE MEMM.bdf
+set_global_assignment -name BDF_FILE Stages/MEMM.bdf
 set_global_assignment -name BDF_FILE ../Flopr_32/Flopr_32.bdf
 set_global_assignment -name BDF_FILE ../Flopr/Flopr.bdf
 set_global_assignment -name BDF_FILE ../DSwitch/DSwitch.bdf
@@ -93,7 +82,6 @@ set_global_assignment -name BDF_FILE ../MUX3_32/MUX3_32.bdf
 set_global_assignment -name BDF_FILE ../SameBit/SameBit.bdf
 set_global_assignment -name BDF_FILE ../MUX3/MUX3.bdf
 set_global_assignment -name BDF_FILE ../SL2_32/SL2_32.bdf
-set_global_assignment -name VERILOG_FILE ../DM/DM.v
 set_global_assignment -name BDF_FILE ../ALU_32/ALU_32.bdf
 set_global_assignment -name BDF_FILE ../ALU_32/ALUBit31.bdf
 set_global_assignment -name BDF_FILE ../ALU_32/ALUBits0To30.bdf
@@ -111,6 +99,48 @@ set_global_assignment -name BDF_FILE ../DESwitch/DESwitch.bdf
 set_global_assignment -name BDF_FILE ../MUX32_32/MUX32_32.bdf
 set_global_assignment -name BDF_FILE ../Decoder_32/Decoder_32.bdf
 set_global_assignment -name BDF_FILE ../MUX32/MUX32.bdf
-set_global_assignment -name BDF_FILE IFF.bdf
-set_global_assignment -name BDF_FILE ANDD.bdf
+set_global_assignment -name BDF_FILE Stages/IFF.bdf
+set_global_assignment -name BDF_FILE ForwardDetection/ForwardBfromWBtoID.bdf
+set_global_assignment -name BDF_FILE ForwardDetection/ForwardBfromWBtoEX.bdf
+set_global_assignment -name BDF_FILE ForwardDetection/ForwardBfromMEMtoID.bdf
+set_global_assignment -name BDF_FILE ForwardDetection/ForwardBfromMEMtoEX.bdf
+set_global_assignment -name BDF_FILE ForwardDetection/ForwardAfromWBtoID.bdf
+set_global_assignment -name BDF_FILE ForwardDetection/ForwardAfromWBtoEX.bdf
+set_global_assignment -name BDF_FILE ForwardDetection/ForwardAfromMEMtoID.bdf
+set_global_assignment -name BDF_FILE ForwardDetection/ForwardAfromMEMtoEX.bdf
+set_global_assignment -name BDF_FILE ForwardDetection/ForwardDetection.bdf
+set_global_assignment -name VERILOG_FILE ../DM/DM_synch.v
+set_global_assignment -name BDF_FILE ../ALU_32/OverflowDetection.bdf
+set_global_assignment -name BDF_FILE ../MUX4_32/MUX4_32.bdf
+set_global_assignment -name BDF_FILE ../Grounder/Grounder.bdf
+set_global_assignment -name BDF_FILE ../Multiplier_32/Multiplier_32.bdf
+set_global_assignment -name BDF_FILE ../OneBitAdderHalf/OneBitAdderHalf.bdf
+set_global_assignment -name BDF_FILE ../SLL_32/SLL_32.bdf
+
+
+
+
+
+
+set_global_assignment -name BDF_FILE ../Sixteen/Sixteen.bdf
+set_global_assignment -name BDF_FILE ../Instructions/SW.bdf
+set_global_assignment -name BDF_FILE ../Instructions/SUB.bdf
+set_global_assignment -name BDF_FILE ../Instructions/SLTI.bdf
+set_global_assignment -name BDF_FILE ../Instructions/SLT.bdf
+set_global_assignment -name BDF_FILE ../Instructions/SLL.bdf
+set_global_assignment -name BDF_FILE ../Instructions/RTYPE.bdf
+set_global_assignment -name BDF_FILE ../Instructions/ORR.bdf
+set_global_assignment -name BDF_FILE ../Instructions/ORI.bdf
+set_global_assignment -name BDF_FILE ../Instructions/MULT.bdf
+set_global_assignment -name BDF_FILE ../Instructions/MFLO.bdf
+set_global_assignment -name BDF_FILE ../Instructions/LW.bdf
+set_global_assignment -name BDF_FILE ../Instructions/LUI.bdf
+set_global_assignment -name BDF_FILE ../Instructions/J.bdf
+set_global_assignment -name BDF_FILE ../Instructions/BNE.bdf
+set_global_assignment -name BDF_FILE ../Instructions/BEQ.bdf
+set_global_assignment -name BDF_FILE ../Instructions/ANDD.bdf
+set_global_assignment -name BDF_FILE ../Instructions/ADDI.bdf
+set_global_assignment -name BDF_FILE ../Instructions/ADD.bdf
+set_global_assignment -name BDF_FILE ../ZE16_32/ZE16_32.bdf
+
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
