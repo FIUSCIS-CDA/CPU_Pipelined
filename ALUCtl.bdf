@@ -40,7 +40,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 40 632 216 648)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (color 255 0 0)(font_size 6)))
-	(text "Opcode[31..26]" (rect 5 0 81 12)(font "Arial" (color 255 0 0)))
+	(text "Opcode[31..26]" (rect 5 0 80 12)(font "Arial" (color 255 0 0)))
 	(pt 176 8)
 	(drawing
 		(line (pt 92 12)(pt 117 12)(color 255 0 0))
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 936 664 968 696)
+	(rect 936 696 968 728)
 	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
 	(text "inst" (rect 3 21 20 33)(font "Arial" )(invisible))
 	(port
@@ -831,11 +831,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 1008 880)
 )
 (connector
-	(text "ALUOp[2]" (rect 922 840 969 857)(font "Intel Clear" ))
-	(pt 912 856)
-	(pt 1008 856)
-)
-(connector
 	(pt 776 784)
 	(pt 656 784)
 	(color 0 0 255)
@@ -844,21 +839,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 656 736)
 	(pt 656 784)
 	(color 0 0 255)
-)
-(connector
-	(text "ALUOp[3]" (rect 882 768 929 785)(font "Intel Clear" ))
-	(pt 872 784)
-	(pt 1008 784)
-)
-(connector
-	(pt 952 656)
-	(pt 952 664)
-	(color 0 0 255)
-)
-(connector
-	(text "ALUOp[5]" (rect 960 640 1007 657)(font "Intel Clear" (color 0 0 255)))
-	(pt 1008 656)
-	(pt 952 656)
 )
 (connector
 	(text "ALUOp[6]" (rect 722 608 769 625)(font "Intel Clear" ))
@@ -1134,25 +1114,8 @@ https://fpgasoftware.intel.com/eula.
 	(color 0 0 255)
 )
 (connector
-	(pt 1008 856)
-	(pt 1008 880)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 1008 784)
-	(pt 1008 856)
-	(bus)
-	(color 0 0 255)
-)
-(connector
 	(pt 592 736)
 	(pt 656 736)
-)
-(connector
-	(text "ALUOp[4]" (rect 704 720 751 737)(font "Intel Clear" (color 0 0 255)))
-	(pt 656 736)
-	(pt 1008 736)
 )
 (connector
 	(pt 1008 736)
@@ -1162,18 +1125,6 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 1008 608)
 	(pt 1008 624)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 1008 624)
-	(pt 1008 656)
-	(bus)
-	(color 0 0 255)
-)
-(connector
-	(pt 1008 656)
-	(pt 1008 736)
 	(bus)
 	(color 0 0 255)
 )
@@ -1206,12 +1157,61 @@ https://fpgasoftware.intel.com/eula.
 	(pt 912 368)
 )
 (connector
-	(pt 912 368)
-	(pt 912 856)
-)
-(connector
 	(pt 504 880)
 	(pt 504 1160)
+)
+(connector
+	(text "ALUOp[2]" (rect 882 768 929 785)(font "Intel Clear" ))
+	(pt 872 784)
+	(pt 1008 784)
+)
+(connector
+	(text "ALUOp[3]" (rect 704 720 751 737)(font "Intel Clear" (color 0 0 255)))
+	(pt 656 736)
+	(pt 1008 736)
+)
+(connector
+	(pt 952 688)
+	(pt 952 696)
+	(color 0 0 255)
+)
+(connector
+	(text "ALUOp[4]" (rect 952 672 999 689)(font "Intel Clear" (color 0 0 255)))
+	(pt 1008 688)
+	(pt 952 688)
+)
+(connector
+	(pt 912 368)
+	(pt 912 648)
+)
+(connector
+	(pt 1008 784)
+	(pt 1008 880)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 1008 688)
+	(pt 1008 736)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 1008 624)
+	(pt 1008 648)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(pt 1008 648)
+	(pt 1008 688)
+	(bus)
+	(color 0 0 255)
+)
+(connector
+	(text "ALUOp[5]" (rect 922 632 969 649)(font "Intel Clear" ))
+	(pt 1008 648)
+	(pt 912 648)
 )
 (junction (pt 448 680))
 (junction (pt 480 800))
@@ -1234,12 +1234,12 @@ https://fpgasoftware.intel.com/eula.
 (junction (pt 272 1432))
 (junction (pt 1008 904))
 (junction (pt 1008 880))
-(junction (pt 1008 856))
 (junction (pt 1008 784))
 (junction (pt 656 736))
 (junction (pt 1008 736))
-(junction (pt 1008 656))
 (junction (pt 1008 624))
 (junction (pt 528 1240))
 (junction (pt 512 1176))
 (junction (pt 728 1240))
+(junction (pt 1008 688))
+(junction (pt 1008 648))

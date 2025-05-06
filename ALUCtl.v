@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Tue Jan 21 11:20:49 2025"
+// CREATED		"Tue May 06 11:18:37 2025"
 
 module ALUCtl(
 	Functcode,
@@ -60,7 +60,7 @@ ORI	b2v_inst13(
 	.Op(Opcode),
 	.Y(ORIInstruction));
 
-assign	ALUOp_ALTERA_SYNTHESIZED[4] = SLTinstruction | SYNTHESIZED_WIRE_4 | SUBinstruction;
+assign	ALUOp_ALTERA_SYNTHESIZED[3] = SLTinstruction | SYNTHESIZED_WIRE_4 | SUBinstruction;
 
 assign	ALUOp_ALTERA_SYNTHESIZED[1] = SYNTHESIZED_WIRE_4 | SYNTHESIZED_WIRE_3;
 
@@ -79,7 +79,7 @@ SLL	b2v_inst6(
 MULT	b2v_inst7(
 	.Funct(Functcode),
 	.Op(Opcode),
-	.Y(ALUOp_ALTERA_SYNTHESIZED[2]));
+	.Y(ALUOp_ALTERA_SYNTHESIZED[5]));
 
 
 SLTI	b2v_inst8(
@@ -124,10 +124,10 @@ SW	b2v_isSW(
 
 
 SameBit	b2v_sameBitBlock(
-	.Ain(ALUOp_ALTERA_SYNTHESIZED[4]),
-	.Aout(ALUOp_ALTERA_SYNTHESIZED[3]));
+	.Ain(ALUOp_ALTERA_SYNTHESIZED[3]),
+	.Aout(ALUOp_ALTERA_SYNTHESIZED[2]));
 
 assign	ALUOp = ALUOp_ALTERA_SYNTHESIZED;
-assign	ALUOp_ALTERA_SYNTHESIZED[5] = 0;
+assign	ALUOp_ALTERA_SYNTHESIZED[4] = 0;
 
 endmodule
